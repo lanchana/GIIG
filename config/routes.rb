@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # resources :locations
   # resources :jobs
   # resources :skills
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+}
 
   namespace :api do
       resources :positions
