@@ -24,7 +24,16 @@ angular
       .state('skillsIndex', {
         url: '/skills',
         component: 'skillsIndex'
+      })
+      .state('skillsEdit', {
+        url: '/skills/:id',
+        component: 'skillsEdit'
+      })
+      .state('skillsNew', {
+        url: '/skills/new',
+        component: 'skillsNew'
       });
+
 
     // default fall back route
     $urlRouterProvider.otherwise('/');
