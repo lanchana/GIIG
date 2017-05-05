@@ -16,7 +16,8 @@
         <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %>
 
         <% if current_user.org?%>
-          <%= link_to 'Skills', api_skills_path, target: '_self' %>
+          <%# link_to 'Skills', api_skills_path, target: '_self' %>
+          <a ui-sref="skillsIndex">Skills</a>
         <% end %>
       <% end %>
     </nav>
