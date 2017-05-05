@@ -1,0 +1,19 @@
+
+
+<p>
+  <strong>Position type:</strong>
+  <%= @skill.position_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @skill.user_id %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @skill.rating %>
+</p>
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>
