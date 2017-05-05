@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GiiG</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application'%>
+  </head>
+
+  <body ng-app="GiiG">
+   <nav>
+      <% if user_signed_in? %>
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Edit account', edit_user_registration_path, target: '_self' %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %>
+      <% end %>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <h1>Welcome to GiiG</h1>
+     {{2 + 2}}
+
+    <ui-view></ui-view>
+
+  </body>
+</html>
