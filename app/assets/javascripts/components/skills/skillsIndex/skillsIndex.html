@@ -1,0 +1,24 @@
+<h1>Skills</h1>
+
+<table>
+ <thead>
+   <tr>
+     <th>Type</th>
+     <th>Rating</th>
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <tr ng-repeat="skill in $ctrl.skills">
+     <td>{{ skill.position_type }}</td>
+     <td>{{ skill.rating }}</td>
+
+     <!-- <td><a ui-sref="notesShow({id: note.id})">Show</a></td>
+     <td><a ui-sref="notesEdit({id: note.id})">Edit</a></td> -->
+     <td><a href="/api/skills/{{ skill.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+   </tr>
+ </tbody>
+</table>
+
+<a class="skills-index__create-btn" ui-sref="skillsNew">Create a Skill</a
