@@ -1,5 +1,10 @@
 <h2>Sign up</h2>
 
+  <%= radio_button_tag(:role, "jobseeker") %>
+  <%= label_tag(:sign_up_role, "I am a GiiGseeker") %>
+  <%= radio_button_tag(:role, "jobmaker") %>
+  <%= label_tag(:sign_up_role, "I am a GiiGmaker") %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
