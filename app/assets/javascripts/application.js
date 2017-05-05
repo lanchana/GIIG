@@ -21,9 +21,9 @@ angular
   .module('GiiG', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        component: 'homePage'
+      .state('skillsIndex', {
+        url: '/skills',
+        component: 'skillsIndex'
       });
 
     // default fall back route
