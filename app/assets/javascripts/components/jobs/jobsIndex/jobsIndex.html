@@ -23,7 +23,8 @@
             <td>{{job.hourly_wage}}</td>
             <td>{{job.actual_start_time}}</td>
             <td>{{job.actual_end_time}}</td>
-
+            <td><button >Edit</button></td>
+            <td><a href="/api/locations/{{job.location_id}}/jobs/{{job.id}}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
         </tr>
     </tbody>
     <a ui-sref="jobsNew({location_id: $ctrl.location})">Create a Skill</a>

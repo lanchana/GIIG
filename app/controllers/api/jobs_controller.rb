@@ -14,6 +14,15 @@ class Api::JobsController < ApplicationController
         end
     end
 
+    def destroy
+        @location = Location.find(params[:location_id])
+        @job = @location.jobs.find(params[:id])
+        @job.destroy
+        render json: '', status: :no_content
+        # binding.pry
+
+    end
+
     private
     def job_params
         params.require(:job)
