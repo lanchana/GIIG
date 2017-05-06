@@ -2,15 +2,17 @@ angular
   .module('GiiG')
   .controller('JobsIndexController', JobsIndexController);
 
-JobsIndexController.$inject = ['jobsService'];
+JobsIndexController.$inject = ['$stateParams', 'jobsService'];
 
-function JobsIndexController(jobsService) {
+function JobsIndexController($stateParams, jobsService) {
   var vm = this;
 
   vm.jobs = [];
+  vm.location = $stateParams.location_id;
 
   jobsService.getJobs().then(function(response) {
     vm.jobs = response.data;
-    // console.log(vm.jobs)
+    // vm.location = vm.jobs[0].location_id;
+    console.log(vm.location);    // console.log(vm.jobs)
   });
 }
