@@ -15,8 +15,8 @@ function jobsService($http) {
 
     return service;
 
-    function getJobs() {
-        return $http.get('/api/locations/:location_id/jobs');
+    function getJobs(location_id) {
+        return $http.get('/api/locations/'+location_id+'/jobs');
     }
 
     function createJob(job, location_id) {

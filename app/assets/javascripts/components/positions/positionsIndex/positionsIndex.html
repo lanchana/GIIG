@@ -1,0 +1,24 @@
+<h1>Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>description</th>
+      <th>qualification</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="position in $ctrl.positions">
+      <td>{{ position.name }}</td>
+      <td>{{ position.description }}</td>
+      <td>{{ position.qualification }}</td>
+      <td><a ui-sref="positionsShow({id: position.id})">Show</a></td>
+      <td><a ui-sref="positionsEdit({id: position.id})">Edit</a></td>
+      <td><a href="/api/positions/{{ position.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<a ui-sref="positionNew">Create a Note</a>

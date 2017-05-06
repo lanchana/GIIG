@@ -44,6 +44,10 @@ angular
       .state('jobsEdit', {
         url: '/locations/:location_id/jobs/:job_id/edit',
         component: 'jobsEdit'
+      })
+      .state('positionsIndex', {
+        url: '/positions',
+        component: 'positionsIndex'
       });
 
 

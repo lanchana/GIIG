@@ -14,7 +14,7 @@ function JobsIndexController($stateParams, jobsService) {
   activate();
 
   function activate() {
-  jobsService.getJobs().then(function(response) {
+  jobsService.getJobs($stateParams.location_id).then(function(response) {
     vm.jobs = response.data;
     // vm.location = vm.jobs[0].location_id;
     console.log(vm.location);    // console.log(vm.jobs)
