@@ -1,1 +1,29 @@
+<h1>Locations</h1>
 
+<table>
+ <thead>
+   <tr>
+     <th>Name</th>
+     <th>Business</th>
+     <th>Address</th>
+     <th>City</th>
+     <th>Telephone</th>
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <tr ng-repeat="skill in $ctrl.locations">
+     <td>{{ location.name }}</td>
+     <td>{{ location.business_type }}</td>
+     <td>{{ location.address }}</td>
+     <td>{{ location.city }}</td>
+     <td>{{ location.telephone}}</td>
+    <!-- later we could add number of jobs made for that site -->
+
+     <td><a href="/api/locations/{{ location.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+   </tr>
+ </tbody>
+</table>
+
+<a ui-sref="skillsNew">Create a Location</a>
