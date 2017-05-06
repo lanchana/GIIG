@@ -36,6 +36,10 @@ angular
       .state('locationsIndex', {
         url: '/locations',
         component: 'locationsIndex'
+      })
+      .state('locationsNew', {
+        url: '/locations/new',
+        component: 'locationsNew'
       });
 
 

@@ -13,7 +13,7 @@
  </thead>
 
  <tbody>
-   <tr ng-repeat="skill in $ctrl.locations">
+   <tr ng-repeat="location in $ctrl.locations">
      <td>{{ location.name }}</td>
      <td>{{ location.business_type }}</td>
      <td>{{ location.address }}</td>
@@ -21,9 +21,13 @@
      <td>{{ location.telephone}}</td>
     <!-- later we could add number of jobs made for that site -->
 
-     <td><a href="/api/locations/{{ location.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+     <td> Want to add a job? </td> <!-- add link -->
+
+<!--      Probably won't put delete here. Stick it in edit. 
+ -->    <td><a href="/api/locations/{{ location.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+ 
    </tr>
  </tbody>
 </table>
 
-<a ui-sref="skillsNew">Create a Location</a>
+<a ui-sref="locationsNew">Create a Location</a>

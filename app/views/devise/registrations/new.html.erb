@@ -6,9 +6,9 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.radio_button :org, 'I am a GiiGseeker', checked: false %>
+    <%= f.radio_button :org, 'false' %>
     <%= f.label 'I am a GiiGseeker' %>
-    <%= f.radio_button :org, "I am a GiiGmaker", checked: true %>
+    <%= f.radio_button :org, 'true', checked: true %>
     <%= f.label 'I am a GiiGmaker' %>
   </div>
 

@@ -24,7 +24,7 @@ class Api::LocationsController < ApplicationController
   private
   def location_params
     params.require(:location)
-          .permit()
-          .merge()
+          .permit(:name, :business_type, :address, :city, :state, :zipcode, :description, :phone_num)
+          .merge(user_id: current_user.id)
   end
 end
