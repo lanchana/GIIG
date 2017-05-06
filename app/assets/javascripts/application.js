@@ -32,6 +32,10 @@ angular
       .state('skillsNew', {
         url: '/skills/new',
         component: 'skillsNew'
+      })
+      .state('jobsIndex', {
+        url: '/locations/:location_id/jobs',
+        component: 'jobsIndex'
       });
 
 

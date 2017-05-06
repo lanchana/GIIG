@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #POST /resource
   def create
     super
-    binding.pry
+    # binding.pry
     # if !current_user.org
   end
 
