@@ -4,6 +4,13 @@ class Api::JobsController < ApplicationController
         render json: @jobs
     end
 
+    def show
+        @location = Location.find(params[:location_id])
+        @job = @location.jobs.find(params[:id])
+        # binding.pry
+        render json: @job
+    end
+
     def create
         @job = Job.new(job_params)
         # binding.pry
@@ -12,6 +19,18 @@ class Api::JobsController < ApplicationController
         else
             render json: @job.errors, status: :unprocessable_entity
         end
+    end
+
+    def update
+        @location = Location.find(params[:location_id])
+        @job = @location.jobs.find(params[:id])
+        if @job.update(job_params)
+            render json: @job, status: :ok
+        else
+            render json: @job.errors, status: :unprocessable_entity
+        end
+
+        # binding.pry
     end
 
     def destroy
