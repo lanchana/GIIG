@@ -17,6 +17,8 @@
 
         <% if current_user.org?%>
           <%# link_to 'Skills', api_skills_path, target: '_self' %>
+          <a ui-sref="locationsIndex">Locations</a>
+        <% elsif %>
           <a ui-sref="skillsIndex">Skills</a>
         <% end %>
       <% end %>
