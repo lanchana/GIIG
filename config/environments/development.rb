@@ -31,7 +31,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
 # enable send mail with specified account
-ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
   #:username =>
   #:password =>
@@ -41,6 +40,7 @@ ActionMailer::Base.delivery_method = :smtp
   :authentication => :plain,
   :enable_starttls_auto => true
 }
+
 
   config.action_mailer.perform_caching = false
 
