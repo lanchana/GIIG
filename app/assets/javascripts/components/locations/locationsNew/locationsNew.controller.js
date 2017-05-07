@@ -6,6 +6,7 @@ LocationsNewController.$inject = ['$state', '$stateParams', 'locationsService'];
 
 function LocationsNewController($state, $stateParams, locationsService) {
   var vm = this;
+  vm.addlocation = addlocation;
 
   vm.location = {
     business_type: '',
@@ -23,6 +24,15 @@ function LocationsNewController($state, $stateParams, locationsService) {
   console.log(vm.address);
 
   vm.saveLocation = saveLocation;
+
+  function addlocation() {
+    address = vm.address.split(',');
+    vm.location.name = address[0];
+    vm.location.address = address[1];
+    vm.location.city = address[2];
+    vm.location.state = address[3];
+
+  }
 
   function saveLocation() {
     console.log(vm.address);
