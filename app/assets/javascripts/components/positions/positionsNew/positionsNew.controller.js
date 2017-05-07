@@ -2,9 +2,9 @@ angular
   .module('GiiG')
   .controller('PositionsNewController', PositionsNewController);
 
-PositionsIndexController.$inject = ['positionsService'];
+PositionsNewController.$inject = ['$state', 'positionsService'];
 
-function PositionsNewController(positionsService) {
+function PositionsNewController($state, positionsService) {
   var vm = this;
    // console.log('1');
     vm.position = {
@@ -16,12 +16,14 @@ function PositionsNewController(positionsService) {
     vm.createPositions = createPositions;
 
     function createPositions() {
+        console.log(vm.position);
         positionsService.createPosition(vm.position)
                         .then((response) => {
-                            if(response.status == 201) {
-                                $state.go('positionsIndex')
+                            console.log(response);
+                            if(response.status == 200) {
+                                $state.go('positionsIndex');
                             } else {
-                                alert('server is Down')
+                                alert('server is Down');
                             }
                         });
     }

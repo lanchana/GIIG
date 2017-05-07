@@ -17,6 +17,7 @@ function positionsService($http) {
     }
 
     function createPosition(position) {
-        return $http.post('/api/positions',position);
+        console.log(position);
+        return $http.post('/api/positions/',position);
     }
 }
