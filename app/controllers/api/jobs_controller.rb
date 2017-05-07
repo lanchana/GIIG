@@ -1,4 +1,6 @@
 class Api::JobsController < ApplicationController
+    # after_commit :job_posting_notification, on: :create
+
     def index
         @jobs = Job.all
         render json: @jobs
@@ -15,6 +17,7 @@ class Api::JobsController < ApplicationController
         @job = Job.new(job_params)
         # binding.pry
         if @job.save
+            JobMailer.job_posting(@job).deliver
             render json: @job, status: :created
         else
             render json: @job.errors, status: :unprocessable_entity
@@ -43,9 +46,14 @@ class Api::JobsController < ApplicationController
     end
 
     private
+
     def job_params
         params.require(:job)
               .permit(:position_type, :description, :start_time, :end_time, :date, :hourly_wage, :actual_start_time, :actual_end_time )
               .merge(user_id: current_user.id, location_id: params[:location_id])
     end
+
+    # def job_posting_notification
+    #     JobMailer.job_posting(self).deliver
+    # end
 end

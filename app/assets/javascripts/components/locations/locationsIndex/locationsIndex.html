@@ -21,11 +21,11 @@
      <td>{{ location.telephone}}</td>
     <!-- later we could add number of jobs made for that site -->
 
-     <td> Want to add a job? </td> <!-- add link -->
+     <td> <a ui-sref="jobsIndex({location_id: location.id})">Available jobs </a></td> <!-- add link -->
 
-<!--      Probably won't put delete here. Stick it in edit. 
+<!--      Probably won't put delete here. Stick it in edit.
  -->    <td><a href="/api/locations/{{ location.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
- 
+
    </tr>
  </tbody>
 </table>
