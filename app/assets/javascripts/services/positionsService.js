@@ -11,6 +11,7 @@ function positionsService($http) {
     service.createPosition = createPosition;
     service.getPosition = getPosition;
     service.updatePosition = updatePosition;
+    service.deletePosition = deletePosition;
 
     return service;
 
@@ -29,5 +30,9 @@ function positionsService($http) {
 
     function updatePosition(position_id, position) {
         return $http.patch('/api/positions/'+position_id,position);
+    }
+
+    function deletePosition(position_id) {
+        return $http.delete('/api/positions/'+position_id);
     }
 }

@@ -16,7 +16,10 @@
       <td>{{ position.qualification }}</td>
       <td><a ui-sref="positionsShow({id: position.id})">Show</a></td>
       <td><a ui-sref="positionsEdit({id: position.id})">Edit</a></td>
-      <td><a href="/api/positions/{{ position.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+      <!-- <td><a href="/api/positions/{{ position.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td> -->
+      <td> <form ng-submit="$ctrl.deletePosition(position.id)">
+        <button type="submit">Delete</button>
+      </form></td>
     </tr>
   </tbody>
 </table>

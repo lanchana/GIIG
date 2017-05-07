@@ -30,6 +30,14 @@ class Api::PositionsController < ApplicationController
         end
     end
 
+    def destroy
+        @position = Position.find(params[:id])
+
+        @position.destroy
+
+        render json: '', status: :no_content
+    end
+
 
 
     private
