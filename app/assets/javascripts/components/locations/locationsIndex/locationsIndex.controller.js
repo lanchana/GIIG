@@ -12,4 +12,6 @@ function LocationsIndexController(locationsService) {
   locationsService.getLocations().then(function(response) {
     vm.locations = response.data;
   });
+
 }
+
