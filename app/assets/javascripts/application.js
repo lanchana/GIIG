@@ -48,6 +48,10 @@ angular
       .state('positionsIndex', {
         url: '/positions',
         component: 'positionsIndex'
+      })
+      .state('positionsNew', {
+        url: '/positions/new',
+        component: 'positionsNew'
       });
 
 
