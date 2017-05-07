@@ -27,7 +27,7 @@ function locationsService($http) {
    return $http.post('/api/locations/', location);
  }
 
- function updateLocation(location) {
-   return $http.put('/api/locations/' + location.id, location);
+ function updateLocation(location_id, location) {
+   return $http.put('/api/locations/' + location_id, location);
  }
 }

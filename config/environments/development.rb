@@ -33,8 +33,8 @@ Rails.application.configure do
 # enable send mail with specified account
 ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-  :user_name => 'lanchanagupta@gmail.com',
-  :password => 'lanch@vini<3',
+  #:username =>
+  #:password =>
   :domain => 'gmail.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
