@@ -17,6 +17,17 @@ class Api::SkillsController < ApplicationController
     # binding.pry
   end
 
+  def update
+    @skill = current_user.skills.find(params[:id])
+
+    if @skill.update(skill_params)
+      render json: @skill, status: :ok
+    else
+      render json: @skill.errors, status: :unprocessable_entity
+    end
+
+  end
+
   def destroy
     @skill = current_user.skills.find(params[:id])
     # binding.pry
@@ -24,6 +35,8 @@ class Api::SkillsController < ApplicationController
 
     render json: '', status: :no_content
   end
+
+
 
   private
   def skill_params
