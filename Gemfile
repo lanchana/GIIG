@@ -42,6 +42,7 @@ gem 'devise'
 gem 'figaro'
 gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
+gem 'rails_12factor'
 
 
 group :development, :test do
