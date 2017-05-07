@@ -38,8 +38,6 @@ class Api::PositionsController < ApplicationController
         render json: '', status: :no_content
     end
 
-
-
     private
     def position_params
         params.require(:position)
