@@ -13,10 +13,14 @@
    <tr ng-repeat="skill in $ctrl.skills">
      <td>{{ skill.position_type }}</td>
      <td>{{ skill.rating }}</td>
+     <td><a ui-sref="skillsEdit({id: skill.id })">EDIT</a></td>
 
      <!-- <td><a ui-sref="notesShow({id: note.id})">Show</a></td>
      <td><a ui-sref="notesEdit({id: note.id})">Edit</a></td> -->
      <td><a href="/api/skills/{{ skill.id }}" data-method="DELETE" data-confirm="Are you sure?">Delete</a></td>
+     <td><form ng-submit="$ctrl.skillDelete(skill.id)">
+      <button type="submit">Delete</button>
+     </form></td>
    </tr>
  </tbody>
 </table>
