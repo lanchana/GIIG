@@ -27,7 +27,20 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+# enable send mail with specified account
+ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+  :user_name => 'lanchanagupta@gmail.com',
+  :password => 'lanch@vini<3',
+  :domain => 'gmail.com',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
 
   config.action_mailer.perform_caching = false
 
