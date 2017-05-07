@@ -11,6 +11,7 @@ function skillsService($http) {
  service.getSkill = getSkill;
  service.createSkill = createSkill;
  service.updateSkill = updateSkill;
+ service.deleteSkill = deleteSkill;
 
  return service;
 
@@ -26,7 +27,11 @@ function skillsService($http) {
    return $http.post('/api/skills/', skill);
  }
 
- function updateSkill(skill) {
-   return $http.put('/api/skills/' + skill.id, skill);
+ function updateSkill(skill_id, skill) {
+   return $http.patch('/api/skills/' + skill_id, skill);
+ }
+
+ function deleteSkill(skill_id) {
+    return $http.delete('/api/skills/'+skill_id);
  }
 }

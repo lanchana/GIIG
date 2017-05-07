@@ -1,9 +1,15 @@
 class Api::SkillsController < ApplicationController
   # GET /api/skills
   def index
-    @skills = Skill.all
+    @skills = current_user.skills.all
     # binding.pry
     render json: @skills
+  end
+
+  def show
+    @skill = Skill.find(params[:id])
+
+    render json: @skill
   end
 
   def create
@@ -19,7 +25,7 @@ class Api::SkillsController < ApplicationController
 
   def update
     @skill = current_user.skills.find(params[:id])
-
+    # binding.pry
     if @skill.update(skill_params)
       render json: @skill, status: :ok
     else

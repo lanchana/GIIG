@@ -51,7 +51,12 @@ angular
       })
       .state('positionsNew', {
         url: '/positions/new',
-        component: 'positionsNew'})
+        component: 'positionsNew'
+      })
+      .state('positionsEdit', {
+        url: '/positions/:id',
+        component: 'positionsEdit'
+      })
       .state('locationsIndex', {
         url: '/locations',
         component: 'locationsIndex'
