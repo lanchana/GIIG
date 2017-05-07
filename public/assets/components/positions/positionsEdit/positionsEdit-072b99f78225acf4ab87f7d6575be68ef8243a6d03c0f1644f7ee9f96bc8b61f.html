@@ -1,0 +1,8 @@
+<h1>Positions Edit</h1>
+
+<form>
+    <label for="name">Name: <input type="text" name="name" ng-model="$ctrl.position.name"></label>
+    <label for="description">Description: <input type="text" name="description" ng-model="$ctrl.position.description"></label>
+    <label for="qualification">Qualification: <input type="text" name="qualification" ng-model="$ctrl.position.qualification"></label><br>
+    <button ng-click="$ctrl.savePosition()">Update</button>
+</form>
