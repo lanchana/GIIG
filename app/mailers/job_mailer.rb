@@ -7,15 +7,16 @@ class JobMailer < ApplicationMailer
   #
   def job_posting(job)
     @specific_job = job
-    candidates = Skill.where(position_type: job.position_type)
     @specific_location = Location.find(job.location_id)
-    binding.pry
+   
+    candidates = Skill.where(position_type: job.position_type)
+    # binding.pry
     candidates.each do |candidate|
-      @jobseeker = User.find(candidate.id)
+      @jobseeker = User.find(candidate.user_id)
 
 
       puts "candidate #{@jobseeker.email}"
-      #mail to: candidate_email.email
+      mail to: @jobseeker.email
 
     end
 
