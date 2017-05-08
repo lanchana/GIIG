@@ -8,7 +8,7 @@ class JobMailer < ApplicationMailer
   def job_posting(job)
     @greeting = "hi"
 
-    mail to: "hernquist@yahoo.com"
+    mail to: "hernquistdavid@gmail.com"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
