@@ -1,22 +1,23 @@
 angular
   .module('GiiG')
-  .controller('JobSeekersController', JobSeekersController);
+  .controller('JobseekersController', JobseekersController);
 
-JobSeekersController.$inject = [];
+JobseekersController.$inject = ['$stateParams', 'jobseekersService'];
 
-function JobSeekersController() {
+function JobseekersController($stateParams, jobseekersService) {
   var vm = this;
 
   vm.jobs = [];
   vm.user_id = $stateParams.user_id;
-  vm.acceptJob  = acceptJob;
+  // vm.acceptJob  = acceptJob;
 
   activate(); 
 
   function activate() {
-  	jobsService.getJobs($stateParams.location_id).then(function(response) {
+  	jobseekersService.getJobs(vm.user_id).then(function(response) {
   	  vm.jobs = response.data;
-  		});
+      console.log(vm.jobs);
+  	});
   }
 
   // function acceptJob(user_id, job_id) {
@@ -25,7 +26,7 @@ function JobSeekersController() {
   //             .then((response) => {
   //               console.log("delete job 2");
   //               activate();
-  //             });
-  }
+  //            });
+  
 
 }

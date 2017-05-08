@@ -1,9 +1,22 @@
 angular
  .module('GiiG')
- .factory('jobsService', jobsService);
+ .factory('jobseekersService', jobseekersService);
 
-jobsService.$inject = ['$http'];
+jobseekersService.$inject = ['$http'];
 
-function jobsService($http) {
+function jobseekersService($http) {
     var service = {};
+
+    service.getJobs = getJobs;
+    // service.createJob = createJob;
+    // service.deleteJob = deleteJob;
+    // service.getJob = getJob;
+    // service.updateJob = updateJob;
+
+    return service;
+
+    function getJobs(user_id) {
+        return $http.get('/api/jobseekers/' + user_id + '/jobs');
+
+    }
 }
