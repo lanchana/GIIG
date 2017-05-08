@@ -21,6 +21,14 @@ angular
   .module('GiiG', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
+      .state('jobSeeker', {
+        url: '/dashboard',
+        component: 'seekerDash'
+      })
+      .state('organization', {
+        url: '/organization',
+        component: 'orgDash'
+      })
       .state('skillsIndex', {
         url: '/skills',
         component: 'skillsIndex'
@@ -66,7 +74,7 @@ angular
         component: 'locationsNew'
       })
       .state('locationsEdit', {
-        url: '/locations/:id', 
+        url: '/locations/:id',
         component: 'locationsEdit'
       });
 
