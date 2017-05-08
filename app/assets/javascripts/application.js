@@ -64,6 +64,10 @@ angular
       .state('locationsNew', {
         url: '/locations/new',
         component: 'locationsNew'
+      })
+      .state('locationsEdit', {
+        url: '/locations/:id', 
+        component: 'locationsEdit'
       });
 
 

@@ -29,10 +29,10 @@ function positionsService($http) {
     }
 
     function updatePosition(position_id, position) {
-        return $http.patch('/api/positions/'+position_id,position);
+        return $http.patch('/api/positions/'+ position_id, position);
     }
 
     function deletePosition(position_id) {
-        return $http.delete('/api/positions/'+position_id);
+        return $http.delete('/api/positions/'+ position_id);
     }
 }

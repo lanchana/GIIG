@@ -24,7 +24,6 @@ function jobsService($http) {
     }
 
     function deleteJob(location_id, job_id) {
-        console.log("delete job 3");
         return $http.delete('/api/locations/'+location_id+'/jobs/'+job_id);
     }
 

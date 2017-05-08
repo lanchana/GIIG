@@ -1,0 +1,21 @@
+<h1>Location Edit</h1>
+<form>
+    <label for="location">location
+    <input ng-model="$ctrl.location.name" />
+    <label for="business_type">type of business
+    <input ng-model="$ctrl.location.business_type" />
+    <label for="address">address
+    <input ng-model="$ctrl.location.address" />
+    <label for="city">city
+    <input ng-model="$ctrl.location.city" />
+    <label for="state">state
+    <input ng-model="$ctrl.location.state" />
+    <label for="zipcode">zipcode
+    <input ng-model="$ctrl.location.zipcode" />
+    <label for="phone_number">phone number
+    <input ng-model="$ctrl.location.phone_num" />
+    <label for="description">description
+    <input ng-model="$ctrl.location.description" />
+
+    <button ng-click="$ctrl.saveLocation()">Update Location</button>
+</form>

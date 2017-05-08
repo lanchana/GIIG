@@ -31,6 +31,16 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
 # enable send mail with specified account
+  ActionMailer::Base.smtp_settings = {
+  #:username =>
+  #:password =>
+  :domain => 'gmail.com',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
+
 
   config.action_mailer.perform_caching = false
 

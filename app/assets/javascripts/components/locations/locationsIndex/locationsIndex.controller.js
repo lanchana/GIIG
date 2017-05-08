@@ -7,11 +7,23 @@ LocationsIndexController.$inject = ['locationsService'];
 function LocationsIndexController(locationsService) {
   var vm = this;
 
-  vm.skills = [];
+  vm.locations = [];
+  vm.locationDelete = locationDelete;
 
-  locationsService.getLocations().then(function(response) {
-    vm.locations = response.data;
-  });
+  activate();
 
+  function activate() {
+	locationsService.getLocations().then(function(response) {
+  	vm.locations = response.data;
+	});
+	}
+
+	function locationDelete(location_id) {
+		console.log("locationsIndexcontroller" + location_id);
+	  locationsService.deleteLocation(location_id)
+	    .then( function(response)  {        
+	      activate();
+      });
+	}
 }
 
