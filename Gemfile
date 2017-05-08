@@ -41,6 +41,7 @@ gem 'devise'
 gem 'figaro'
 gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
+gem 'materialize-sass'
 
 
 group :development, :test do
