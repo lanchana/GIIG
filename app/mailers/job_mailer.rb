@@ -8,7 +8,18 @@ class JobMailer < ApplicationMailer
   def job_posting(job)
     @greeting = "hi"
 
-    mail to: "hernquistdavid@gmail.com"
+    
+    candidates = Skill.where(position_type: job.position_type)
+    
+    candidates.each do |candidate|
+      candidate_email = User.find_by(candidate.id)
+
+      puts "candidate #{candidate.candidate_email}"
+    end
+
+
+
+    # mail to: "hernquistdavid@gmail.com"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
