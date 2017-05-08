@@ -21,21 +21,17 @@ class Api::LocationsController < ApplicationController
   end
 
   def update
-    
     @location = Location.find(params[:id])
-
     if @location.update(location_params)
         render json: @location, status: :ok
     else
         render json: @location.errors, status: :unprocessable_entity
     end
-    
-end
+  end
 
   def destroy
-    @location = current_user.locations.find(params[:id])
+    @location = Location.find(params[:id])
     @location.destroy
-
     render json: '', status: :no_content
   end
 

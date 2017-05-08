@@ -11,6 +11,7 @@ function locationsService($http) {
  service.getLocation = getLocation;
  service.createLocation = createLocation;
  service.updateLocation = updateLocation;
+ service.deleteLocation = deleteLocation;
 
  return service;
 
@@ -30,4 +31,9 @@ function locationsService($http) {
  function updateLocation(location_id, location) {
    return $http.put('/api/locations/' + location_id, location);
  }
+
+ function deleteLocation(location_id) {
+ 	console.log('delete' + location_id);
+    return $http.delete('/api/locations/' + location_id);
+    }
 }
