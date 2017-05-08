@@ -3,7 +3,7 @@
   <head>
     <title>GiiG</title>
     <%= csrf_meta_tags %>
-
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -92,26 +92,57 @@
   </head>
 
   <body ng-app="GiiG">
-   <nav>
-      <% if user_signed_in? %>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'Edit account', edit_user_registration_path, target: '_self' %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %>
 
-        <% if current_user.org? %>
-          <a ui-sref="locationsIndex">Locations</a>
-        <% elsif %>
-          <a ui-sref="skillsIndex">Skills</a>
-        <% end %>
-      <% end %>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">GiiG</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <% if user_signed_in? %>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Edit account', edit_user_registration_path, target: '_self' %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></li>
+            <% if current_user.org? %>
+            <!--  ui-sref="locationsIndex({id: '<% current_user.id %>'})" -->
+            <li><a ui-sref="locationsIndex">Locations</a></li>
+            <% elsif %>
+            <li><a ui-sref="skillsIndex">Skills</a></li>
+            <% end %>
+          <% end %>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <% if user_signed_in? %>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Edit account', edit_user_registration_path, target: '_self' %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></li>
+            <% if current_user.org? %>
+            <!--  ui-sref="locationsIndex({id: '<% current_user.id %>'})" -->
+            <li><a ui-sref="locationsIndex">Locations</a></li>
+            <% elsif %>
+            <li><a ui-sref="skillsIndex">Skills</a></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h1>Welcome to GiiG</h1>
-<input type="file" id="file" name="file"/>
-<button ng-click="$ctrl.add()">Add</button>
-    <ui-view></ui-view>
 
+      <input type="file" id="file" name="file"/>
+      <button ng-click="$ctrl.add()">Add</button>
 
+      <ui-view></ui-view>
+
+      <script>
+        $(".dropdown-button").dropdown();
+        $(".button-collapse").sideNav();
+      </script>
   </body>
 </html>
