@@ -1,3 +1,15 @@
-Job#job_posting
 
-<%= @greeting %>, find me in app/views/job_mailer/job_posting.text.erb
+Good news, <%= @jobseeker.full_name %>! GiiG has a job for you. The job is for a<%= @specific_job.position_type %> at <%= @specific_location.name %>
+
+The job starts at <%= @specific_job.start_time %> on <%= @specific_job.date %>
+The expected end time is for <%= @specific_job.end_time %>
+
+This job pays <%= @specific_job.hourly_wage %>
+
+Location: <%= @specific_job.address %>
+		  <%= @specific_job.city %>, <%= @specific_job.state %> <%= @specific_job.zipcode%>
+
+First to respond gets the GiiG, so repsond at ... /dashboard
+
+Sincerely, 
+	Your GiiGmaster
