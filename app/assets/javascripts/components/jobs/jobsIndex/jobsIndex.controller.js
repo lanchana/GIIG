@@ -11,7 +11,7 @@ function JobsIndexController($stateParams, jobsService) {
   vm.location = $stateParams.location_id;
   vm.jobDelete  = jobDelete;
 
-  activate();
+  activate(); 
 
   function activate() {
   jobsService.getJobs($stateParams.location_id).then(function(response) {

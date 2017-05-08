@@ -99,8 +99,7 @@
         <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %>
 
         <% if current_user.org? %>
-         <a ui-sref="locationsIndex">Locations</a>
-        <!--  ui-sref="locationsIndex({id: '<% current_user.id %>'})" -->          <a ui-sref="locationsIndex">Locations</a>
+          <a ui-sref="locationsIndex">Locations</a>
         <% elsif %>
           <a ui-sref="skillsIndex">Skills</a>
         <% end %>
