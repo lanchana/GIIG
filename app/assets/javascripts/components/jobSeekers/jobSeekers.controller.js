@@ -15,7 +15,7 @@ function JobseekersController($stateParams, jobseekersService) {
 
   function activate() {
     console.log ("jobseekers Contoller 10 :" + vm.user_id);
-  	jobseekersService.getJobs(vm.user_id).then(function(response) {
+  	jobseekersService.getJobs().then(function(response) {
   	  vm.jobs = response.data;
       // console.log(vm.jobs);
   	});
