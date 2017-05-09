@@ -43,7 +43,8 @@ gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0"
 gem 'figaro'
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 group :development, :test do

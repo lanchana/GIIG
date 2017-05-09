@@ -11,6 +11,6 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 S3_BUCKET_NAME: giigbrandala
-
 AWS_ACCESS_KEY_ID: AKIAJ7GYTFBMSFAIPKSQ
 AWS_SECRET_ACCESS_KEY: 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
+AWS_REGION:  us-east-1
