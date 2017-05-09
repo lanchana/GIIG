@@ -18,13 +18,13 @@
 //= require angular-ui-router/release/angular-ui-router
 //= require_self
 //= require_tree .
- 
+
 angular
   .module('GiiG', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('jobseeker', {
-        url: '/jobseeker/:id',
+        url: '/jobseeker',
         component: 'jobseeker'
       })
       .state('organization', {
