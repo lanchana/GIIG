@@ -3,8 +3,8 @@
 <form>
     <label>Position</label>
     <input ng-model="$ctrl.location.name" />
-    <input ng-model="$ctrl.address" />
-    <button ng-click="$ctrl.addlocation($ctrl.address)">Add location</button>
+    <!-- <input ng-model="$ctrl.address" /> -->
+    <!-- <button ng-click="$ctrl.addlocation($ctrl.address)">Add location</button> -->
 
     <input ng-model="$ctrl.location.business_type" />
     <input ng-model="$ctrl.location.address" />
@@ -28,7 +28,7 @@
         <input id="pac-input" type="text"
             placeholder="Enter a location" ng-model="$ctrl.address">
             <button ng-click="$ctrl.addlocation($ctrl.address)">Add location</button>
-            <input ng-model="$ctrl.address" />
+            <!-- <input ng-model="$ctrl.address" /> -->
       </div>
     </div>
     <div id="map" ></div>
