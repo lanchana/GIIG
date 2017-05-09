@@ -24,7 +24,7 @@ angular
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('jobseeker', {
-        url: '/jobseeker/:id',
+        url: '/jobseeker',
         component: 'jobseeker'
       })
       .state('organization', {

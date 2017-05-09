@@ -26,6 +26,7 @@ class Api::JobsController < ApplicationController
     end
 
     def update
+        
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
         if @job.update(job_params)

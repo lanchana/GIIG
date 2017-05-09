@@ -20,14 +20,19 @@
       <td>{{ job.date }}</td>
       <td>{{ job.hourly_wage }}</td>
       <!-- add location of job -->
-      <th>{{ showLocation(job.location_id)}}
+      <td>{{ job.location.name }}</td> -->
 
+      <td><form ng-submit="$ctrl.acceptJob(job.id)"> 
+        <button type="submit">accept this job</button></form></td>
 
-<!--       <td><a ui-sref='acceptJob({user_id//USERID job_id:job.id})'>AcceptJob</a>
- -->     <!--  <td><form ng-submit='$ctrl.jobDelete(USERID, job.id)'> -->
-<!--          <button type='submit'>delete</button></form> </td>
- -->        </tr>
-    </tbody>
+        <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
+                <button type="submit">delete</button>
+            </form>
+
+<!--  <td><form ng-submit='$ctrl.jobDelete(USERID, job.id)'> -->
+<!-- <button type='submit'>delete</button></form> </td> -->        
+    </tr>
+  </tbody>
     <tbody>
     </tbody>
 </table>

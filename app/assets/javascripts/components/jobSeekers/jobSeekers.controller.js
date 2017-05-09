@@ -2,39 +2,32 @@ angular
   .module('GiiG')
   .controller('JobSeekersController', JobSeekersController);
 
-JobSeekersController.$inject = ['$stateParams', 
-                            'jobseekersService', 
-                            'locationsService']';
+JobSeekersController.$inject = ['$stateParams', '$scope', 
+                                'jobseekersService', 
+                                'locationsService'];
 
-function JobSeekersController($stateParams, jobseekersService, jobseekersService) {
+function JobSeekersController($stateParams, $scope, 
+                              jobseekersService, 
+                              locationsService) {
   var vm = this;
 
- vm.jobs = [];
-  vm.user_id = $stateParams.id;
-  // vm.acceptJob  = acceptJob;
+  vm.jobs = [];
+  vm.acceptJob  = acceptJob;
 
  activate();
 
  function activate() {
     console.log ('jobseekers Contoller 10 :' + vm.user_id);
-      jobseekersService.getJobs(vm.user_id).then(function(response) {
+      jobseekersService.getJobs().then(function(response) {
         vm.jobs = response.data;
       // console.log(vm.jobs);
       });
-
-    function showLocation(location_id) {
-      locationsService.getLocation($stateParams.id).then(function(response) {
-        vm.location = response.data;
-        // console.log(vm.location);
-        }
-      }
-    });
-
-
-
   }
 
- // function acceptJob(user_id, job_id) {
+  function acceptJob(job_id) {
+    console.log('acceptJob' + job_id);
+    jobseekersService.updateJob(job_id);
+  }
   //   console.log(“delete”+ job_id);
   //   jobsService.deleteJob(location_id, job_id)
   //             .then((response) => {
@@ -42,5 +35,5 @@ function JobSeekersController($stateParams, jobseekersService, jobseekersService
   //               activate();
   //            });
   
-
 }
+
