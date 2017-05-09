@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
             if resource.org == true
               "/organization"
             else
-              "/jobseeker/#{current_user.id}" 
+              "/dashboard/#{current_user.id}" 
             end
       end
 end
