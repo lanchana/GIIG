@@ -3,7 +3,7 @@ class Api::JobsController < ApplicationController
 
     def index
         location = Location.find(params[:location_id])
-        @jobs = location.jobs
+        @jobs = location.jobs.all
         render json: @jobs
     end
 
