@@ -15,6 +15,7 @@ function OrganizationsController($stateParams, organizationsService) {
   function activate() {
     organizationsService.getJobs().then(function(response) {
         vm.jobs = response.data;
+        console.log(response)
     });
   }
 }

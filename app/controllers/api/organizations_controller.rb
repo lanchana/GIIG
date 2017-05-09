@@ -3,6 +3,10 @@ class Api::OrganizationsController < ApplicationController
     organization = current_user
     @jobs = Job.where(user_id: organization.id)
 
-    render json: @jobs
+    # jobseeker = User.where(user_id: jobseeker.id)
+
+
+    render json: @jobs.to_json(include: [:location, :jobseeker])
+
   end
 end

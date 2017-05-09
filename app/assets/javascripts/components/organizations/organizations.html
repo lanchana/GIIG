@@ -3,26 +3,37 @@
 <table>
     <thead>
         <tr>
-            <th>position_type</th>
-            <th>description</th>
-            <th>start_time</th>
-            <th>end_time</th>
-            <th>date</th>
-            <th>hourly_wage</th>
+            <th>Position</th>
+            <th>Applicant</th>
+            <!-- <th>start_time</th>
+            <th>end_time</th> -->
+            <th>Date Posted</th>
+            <!-- <th>hourly_wage</th>
             <th>actual_start_time</th>
-            <th>actual_end_time</th>
+            <th>actual_end_time</th> -->
+            <th>Status</th>
+            <th>Actions</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="job in $ctrl.jobs">
-            <td>{{job.position_type}}</td>
-            <td>{{job.description}}</td>
-            <td>{{job.start_time}}</td>
-            <td>{{job.end_time}}</td>
+            <td>
+              {{job.position_type}}
+              <br>
+              {{job.location.name}}
+              <br>
+              {{job.location.city}}, {{job.location.state}}
+            </td>
+            <td>{{job.jobseeker.full_name}}</td>
+
             <td>{{job.date}}</td>
-            <td>{{job.hourly_wage}}</td>
-            <td>{{job.actual_start_time}}</td>
+            <!-- <td>{{job.start_time}}</td>
+            <td>{{job.end_time}}</td>
+            <td>{{job.hourly_wage}}</td>-->
+            <td ng-if="job.jobseeker_id === null">Empty</td>
+            <td ng-if="job.jobseeker_id != null">Filled</td>
+             <td>{{job.actual_start_time}}</td>
             <td>{{job.actual_end_time}}</td>
             <td><a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
             <td>
