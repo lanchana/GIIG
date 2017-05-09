@@ -12,6 +12,7 @@ function jobsService($http) {
     service.deleteJob = deleteJob;
     service.getJob = getJob;
     service.updateJob = updateJob;
+    service.getGeo = getGeo;
 
     return service;
 
@@ -34,5 +35,9 @@ function jobsService($http) {
 
     function getJob(location_id, job_id) {
         return $http.get('/api/locations/'+location_id+'/jobs/'+job_id)
+    }
+
+    function getGeo(loc) {
+        return $http.get('https://maps.googleapis.com/maps/api/geocode/json?address='+loc+'&key=AIzaSyAohMMx5Ns4F5hhjZolRS29Ey9X5ZfKftU');
     }
 }

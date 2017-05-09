@@ -6,8 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
+    <!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <!-- <script src='//maps.googleapis.com/maps/api/js?key=YOUR_API_KEY'></script> -->
+
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -112,6 +115,7 @@
 <button ng-click="$ctrl.add()">Add</button>
     <ui-view></ui-view>
 
+ <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAohMMx5Ns4F5hhjZolRS29Ey9X5ZfKftU"></script>
 
   </body>
 </html>

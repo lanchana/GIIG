@@ -10,6 +10,8 @@ function JobsIndexController($stateParams, jobsService) {
   vm.jobs = [];
   vm.location = $stateParams.location_id;
   vm.jobDelete  = jobDelete;
+  // vm.place ="abcd";
+  // console.log(v)
 
   activate();
 
@@ -17,7 +19,12 @@ function JobsIndexController($stateParams, jobsService) {
   jobsService.getJobs($stateParams.location_id).then(function(response) {
     vm.jobs = response.data;
     // vm.location = vm.jobs[0].location_id;
-    console.log(vm.location);    // console.log(vm.jobs)
+    console.log(vm.location);
+    vm.jobs.forEach( function(job) {
+      // statements
+      // job.locationurl = ;
+    });
+       // console.log(vm.jobs)
   });
   }
 
