@@ -8,20 +8,24 @@
       <th>end_time</th>
       <th>date</th>
       <th>hourly_wage</th>
+      <th>location</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat=“job in $ctrl.jobs”>
+    <tr ng-repeat='job in $ctrl.jobs'>
       <td>{{ job.position_type }}</td>
       <td>{{ job.start_time }}</td>
       <td>{{ job.end_time }}</td>
       <td>{{ job.date }}</td>
       <td>{{ job.hourly_wage }}</td>
       <!-- add location of job -->
-<!--       <td><a ui-sref=“acceptJob({user_id//USERID job_id:job.id})“>AcceptJob</a>
- -->     <!--  <td><form ng-submit=“$ctrl.jobDelete(USERID, job.id)“> -->
-<!--          <button type=“submit”>delete</button></form> </td>
+      <th>{{ showLocation(job.location_id)}}
+
+
+<!--       <td><a ui-sref='acceptJob({user_id//USERID job_id:job.id})'>AcceptJob</a>
+ -->     <!--  <td><form ng-submit='$ctrl.jobDelete(USERID, job.id)'> -->
+<!--          <button type='submit'>delete</button></form> </td>
  -->        </tr>
     </tbody>
     <tbody>
