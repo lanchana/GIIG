@@ -20,6 +20,7 @@
 // @import "materialize/components/prefixer";
 @import "materialize/components/mixins";
 @import "materialize/components/color";
+$primary-color: color("blue-grey", "darken-4") !default;
 
 // Variables;
 @import "materialize/components/variables";
@@ -58,3 +59,41 @@
 @import "materialize/components/date_picker/default";
 @import "materialize/components/date_picker/default.date";
 @import "materialize/components/date_picker/default.time";
+
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.page-footer {
+     padding-top: 0 !important;
+
+}
+
+#dropdown1 {
+  top: 55px !important;
+}
+
+nav{
+  ul{
+    a:hover {
+      color: #26a69a;
+
+    }
+  }
+}
+
+nav .brand-logo {
+  padding-left: 50px;
+}
+nav ul.left {
+  // float: left !important;
+  padding-left: 200px;
+}
