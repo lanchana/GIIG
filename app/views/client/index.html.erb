@@ -6,8 +6,11 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
+    <!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <!-- <script src='//maps.googleapis.com/maps/api/js?key=YOUR_API_KEY'></script> -->
+
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -35,7 +38,8 @@
           </ul>
             <% if current_user.org? %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li ><a ui-sref="jobsIndex">Jobs</a></li>
+                <li ><a ui-sref="organization">Jobs</a></li>
+                <!-- <li ><a ui-sref="locationsIndex">Jobs</a></li> -->
                 <li ><a ui-sref="skillsIndex">Applicants</a></li>
               </ul>
               <% elsif %>
@@ -68,8 +72,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-      <!-- <input type="file" id="file" name="file"/>
-      <button ng-click="$ctrl.add()">Add</button> -->
+<% if user_signed_in? %>
+<%= image_tag( current_user.avatar.url, style: 'height: 200px; width: 200px;' ) %>
+    <%# image_tag(current_user.avatar.url)%>
+<% end %>
+
+
+
+
 
       <ui-view></ui-view>
       <main>
@@ -83,6 +93,8 @@
            </div>
          </div>
        </footer>
+
+       <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAohMMx5Ns4F5hhjZolRS29Ey9X5ZfKftU"></script>
 
       <script>
         $(".dropdown-button").dropdown();

@@ -14,9 +14,10 @@ function JobSeekersController($stateParams, $scope,
   vm.jobs = [];
   vm.acceptJob  = acceptJob;
 
- activate();
 
- function activate() {
+  activate();
+
+  function activate() {
     console.log ('jobseekers Contoller 10 :' + vm.user_id);
       jobseekersService.getJobs().then(function(response) {
         vm.jobs = response.data;
@@ -31,7 +32,7 @@ function JobSeekersController($stateParams, $scope,
   //   console.log(“delete”+ job_id);
   //   jobsService.deleteJob(location_id, job_id)
   //             .then((response) => {
-  //               console.log(“delete job 2”);
+  //               console.log('delete job 2');
   //               activate();
   //            });
   

@@ -16,11 +16,14 @@
 //= require materialize-sprockets
 //= require angular/angular
 //= require angular-ui-router/release/angular-ui-router
+//= require angular-simple-logger/dist/angular-simple-logger.js
+//= require lodash/lodash.js
+//= require angular-google-maps/dist/angular-google-maps.js
 //= require_self
 //= require_tree .
- 
+
 angular
-  .module('GiiG', ['ui.router'])
+  .module('GiiG', ['ui.router','uiGmapgoogle-maps'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('jobseeker', {
@@ -54,6 +57,10 @@ angular
       .state('jobsEdit', {
         url: '/locations/:location_id/jobs/:job_id/edit',
         component: 'jobsEdit'
+      })
+      .state('jobsShow', {
+        url: '/locations/:location_id/jobs/:job_id',
+        component: 'jobsShow'
       })
       .state('positionsIndex', {
         url: '/positions',

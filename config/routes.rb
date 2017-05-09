@@ -14,7 +14,8 @@ Rails.application.routes.draw do
       end
       resources :skills
       resources :jobseekers
-      
+      resources :organizations
+
   end
 
   root 'client#index'

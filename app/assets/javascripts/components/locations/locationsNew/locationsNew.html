@@ -27,6 +27,8 @@
       <div id="pac-container">
         <input id="pac-input" type="text"
             placeholder="Enter a location" ng-model="$ctrl.address">
+            <button ng-click="$ctrl.addlocation($ctrl.address)">Add location</button>
+            <input ng-model="$ctrl.address" />
       </div>
     </div>
     <div id="map" ></div>
