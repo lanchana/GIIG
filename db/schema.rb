@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 20170509160738) do
     t.datetime "updated_at",                          null: false
     t.boolean  "org"
     t.string   "photo_url"
-    t.string   "avatar"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

@@ -18,6 +18,9 @@
   "homepage": "https://github.com/lanchana/GIIG#readme",
   "dependencies": {
     "angular": "^1.6.4",
-    "angular-ui-router": "^1.0.0-rc.1"
+    "angular-google-maps": "^2.4.1",
+    "angular-simple-logger": "^0.1.7",
+    "angular-ui-router": "^1.0.0-rc.1",
+    "lodash": "^4.17.4"
   }
 }

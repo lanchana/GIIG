@@ -50,7 +50,7 @@ class JobMailer < ApplicationMailer
     @specific_location = Location.find(job.location_id)
 
     @org = User.find(@specific_location.user_id)
-
+   
     mail to: @org.email
   end
 end

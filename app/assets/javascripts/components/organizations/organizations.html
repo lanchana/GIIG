@@ -25,7 +25,7 @@
               <br>
               {{job.location.city}}, {{job.location.state}}
             </td>
-            <td><a href="#">{{job.jobseeker.full_name}}</a></td>
+            <td><a ui-sref="applicant({jobseeker_id:job.jobseeker.id})">{{ job.jobseeker.full_name }}</a></td>
 
             <td>{{job.date}}</td>
             <!-- <td>{{job.start_time}}</td>
