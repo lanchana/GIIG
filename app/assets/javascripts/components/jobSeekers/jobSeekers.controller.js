@@ -1,8 +1,8 @@
 angular
-  .module(‘GiiG’)
-  .controller(‘JobSeekersController’, JobSeekersController);
+  .module('GiiG')
+  .controller('JobSeekersController', JobSeekersController);
 
-JobSeekersController.$inject = [‘$stateParams’, ‘jobseekersService’];
+JobSeekersController.$inject = ['$stateParams', 'jobseekersService'];
 
 function JobseekersController($stateParams, jobseekersService) {
   var vm = this;
@@ -14,7 +14,7 @@ function JobseekersController($stateParams, jobseekersService) {
  activate();
 
  function activate() {
-    console.log (“jobseekers Contoller 10 :” + vm.user_id);
+    console.log ('jobseekers Contoller 10 :' + vm.user_id);
       jobseekersService.getJobs(vm.user_id).then(function(response) {
         vm.jobs = response.data;
       // console.log(vm.jobs);
