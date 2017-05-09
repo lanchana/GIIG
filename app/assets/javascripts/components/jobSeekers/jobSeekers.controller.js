@@ -4,7 +4,7 @@ angular
 
 JobSeekersController.$inject = ['$stateParams', 'jobseekersService'];
 
-function JobseekersController($stateParams, jobseekersService) {
+function JobSeekersController($stateParams, jobseekersService) {
   var vm = this;
 
  vm.jobs = [];
