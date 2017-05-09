@@ -41,6 +41,7 @@ gem 'devise'
 gem 'figaro'
 gem 'angular_rails_csrf'
 gem 'omniauth-facebook'
+gem "paperclip", "~> 5.0.0"
 
 
 group :development, :test do
