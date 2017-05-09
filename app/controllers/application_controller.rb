@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
         # devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth, :avatar) }
 
   # before_action :authenticate_user!
+    end
 
   	def after_sign_in_path_for(resource)
             if resource.org == true
@@ -19,6 +20,5 @@ class ApplicationController < ActionController::Base
             else
                "/jobseeker"
             end
-
     end
 end
