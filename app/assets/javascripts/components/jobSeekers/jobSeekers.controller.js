@@ -1,9 +1,8 @@
-Brandon King [10:38 AM] 
 angular
   .module(‘GiiG’)
-  .controller(‘JobseekersController’, JobseekersController);
+  .controller(‘JobSeekersController’, JobSeekersController);
 
-JobseekersController.$inject = [‘$stateParams’, ‘jobseekersService’];
+JobSeekersController.$inject = [‘$stateParams’, ‘jobseekersService’];
 
 function JobseekersController($stateParams, jobseekersService) {
   var vm = this;
