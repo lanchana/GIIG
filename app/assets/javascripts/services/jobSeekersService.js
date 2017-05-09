@@ -16,7 +16,9 @@ function jobseekersService($http) {
     return service;
 
     function getJobs(user_id) {
-        return $http.get('/api/jobseekers/' + user_id + '/jobs');
-
+        console.log ("Userservice 10: " + user_id);
+        return $http.get('/api/jobseekers/');
     }
+
+    
 }
