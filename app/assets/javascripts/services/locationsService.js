@@ -6,9 +6,9 @@ locationsService.$inject = ['$http'];
 
 function locationsService($http) {
  var service = {};
-
- service.getLocations = getLocations;
- service.getLocation = getLocation;
+ 
+ service.getLocations   = getLocations;
+ service.getLocation    = getLocation;
  service.createLocation = createLocation;
  service.updateLocation = updateLocation;
  service.deleteLocation = deleteLocation;

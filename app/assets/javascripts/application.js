@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require materialize
+//= require materialize-sprockets
 //= require angular/angular
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-simple-logger/dist/angular-simple-logger.js
@@ -24,6 +26,14 @@ angular
   .module('GiiG', ['ui.router','uiGmapgoogle-maps'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
+      .state('jobseeker', {
+        url: '/jobseeker',
+        component: 'jobseeker'
+      })
+      .state('organization', {
+        url: '/organization',
+        component: 'orgDash'
+      })
       .state('skillsIndex', {
         url: '/skills',
         component: 'skillsIndex'

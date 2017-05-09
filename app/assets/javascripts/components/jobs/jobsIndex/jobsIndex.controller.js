@@ -13,7 +13,7 @@ function JobsIndexController($stateParams, jobsService) {
   // vm.place ="abcd";
   // console.log(v)
 
-  activate();
+  activate(); 
 
   function activate() {
   jobsService.getJobs($stateParams.location_id).then(function(response) {

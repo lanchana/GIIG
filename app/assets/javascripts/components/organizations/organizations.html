@@ -1,4 +1,5 @@
 <h1>My Jobs</h1>
+<a ui-sref="jobsNew({location_id: $ctrl.location})">New Job Post</a>
 <table>
     <thead>
         <tr>
@@ -23,25 +24,12 @@
             <td>{{job.hourly_wage}}</td>
             <td>{{job.actual_start_time}}</td>
             <td>{{job.actual_end_time}}</td>
-            <td><a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a></td>
-
-            <td><a ui-sref="jobsShow({location_id:job.location_id, job_id:job.id})">Show</a></td>
-             <td>
+            <td><a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
+            <td>
             <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
                 <button type="submit">delete</button>
             </form>
             </td>
         </tr>
     </tbody>
-    <span id="type">{{$ctrl.place}}</span>
-
-    <a ui-sref="jobsNew({location_id: $ctrl.location})">New Job Job</a>
-
 </table>
-
-<!-- <script>
-var ty = document.getElementById('type').value;
-// console.log({{}});
-
-</script>
- -->
