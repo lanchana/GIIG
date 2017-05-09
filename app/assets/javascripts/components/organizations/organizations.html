@@ -25,13 +25,14 @@
               <br>
               {{job.location.city}}, {{job.location.state}}
             </td>
-            <td>{{job.jobseeker_id}}</td>
+            <td>{{job.jobseeker.full_name}}</td>
+
             <td>{{job.date}}</td>
             <!-- <td>{{job.start_time}}</td>
             <td>{{job.end_time}}</td>
             <td>{{job.hourly_wage}}</td>-->
             <td ng-if="job.jobseeker_id === null">Empty</td>
-            <td ng-if="job.jobseeker_id === 1">Filled</td>
+            <td ng-if="job.jobseeker_id != null">Filled</td>
              <td>{{job.actual_start_time}}</td>
             <td>{{job.actual_end_time}}</td>
             <td><a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
