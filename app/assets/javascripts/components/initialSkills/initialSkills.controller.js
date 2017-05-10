@@ -2,39 +2,85 @@ angular
   .module('GiiG')
   .controller('InitialSkillsController', InitialSkillsController);
 
-InitialSkillsController.$inject = ['$stateParams', 'initialSkillsService'];
+InitialSkillsController.$inject = ['$state', 'initialSkillsService'];
 
-function InitialSkillsController($stateParams, initialSkillsService) {
+function InitialSkillsController($state, initialSkillsService) {
   var vm = this;
 
-  vm.skillsArray = [];
-  vm.data = [];
-  vm.data.cb1 = '';
-  vm.data.cb2 = '';
-  vm.data.cb3 = '';
-  vm.data.cb4 = '';
-  vm.data.cb5 = '';
+  vm.skills = [];
+  vm.skills[0] = "";
+  vm.skills[1] = "";
+  vm.skills[2] = "";
+  vm.skills[3] = "";
+  vm.skills[4] = "";
 
-  console.log ("views controller");
+  skill = {
+     position_type: '',
+     rating: '0.0'  
+   };
+  console.log ('In the controller');
+  vm.saveSkills = saveSkills;
 
-    vm.saveSkills = saveSkills;
-    
-    // activate();
+  function saveSkills() {
+  console.log (vm.skills);
 
-    function saveSkills() {
-      console.log (vm.data);
-      console.log (vm.data.cb1);
-
-      initialSkillsService.postSkills(vm.skillsArray)
-       .then((response) => {
-        if(response.status == 201) {
-            $state.go('/jobseeker')  
-               // can be added like this to the state {location_id: vm.location})
-        } else {
+    if (vm.skills[0]) {
+      skill.position_type = "Prep Cook";
+      initialSkillsService.postSkills({position_type:"Prep Cook", rating: 0.0})
+        .then(function (response) {
+          if(response.status == 201) {
+            console.log("prep cook added");
+          } else {
             alert('server is down')
-        }
-       });
+          }
+        })
     }
-  }
- 
 
+    if (vm.skills[1]) {
+      skill.position_type = "Busboy";
+      initialSkillsService.postSkills(skill)
+        .then(function (response) {
+          if(response.status == 201) {
+            console.log("Busboy added");
+          } else {
+            alert('server is down')
+          }
+        })
+    }
+    if (vm.skills[2]) {
+      skill.position_type = "Dishwasher";
+      initialSkillsService.postSkills(skill)
+        .then(function (response) {
+          if(response.status == 201) {
+            console.log("Dishwasher added");
+          } else {
+            alert('server is down')
+          }
+        })
+    }
+    if (vm.skills[3]) {
+      skill.position_type = "Server";
+      initialSkillsService.postSkills(skill)
+        .then(function (response) {
+          if(response.status == 201) {
+            console.log("Server added");
+          } else {
+            alert('server is down')
+          }
+        })
+    }
+    if (vm.skills[4]) {
+      skill.position_type = "Foodrunner";
+      initialSkillsService.postSkills(skill)
+        .then(function (response) {
+          if(response.status == 201) {
+            console.log("Foodrunner added");
+          } else {
+            alert('server is down')
+          }
+        })
+    }
+    $state.go('jobseeker');  
+  }
+}
+ 
