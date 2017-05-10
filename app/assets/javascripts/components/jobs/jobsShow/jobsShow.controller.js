@@ -22,13 +22,15 @@ function JobsShowController($stateParams, jobsService, locationsService) {
     vm.job = resp.data;
   });
 
-  locationsService.getLocation($stateParams.location_id).then(function(resp) {
-    vm.location = resp.data;
-  });
+
   console.log();
   // vm.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
   function activate() {
+    jobsService.getJob($stateParams.location_id, $stateParams.job_id).then(function(resp) {
+      vm.job = resp.data;
+    });
+
     locationsService.getLocation($stateParams.location_id).then(function(resp) {
       vm.location = resp.data;
       console.log(vm.location);
