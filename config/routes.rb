@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 #     registrations: 'users/registrations'
 # }
 
-devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", registrations: 'users/registrations' }
 
   namespace :api do
       resources :positions

@@ -2,7 +2,18 @@
   <a ui-sref="jobsNew({location_id: location.id})"> Post a job at {{location.name}}</a>
 <p> -->
 
+
 <div class="container">
+  <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+    <input class="btn btn-primary"
+        value="Add a new job at {{$ctrl.selectedLocation.name}}"
+        type="submit">
+    <br>
+    <select ng-options="location as location.name for location in $ctrl.locations track by location.id" 
+    ng-model="$ctrl.selectedLocation" 
+    id="newLocation">
+    </select>
+  </form>
   <div class="table-position">
     <h3>My Jobs</h3>
     <table class="responsive-table">
@@ -45,3 +56,4 @@
     </table>
   </div>
 </div>
+
