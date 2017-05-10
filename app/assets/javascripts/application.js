@@ -34,6 +34,10 @@ angular
         url: '/organization',
         component: 'orgDash'
       })
+      .state('applicant', {
+        url: '/applicant/:jobseeker_id',
+        component: 'applicant'
+      })
       .state('skillsIndex', {
         url: '/skills',
         component: 'skillsIndex'

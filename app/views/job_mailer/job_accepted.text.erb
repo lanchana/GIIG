@@ -1,3 +1,14 @@
-Job#job_accepted
+Congrats!
 
-<%= @greeting %>, find me in app/views/job_mailer/job_accepted.text.erb
+ <%= @jobseeker.full_name %> you have a job!
+
+  Your job starts at <%= @specific_job.start_time %> on <%= @specific_job.date %>
+  The expected end time is for <%= @specific_job.end_time %>
+
+  This job pays <%= number_to_currency(@specific_job.hourly_wage) %> an hour.
+
+  Location: <%= @specific_location.address %>
+		  			<%= @specific_location.city %>, <%= @specific_location.state %> <%= @specific_location.zipcode%>
+
+Sincerely, 
+	Your GiiGmaster

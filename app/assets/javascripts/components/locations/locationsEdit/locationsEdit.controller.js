@@ -8,7 +8,7 @@ function LocationsEditController($stateParams, $state, locationsService) {
   var vm = this;
 
   vm.location = {};
-
+  
   vm.saveLocation = saveLocation;
 
   locationsService.getLocation($stateParams.id).then(function(response) {

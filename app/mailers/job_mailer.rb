@@ -17,7 +17,6 @@ class JobMailer < ApplicationMailer
 
       puts "candidate #{@jobseeker.email}"
       mail to: @jobseeker.email
-
     end
 
 
@@ -30,10 +29,14 @@ class JobMailer < ApplicationMailer
   #
   #   en.job_mailer.job_accepted.subject
   #
-  def job_accepted
-    @greeting = "Hi"
+  def job_accepted(job, jobseeker)
+    @specific_job = job
 
-    mail to: "to@example.org"
+    @jobseeker = jobseeker
+
+    @specific_location = Location.find(job.location_id)
+
+    mail to: @jobseeker.email
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -41,9 +44,13 @@ class JobMailer < ApplicationMailer
   #
   #   en.job_mailer.job_filled.subject
   #
-  def job_filled
-    @greeting = "Hi"
+  def job_filled(job, jobseeker)
+    @specific_job = job
+    @jobseeker = jobseeker
+    @specific_location = Location.find(job.location_id)
 
-    mail to: "to@example.org"
+    @org = User.find(@specific_location.user_id)
+   
+    mail to: @org.email
   end
 end

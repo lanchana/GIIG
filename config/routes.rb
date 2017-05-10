@@ -17,6 +17,7 @@ devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
       resources :skills
       resources :jobseekers
       resources :organizations
+      resources :applicant
 
   end
 

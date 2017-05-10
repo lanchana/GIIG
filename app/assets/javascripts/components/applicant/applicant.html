@@ -1,4 +1,7 @@
-<h1>This is the Job Seekers Dashboard</h1>
+<h1>This is an applicant</h1>
+
+<h3> {{ $ctrl.jobseeker.full_name }} </h3>
+
 
 <table>
   <thead>
@@ -8,8 +11,6 @@
       <th>end_time</th>
       <th>date</th>
       <th>hourly_wage</th>
-      <th>location</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +20,7 @@
       <td>{{ job.end_time }}</td>
       <td>{{ job.date }}</td>
       <td>{{ job.hourly_wage }}</td>
-      <td>{{ job.location.name }}</td>      
+      <!-- add location of job -->
     </tr>
   </tbody>
     <tbody>
