@@ -9,22 +9,26 @@ function InitialSkillsController($stateParams, initialSkillsService) {
 
   vm.skillsArray = [];
   vm.data = [];
-  // vm.data.cb1 = '';
-  // vm.data.cb2 = '';
-  // vm.data.cb3 = '';
-  // vm.data.cb4 = '';
-  // vm.data.cb5 = '';
+  vm.data.cb1 = '';
+  vm.data.cb2 = '';
+  vm.data.cb3 = '';
+  vm.data.cb4 = '';
+  vm.data.cb5 = '';
 
   console.log ("views controller");
-    vm.saveJob = saveJob;
+
+    vm.saveSkills = saveSkills;
     
     // activate();
 
-    function saveJob() {
+    function saveSkills() {
+      console.log (vm.data);
+      console.log (vm.data.cb1);
+
       initialSkillsService.postSkills(vm.skillsArray)
        .then((response) => {
         if(response.status == 201) {
-            $state.go('jobseeker')  
+            $state.go('/jobseeker')  
                // can be added like this to the state {location_id: vm.location})
         } else {
             alert('server is down')
