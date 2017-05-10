@@ -2,7 +2,7 @@ angular
     .module('GiiG')
     .controller('JobsNewController', JobsNewController);
 
-JobsNewController.$inject = ['$state', '$stateParams' , 'jobsService'];
+JobsNewController.$inject = ['$state', '$stateParams', 'jobsService'];
 
 function JobsNewController($state, $stateParams, jobsService) {
     var vm = this;

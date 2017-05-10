@@ -2,9 +2,23 @@
 
 
 <p ng-repeat="location in $ctrl.locations">
-    
     <a ui-sref="jobsNew({location_id: location.id})"> Post a job at {{location.name}}</a>
 <p>
+
+<form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+    <select ng-options="location as location.name for location in $ctrl.locations track by location.id" 
+    ng-model="$ctrl.selectedLocation" 
+    id="newLocation">
+    </select>
+    <br> <input class="btn btn-primary"
+        value="Add a new job at {{$ctrl.selectedLocation.name}}"
+        type="submit">
+</form>
+
+
+
+    
+
 
 
 <table>
