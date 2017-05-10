@@ -1,16 +1,11 @@
 <h1>My Jobs</h1>
-<a ui-sref="jobsNew({location_id: $ctrl.location})">New Job Post</a>
+<a ui-sref="jobsNew({location_id: location.id})">New Job Post</a>
 <table>
     <thead>
         <tr>
             <th>Position</th>
             <th>Applicant</th>
-            <!-- <th>start_time</th>
-            <th>end_time</th> -->
             <th>Date Posted</th>
-            <!-- <th>hourly_wage</th>
-            <th>actual_start_time</th>
-            <th>actual_end_time</th> -->
             <th>Status</th>
             <th>Actions</th>
             <th></th>
@@ -25,12 +20,8 @@
               <br>
               {{job.location.city}}, {{job.location.state}}
             </td>
-            <td><a ui-sref="applicant({jobseeker_id:job.jobseeker.id})">{{ job.jobseeker.full_name }}</a></td>
-
+            <td><a ui-sref="applicant({jobseeker_id: job.jobseeker.id, location_id:job.location_id, job_id:job.id})">{{ job.jobseeker.full_name }}</a></td>
             <td>{{job.date}}</td>
-            <!-- <td>{{job.start_time}}</td>
-            <td>{{job.end_time}}</td>
-            <td>{{job.hourly_wage}}</td>-->
             <td ng-if="job.jobseeker_id === null">Empty</td>
             <td ng-if="job.jobseeker_id != null">Filled</td>
              <td>{{job.actual_start_time}}</td>

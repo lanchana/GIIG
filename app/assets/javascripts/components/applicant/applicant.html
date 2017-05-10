@@ -1,6 +1,10 @@
 <h1>This is an applicant</h1>
 
 <h3> {{ $ctrl.jobseeker.full_name }} </h3>
+<h3> {{ $ctrl.job.position_type }} </h3>
+<h3> {{ $ctrl.job.position }} </h3>
+<!-- <h3> {{ $ctrl.job.location.name }} </h3> -->
+<h3> {{ $ctrl.job.date | date }}</h3>
 
 
 <table>

@@ -11,7 +11,7 @@ class Api::JobsController < ApplicationController
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
         # binding.pry
-        render json: @job
+        render json: @job.to_json(include: [:location])
     end
 
     def create
@@ -26,7 +26,7 @@ class Api::JobsController < ApplicationController
     end
 
     def update
-        
+
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
         if @job.update(job_params)

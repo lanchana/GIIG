@@ -18,10 +18,13 @@ function applicantService($http) {
     function getApplicant(jobseeker_id) {
         return $http.get('/api/applicant/' + jobseeker_id);
     }
+    // function getApplicantJob(location_id, job_id) {
+    //     return $http.get('/api/locations/'+location_id+'/jobs/'+job_id)
+    // }
 
     function getApplicantJobs(jobseeker_id) {
         return $http.get('/api/applicant/' + jobseeker_id + '/edit');
     }
 
+
 }
-   
