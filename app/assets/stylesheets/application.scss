@@ -15,47 +15,13 @@
  */
 
 
-@import "materialize/components/mixins";
-@import "materialize/components/color";
-$primary-color: color("blue-grey", "darken-4") !default;
+
+@import "materialize";
+$nav-color: color("blue-grey", "darken-4") !default;
+$teal-color: #26a69a;
+$text_shadow: 1px 1px 3px grey;
 
 
-@import "materialize/components/variables";
-
-
-@import "materialize/components/normalize";
-
-
-@import "materialize/components/global";
-@import "materialize/components/badges";
-@import "materialize/components/icons-material-design";
-@import "materialize/components/grid";
-@import "materialize/components/navbar";
-@import "materialize/components/roboto";
-@import "materialize/components/typography";
-@import "materialize/components/transitions";
-@import "materialize/components/cards";
-@import "materialize/components/toast";
-@import "materialize/components/tabs";
-@import "materialize/components/tooltip";
-@import "materialize/components/buttons";
-@import "materialize/components/dropdown";
-@import "materialize/components/waves";
-@import "materialize/components/modal";
-@import "materialize/components/collapsible";
-@import "materialize/components/chips";
-@import "materialize/components/materialbox";
-
-@import "materialize/components/table_of_contents";
-@import "materialize/components/sideNav";
-@import "materialize/components/preloader";
-@import "materialize/components/slider";
-@import "materialize/components/carousel";
-@import "materialize/components/tapTarget";
-@import "materialize/components/pulse";
-@import "materialize/components/date_picker/default";
-@import "materialize/components/date_picker/default.date";
-@import "materialize/components/date_picker/default.time";
 
 
 
@@ -79,6 +45,7 @@ main {
 }
 
 nav{
+  background: $nav-color;
   ul{
     a:hover {
       color: #26a69a;
@@ -87,12 +54,89 @@ nav{
   }
 }
 
-nav .brand-logo {
-  padding-left: 50px;
+.login-form {
+    margin-top: 2em;
+    float: none;
+
+    .z-depth-4 {
+        padding: 2em;
+    }
+
+    div {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .sign_up_heading {
+      margin-bottom: 1em;
+      text-shadow: $text_shadow;
+      color: $nav-color;
+    }
 }
+
+
+/*nav .brand-logo {*/
+  /*padding-left: 50px;*/
+/*}*/
 nav ul.left {
   // float: left !important;
   padding-left: 200px;
+}
+
+input {
+  font-size: 1em !important;
+}
+
+nav {
+
+    margin-bottom: 1em;
+    /*background: $off_white;*/
+
+    .brand-logo  {
+        /*font-family: $logo_font;*/
+      /*color: $text_color;*/
+      margin-left: 1em;
+
+      /*text-decoration: none;*/
+    }
+
+    .button-collapse:hover {
+        /*color: $text_color;*/
+        color: $teal-color;
+        text-decoration: none;
+    }
+
+
+    .brand-logo:hover {
+         text-decoration: none;
+                     color: $teal-color;
+
+    }
+
+    ul {
+
+        a:hover {
+            color: $teal-color;
+            text-decoration: none;
+
+        }
+    }
+}
+
+label {
+  font-size: 1rem !important;
+}
+
+.page-footer {
+  background: $nav-color;
+}
+
+.sign-up-form {
+  float: none;
+}
+
+.custom_btn {
+  margin: 1em 0;
 }
 
 .angular-google-map-container { height: 400px; }

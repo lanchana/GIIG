@@ -4,7 +4,8 @@ angular
 
 JobsNewController.$inject = ['$state', '$stateParams', 'jobsService'];
 
-function JobsNewController($state, $stateParams, jobsService) {
+function JobsNewController($state, $stateParams,  jobsService) {
+
     var vm = this;
 
     vm.job = {
@@ -18,7 +19,7 @@ function JobsNewController($state, $stateParams, jobsService) {
         actual_end_time: ''
     };
 
-    vm.location = $stateParams.location_id;
+    vm.location_id = $stateParams.location_id;
 
     vm.saveJob = saveJob;
 
