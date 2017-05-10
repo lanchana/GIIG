@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :skills
       resources :jobseekers
       resources :organizations
+      resources :applicant
 
   end
 
