@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # resources :locations
   # resources :jobs
   # resources :skills
-  devise_for :users, controllers: {
-    registrations: 'users/registrations'
-}
+#   devise_for :users, controllers: {
+#     registrations: 'users/registrations'
+# }
+
+devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   namespace :api do
       resources :positions
