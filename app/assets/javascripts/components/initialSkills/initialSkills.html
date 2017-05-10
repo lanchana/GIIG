@@ -1,31 +1,30 @@
- 
-
 <h1>Initial Skills Page</h1>
 
 
 
 <div class="inset switchpositions" ng-cloak="">
   
-  <md-switch ng-model="$ctrl.data.cb1" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 1">
-    Busboy: {{ $ctrl.data.cb1 }}
+  <md-switch ng-model="$ctrl.skills[0]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 0">
+    Prep Cook: {{ $ctrl.skills[0] }}
   </md-switch>
   
-  <md-switch ng-model="$ctrl.data.cb2" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 1">
-    Dishwasher: {{ $ctrl.data.cb2 }}
-  </md-switch>
-  
-  <md-switch ng-model="$ctrl.data.cb3" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 3">
-    Server: {{ $ctrl.data.cb3 }}
-  </md-switch>
-  
-  <md-switch ng-model="$ctrl.data.cb4" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 4">
-    Foodrunner: {{ $ctrl.data.cb4 }}
-  </md-switch>
-  
-  <md-switch ng-model="$ctrl.data.cb5" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 1">
-    Prep Cook: {{ $ctrl.data.cb5 }}
-  </md-switch>
 
+  <md-switch ng-model="$ctrl.skills[1]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 1">
+    Busboy: {{ $ctrl.skills[1] }}
+  </md-switch>
+  
+  <md-switch ng-model="$ctrl.skills[2]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 2">
+    Dishwasher: {{ $ctrl.skills[2] }}
+  </md-switch>
+  
+  <md-switch ng-model="$ctrl.skills[3]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 3">
+    Server: {{ $ctrl.skills[3] }}
+  </md-switch>
+  
+  <md-switch ng-model="$ctrl.skills[4]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 4">
+    Foodrunner: {{ $ctrl.skills[4] }}
+  </md-switch>
+  
   <button ng-click="$ctrl.saveSkills()">Create New Job</button>
 
 </div>

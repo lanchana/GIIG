@@ -7,12 +7,13 @@ initialSkillsService.$inject = ['$http'];
 function initialSkillsService($http) {
 	 var service = {};
 
-    service.postSkills = postSkills;
+   service.postSkills = postSkills;
 
+  
 
-	return service
+	return service;
 
-	function postSkills(array_of_skills) {
-        return $http.get('/api/applicant/' + jobseeker_id);
-    }
+	function postSkills(skill) {
+	  return $http.post('/api/skills/', skill);
+	}      		
 }
