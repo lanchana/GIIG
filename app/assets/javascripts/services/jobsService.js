@@ -21,7 +21,7 @@ function jobsService($http) {
     }
 
     function createJob(job, location_id) {
-        return $http.post('/api/locations/'+location_id+'/jobs/', job);
+        return $http.post('/api/locations/' + location_id + '/jobs/', job);
     }
 
     function deleteJob(location_id, job_id) {
