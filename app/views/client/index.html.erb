@@ -46,7 +46,6 @@
       </ul>
     <nav>
       <div class="nav-wrapper">
-
         <%= link_to 'GiiG', root_path, :class => 'brand-logo' %>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
@@ -61,7 +60,7 @@
               </ul>
               <% elsif %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="sass.html">Jobs</a></li>
+                <li><a ui-sref="jobseeker">Jobs</a></li>
                 <li><a href="badges.html">Past Jobs</a></li>
               </ul>
             <% end %>
@@ -86,17 +85,13 @@
         </ul>
       </div>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
 <% if user_signed_in? %>
-<%= image_tag( current_user.avatar.url, style: 'height: 200px; width: 200px;' ) %>
+<!-- <%= image_tag( current_user.avatar.url, style: 'height: 200px; width: 200px;' ) %> -->
     <%# image_tag(current_user.avatar.url)%>
 <% end %>
-
-
-
-
 
       <ui-view></ui-view>
       <main>

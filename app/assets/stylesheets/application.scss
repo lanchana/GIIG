@@ -29,6 +29,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  // font-family: avenir;
 }
 
 main {
@@ -140,3 +141,16 @@ label {
 }
 
 .angular-google-map-container { height: 400px; }
+
+.table-position {
+  padding-top: 80px;
+}
+
+thead {
+  color: white;
+  background-color: $primary-color;
+  td, th {
+    border-radius: 0 !important;
+  }
+
+}
