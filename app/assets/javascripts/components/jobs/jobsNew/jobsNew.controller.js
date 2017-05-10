@@ -2,9 +2,9 @@ angular
     .module('GiiG')
     .controller('JobsNewController', JobsNewController);
 
-JobsNewController.$inject = ['$state', '$stateParams', 'jobsService'];
+JobsNewController.$inject = ['$state', '$stateParams', 'jobsService', 'positionsService'];
 
-function JobsNewController($state, $stateParams, jobsService) {
+function JobsNewController($state, $stateParams, jobsService, positionsService) {
     var vm = this;
 
     vm.job = {
@@ -19,8 +19,18 @@ function JobsNewController($state, $stateParams, jobsService) {
     };
 
     vm.location = $stateParams.location_id;
-
     vm.saveJob = saveJob;
+    vm.positions = [];
+
+    activate();
+
+    function activate() {
+      positionsService.getPositions()
+        .then(function(response) {
+        vm.positions = response.data;
+        console.log("getting positions | " + vm.positions);
+      });
+    }
 
     function saveJob() {
         jobsService.createJob(vm.job, vm.location)
