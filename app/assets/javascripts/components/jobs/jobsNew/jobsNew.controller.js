@@ -2,7 +2,7 @@ angular
     .module('GiiG')
     .controller('JobsNewController', JobsNewController);
 
-JobsNewController.$inject = ['$state', '$stateParams' , 'jobsService'];
+JobsNewController.$inject = ['$state', '$stateParams', 'jobsService'];
 
 function JobsNewController($state, $stateParams,  jobsService) {
 
@@ -24,13 +24,13 @@ function JobsNewController($state, $stateParams,  jobsService) {
     vm.saveJob = saveJob;
 
     function saveJob() {
-        jobsService.createJob(vm.job, vm.location_id)
-                   .then((response) => {
-                    if(response.status == 201) {
-                        $state.go('jobsIndex',{location_id: vm.location_id})
-                    } else {
-                        alert('server is down')
-                    }
-                   });
+        jobsService.createJob(vm.job, vm.location)
+           .then((response) => {
+            if(response.status == 201) {
+                $state.go('organization')
+            } else {
+                alert('server is down')
+            }
+        });
     }
 }
