@@ -1,7 +1,9 @@
 class Api::ApplicantController < ApplicationController
- 
+
   def show
     @applicant = User.find(params[:id])
+
+
     render json: @applicant
   end
 

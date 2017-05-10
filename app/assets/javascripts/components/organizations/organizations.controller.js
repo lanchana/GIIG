@@ -8,8 +8,10 @@ function OrganizationsController($stateParams, organizationsService, locationsSe
   var vm = this;
 
   vm.jobs = [];
+
+  // vm.jobDelete = jobDelete;
+
   vm.locations = [];
-  
 
   activate();
 

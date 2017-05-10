@@ -41,6 +41,7 @@ GEM
     angular_rails_csrf (2.1.0)
       railties (>= 3, <= 5.1)
     arel (7.1.4)
+    awesome_print (1.7.0)
     aws-sdk (2.9.16)
       aws-sdk-resources (= 2.9.16)
     aws-sdk-core (2.9.16)
@@ -221,6 +222,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular_rails_csrf
+  awesome_print
   aws-sdk
   byebug
   coffee-rails (~> 4.2)

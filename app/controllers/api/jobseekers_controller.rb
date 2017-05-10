@@ -6,7 +6,7 @@ class Api::JobseekersController < ApplicationController
 
     position_types = skills.pluck(:position_type)
     @jobs = Job.where(position_type: position_types)
-  	
+
   	# skills.each do |skill|
   	# 	array_jobs = (array_jobs << Job.where(position_type: skill.position_type)).flatten!
   	# end
@@ -17,7 +17,7 @@ class Api::JobseekersController < ApplicationController
    def update
         @jobseeker = current_user
         @job = Job.find(params[:id])
-        
+
 
         @job.update_attribute :jobseeker_id, current_user.id
 
