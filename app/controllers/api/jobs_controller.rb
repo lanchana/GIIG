@@ -16,9 +16,10 @@ class Api::JobsController < ApplicationController
 
     def create
         @job = Job.new(job_params)
-
+        # binding.pry
         if @job.save
-            JobMailer.job_posting(@job).deliver
+            # JobMailer.job_posting(@job).deliver
+            binding.pry
             render json: @job, status: :created
         else
             render json: @job.errors, status: :unprocessable_entity
@@ -26,7 +27,7 @@ class Api::JobsController < ApplicationController
     end
 
     def update
-        
+
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
         if @job.update(job_params)
