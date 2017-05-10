@@ -1,72 +1,57 @@
-<div class="col-md-12 col-sm-12 col-xs-12 center login-form">
-
+<div class="col-md-12 col-sm-12 col-xs-12 login-form">
+  <h1 class="center sign_up_heading col-md-12 col-sm-12 col-xs-12 ">Sign Up</h1>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <div class="col-md-6 col-sm-8 col-xs-12 z-depth-4">
 
-  <div class="field">
-        <%= f.label :profile_Pic %>
-        <%= f.file_field :avatar %>
-  </div>
-
-  <div class="field col-md-12">
+  <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :email, :class => 'left' %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, :required => true%>
   </div>
 
-  <div class="field col-md-12">
+  <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :full_name, :class => 'left' %><br />
-    <%= f.text_field :full_name %>
+    <%= f.text_field :full_name, :required => true %>
   </div>
 
-  <div class="field col-md-12">
+  <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :phone_number, :class => 'left' %><br />
-    <%= f.text_field :phone_num %>
+    <%= f.text_field :phone_num, :required => true %>
   </div>
 
-
-
-  <div class="field col-md-12">
-    <%= f.label :profile_picture, :class => 'left' %><br />
-    <%= f.text_field :photo_url %>
-  </div>
-
-  <div class="field col-md-12">
+  <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :address, :class => 'left' %><br />
-    <%= f.text_field :address %>
+    <%= f.text_field :address, :required => true %>
   </div>
 
-  <div calss="col-md-12 sign-up-form">
-    <div class="field col-md-3 col-sm-3 col-xs-12">
-      <%= f.label :city, :class => 'left' %><br />
-      <%= f.text_field :city %>
-    </div>
-
-    <div class="field col-md-3 col-sm-3 col-xs-12">
-      <%= f.label :state, :class => 'left' %><br />
-      <%= f.text_field :state %>
-    </div>
-
-    <div class="field col-md-3 col-sm-3 col-xs-12">
-      <%= f.label :zipcode, :class => 'left' %><br />
-      <%= f.text_field :zipcode %>
-    </div>
+  <div class="field col-md-11 col-sm-11 col-xs-11">
+    <%= f.label :city, :class => 'left' %><br />
+    <%= f.text_field :city, :required => true %>
   </div>
 
-  <div class="field col-md-12">
+  <div class="field col-md-11 col-sm-11 col-xs-11">
+    <%= f.label :state, :class => 'left' %><br />
+    <%= f.text_field :state, :required => true %>
+  </div>
+
+  <div class="field col-md-11 col-sm-11 col-xs-11">
+    <%= f.label :zipcode, :class => 'left' %><br />
+    <%= f.text_field :zipcode, :required => true %>
+  </div>
+
+
+  <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :password, :class => 'left' %>
-    <% if @minimum_password_length %>
-    <em class = "left"> (<%=  @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
     <%= f.password_field :password, autocomplete: "off", :required => true %>
   </div>
 
-  <div class="field col-md-12">
+  <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :password_confirmation, :class => 'left' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="btn-group col-md-12" data-toggle="buttons-radio">
+  <div class="btn-group col-md-8 col-sm-8 col-xs-8 custom_btn" data-toggle="buttons-radio" style="
+    padding-left: 35px;">
     <%= f.radio_button :org, "false", :id=>"first", :style=>"display:none;" %>
     <label for="first">I am a GiiGseeker</label>
 
@@ -74,8 +59,19 @@
     <label for="second">I am a GiiGmaker</label>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="field col-md-11 col-sm-11 col-xs-8 center">
+        <label class="btn custom_btn" style="width:70%;">
+  Upload Picture
+  <span style="display:none; ">
+    <%= f.file_field :avatar, multiple: true, name: 'picture' %>
+  </span>
+  </label>
+  </div>
+
+
+
+  <div class="actions col-md-11 col-sm-11 col-xs-8 center">
+    <%= f.submit "Sign up", :class => 'btn custom_btn', :style => "width: 70%" %>
   </div>
 
 
