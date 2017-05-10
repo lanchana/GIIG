@@ -19,7 +19,7 @@
       <td>{{ job.end_time }}</td>
       <td>{{ job.date }}</td>
       <td>{{ job.hourly_wage }}</td>
-      <td>{{ job.location.name }}</td>      
+      <td> <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">{{ job.location.name }}</a></td>      
     </tr>
   </tbody>
     <tbody>

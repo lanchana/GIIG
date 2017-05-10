@@ -15,6 +15,10 @@
 //= require materialize
 //= require materialize-sprockets
 //= require angular/angular
+//= require angular-material
+//= require angular-animate
+//= require angular-aria
+//= require angular-messages
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-simple-logger/dist/angular-simple-logger.js
 //= require lodash/lodash.js
@@ -23,9 +27,13 @@
 //= require_tree .
 
 angular
-  .module('GiiG', ['ui.router','uiGmapgoogle-maps'])
+  .module('GiiG', ['ui.router','uiGmapgoogle-maps', 'ngMaterial', 'ngMessages'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
+      .state('initialSkills', {
+        url: '/initialSkills',
+        component: 'initialSkills'
+      })
       .state('jobseeker', {
         url: '/jobseeker',
         component: 'jobseeker'
