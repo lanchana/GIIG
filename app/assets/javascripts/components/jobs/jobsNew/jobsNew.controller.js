@@ -26,7 +26,7 @@ function JobsNewController($state, $stateParams, jobsService) {
         jobsService.createJob(vm.job, vm.location)
            .then((response) => {
             if(response.status == 201) {
-                $state.go('jobsIndex',{location_id: vm.location})
+                $state.go('organization')
             } else {
                 alert('server is down')
             }
