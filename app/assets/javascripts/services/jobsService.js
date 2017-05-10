@@ -34,6 +34,7 @@ function jobsService($http) {
     }
 
     function getJob(location_id, job_id) {
+      console.log(location_id + job_id)
         return $http.get('/api/locations/'+location_id+'/jobs/'+job_id)
     }
 

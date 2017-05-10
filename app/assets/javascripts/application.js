@@ -43,7 +43,7 @@ angular
         component: 'orgDash'
       })
       .state('applicant', {
-        url: '/applicant/:jobseeker_id',
+        url: '/applicant/:jobseeker_id/location/:location_id:/job/:job_id',
         component: 'applicant'
       })
       .state('skillsIndex', {

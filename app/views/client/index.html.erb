@@ -39,6 +39,8 @@
   <body ng-app="GiiG">
       <ul id="dropdown1" class="dropdown-content">
         <li><%= link_to 'Edit account', edit_user_registration_path, target: '_self' %></li>
+        <li><a ui-sref="locationsIndex">Locations</a></li>
+        <!-- <li><a ui-sref="skillsIndex">Skills</a></li> -->
         <li class="divider"></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></li>
       </ul>

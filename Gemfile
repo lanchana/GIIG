@@ -47,6 +47,7 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'materialize-sass'
+gem 'awesome_print'
 
 
 group :development, :test do
