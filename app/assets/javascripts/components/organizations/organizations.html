@@ -3,17 +3,16 @@
 <p> -->
 
 <div class="container">
-  <div class="">
+  <div class="table-position">
     <h3>My Jobs</h3>
     <table class="responsive-table">
         <thead>
             <tr>
-                <th>Position</th>
-                <th>Applicant</th>
-                <th>Date Posted</th>
-                <th>Status</th>
-                <th>Actions</th>
-                <th></th>
+                <th class="col-md-4">Position</th>
+                <th class="col-md-4">Applicant</th>
+                <th class="col-md-4">Date Posted</th>
+                <th class="col-md-4">Status</th>
+                <th class="col-md-6">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,16 +25,20 @@
                   {{job.location.city}}, {{job.location.state}}
                 </td>
                 <td><a ui-sref="applicant({jobseeker_id: job.jobseeker.id, location_id:job.location_id, job_id:job.id})">{{ job.jobseeker.full_name }}</a></td>
-                <td>{{job.date}}</td>
-                <td ng-if="job.jobseeker_id === null">Empty</td>
-                <td ng-if="job.jobseeker_id != null">Filled</td>
-                 <td>{{job.actual_start_time}}</td>
-                <td>{{job.actual_end_time}}</td>
-                <td><a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
+                  <td>{{job.date}}</td>
                 <td>
-                <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
+                  <div ng-if="job.jobseeker_id === null">
+                    Empty
+                  </div>
+                  <div ng-if="job.jobseeker_id != null">
+                    Filled
+                  </div>
+                </td>
+                <td>
+                  <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
+                  <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
                     <button type="submit">delete</button>
-                </form>
+                  </form>
                 </td>
             </tr>
         </tbody>
