@@ -18,9 +18,7 @@ function JobsShowController($stateParams, jobsService, locationsService) {
   // loc;
 
 
-  jobsService.getJob($stateParams.location_id, $stateParams.job_id).then(function(resp) {
-    vm.job = resp.data;
-  });
+  
 
 
   console.log();
@@ -28,7 +26,7 @@ function JobsShowController($stateParams, jobsService, locationsService) {
 
   function activate() {
     jobsService.getJob($stateParams.location_id, $stateParams.job_id).then(function(resp) {
-      vm.job = resp.data;
+    vm.job = resp.data;
     });
 
     locationsService.getLocation($stateParams.location_id).then(function(resp) {

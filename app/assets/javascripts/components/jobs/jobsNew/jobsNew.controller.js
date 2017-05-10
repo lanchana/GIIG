@@ -4,10 +4,8 @@ angular
 
 JobsNewController.$inject = ['$state', '$stateParams' , 'jobsService'];
 
-function JobsNewController($state,$stateParams,  jobsService) {
-
+function JobsNewController($state, $stateParams, jobsService) {
     var vm = this;
-    console.log("stateparam" +$stateParams.location_id);
 
     vm.job = {
         position_type: '',
@@ -26,12 +24,12 @@ function JobsNewController($state,$stateParams,  jobsService) {
 
     function saveJob() {
         jobsService.createJob(vm.job, vm.location)
-                   .then((response) => {
-                    if(response.status == 201) {
-                        $state.go('jobsIndex',{location_id: vm.location})
-                    } else {
-                        alert('server is down')
-                    }
-                   });
+           .then((response) => {
+            if(response.status == 201) {
+                $state.go('jobsIndex',{location_id: vm.location})
+            } else {
+                alert('server is down')
+            }
+        });
     }
 }

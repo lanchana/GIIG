@@ -1,5 +1,12 @@
 <h1>My Jobs</h1>
-<a ui-sref="jobsNew({location_id: location.id})">New Job Post</a>
+
+
+<p ng-repeat="location in $ctrl.locations">
+    
+    <a ui-sref="jobsNew({location_id: location.id})"> Post a job at {{location.name}}</a>
+<p>
+
+
 <table>
     <thead>
         <tr>
