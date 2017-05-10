@@ -20,6 +20,12 @@
       <td>{{ job.date }}</td>
       <td>{{ job.hourly_wage }}</td>
       <td> <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">{{ job.location.name }}</a></td>      
+ 
+       <td><form ng-submit="$ctrl.acceptJob(job.id)"> 
+         <button type="submit">accept this job</button></form></td>
+ 
+        
+
     </tr>
   </tbody>
     <tbody>
