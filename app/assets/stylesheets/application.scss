@@ -161,6 +161,11 @@ label {
   @extend .jobshow-desc-tittle;
 }
 
+.initial-skill-tittle {
+  margin: 2em 0 !important;
+  @extend .location-new-tittle
+}
+
 .jobshow-desc {
   text-indent: 40px;
     margin: 1em 0;
@@ -293,6 +298,11 @@ thead {
     margin-left: auto;
     margin-right: auto;
     width: 20em;
+}
+
+.initialskill-custom-btn {
+  margin-bottom: 2em !important;
+  @extend .custom_btn;
 }
 
 

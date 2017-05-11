@@ -1,8 +1,16 @@
-<h1>Initial Skills Page</h1>
+<div calss="container">
+    <div class="col-md-4 col-sm-4 col-xs-4 job-show z-depth-4">
 
 
+<div class="col-md-12 col-sm-12 col-xs-12 text-center text-uppercase initial-skill-tittle">
+          Choose your skills
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr class="m12 s12 xs12">
+        </div>
 
-<form>
+
+<form class= "center">
     <p>
       <input type="checkbox" id="test5" ng-model="$ctrl.skills[0]" />
       <label for="test5">Prep Cook</label>
@@ -23,9 +31,10 @@
       <input type="checkbox" id="test9" ng-model="$ctrl.skills[4]" />
       <label for="test9">Foodrunner</label>
     </p>
-    <button ng-click="$ctrl.saveSkills()">Save your skills</button>
+    <button ng-click="$ctrl.saveSkills()" class="btn initialskill-custom-btn">Save your skills</button>
   </form>
 
-
+</div>
+</div>
 
 
