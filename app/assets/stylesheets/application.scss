@@ -150,8 +150,17 @@ label {
 thead {
   color: white;
   background-color: $nav-color;
+  border: 2px solid black;
+  border-radius: 50%;
+  border-top-left-radius: 2em;
+  td {
+    border: 2px solid;
+    border-top-left-radius: 2em;
+  }
+
   td, th {
     border-radius: 0 !important;
+
   }
 
 }
