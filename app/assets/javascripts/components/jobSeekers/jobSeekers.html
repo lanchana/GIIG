@@ -43,7 +43,15 @@
                 <img ng-src="http://materializecss.com/images/sample-1.jpg">
               </a>
               <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
-              <span class="card-title">{{ job.position_type }}</span>
+              <div class="card-title">
+                <div class="title-content">
+                  <span>{{ job.position_type }}</span>
+                </div>
+                <div class="time-content">
+                  <i class="material-icons left">schedule</i>
+                  {{ job.start_time }} - {{ job.end_time }}
+                </div>
+              </div>
               </a>
             </div>
             <div class="card-content">
@@ -52,19 +60,9 @@
                 <p>{{ job.location.name }}</a><br>{{job.location.city}}, {{job.location.state}}</p>
               </div>
               <div class="payment-content">
-                <div class="money-content">
-
                   <i class="material-icons left">attach_money</i>
-                  {{ job.hourly_wage }}
-                </div>
-                <!-- <br> -->
-                <div class="time-content">
-                  <i class="material-icons left">schedule</i>
-                  {{ job.start_time }} - {{ job.end_time }}
-
-                </div>
+                  {{ job.hourly_wage }}/hr
               </div>
-
             </div>
             <!-- <div class="card-action">
               <a href="#">This is a link</a>
