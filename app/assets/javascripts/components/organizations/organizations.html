@@ -4,40 +4,40 @@
 
 
 <div class="container">
-  <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+  <!-- <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
     <input class="btn btn-primary" value="Add a new job at {{$ctrl.selectedLocation.name}}" type="submit">
     <br>
 
     <select ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
 
     </select>
-  </form>
+  </form> -->
   <!-- Dropdown Trigger -->
-  <a class='location-button btn' href='#' data-activates='locationdropdown'>Drop Me!</a>
+  <!-- <a class='location-button btn' href='#' data-activates='locationdropdown'>Drop Me!</a> -->
 
   <!-- Dropdown Structure -->
-  <ul id='locationdropdown' class='dropdown-content'>
+  <!-- <ul id='locationdropdown' class='dropdown-content'>
     <li><a href="#!">one</a></li>
     <li><a href="#!">two</a></li>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
     <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
     <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
+  </ul> -->
   <div class="table-position">
     <h3>My Jobs</h3>
-    <table class="responsive-table">
+    <table class="responsive-table centered bordered">
         <thead>
             <tr>
-                <th class="col-md-4">Position</th>
-                <th class="col-md-4">Applicant</th>
-                <th class="col-md-4">Date Posted</th>
-                <th class="col-md-4">Status</th>
-                <th class="col-md-6">Actions</th>
+                <th class="col-md-2">Position</th>
+                <th class="col-md-2">Applicant</th>
+                <th class="col-md-2">Date Posted</th>
+                <th class="col-md-2">Status</th>
+                <th class="col-md-2">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="job in $ctrl.jobs">
+            <tr class="table-content" ng-repeat="job in $ctrl.jobs">
                 <td>
                   {{job.position_type}}
                   <br>
@@ -57,11 +57,11 @@
                 </td>
                 <td>
                   <div ng-if="$ctrl.checkDates(job.date) === true">
-                      <a ui-sref"checkJob({job_id: job.id})>Process Billing</a>
+                      <a ui-sref"checkJob({job_id: job.id})>Process Billing"</a>
                   </div>
-                  <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
+                  <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})"><i class="material-icons" style="color:green;">mode_edit</i></a>
                   <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
-                    <button type="submit">delete</button>
+                    <button type="submit" class="delete-button"><i class="material-icons " >delete</i></button>
                   </form>
                 </td>
             </tr>

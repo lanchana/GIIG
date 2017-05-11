@@ -21,7 +21,7 @@ class Api::JobsController < ApplicationController
         # binding.pry
         if @job.save
             # JobMailer.job_posting(@job).deliver
-            binding.pry
+            
             render json: @job, status: :created
         else
             render json: @job.errors, status: :unprocessable_entity
