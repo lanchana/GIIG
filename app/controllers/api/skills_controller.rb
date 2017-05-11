@@ -2,7 +2,6 @@ class Api::SkillsController < ApplicationController
   # GET /api/skills
   def index
     @skills = current_user.skills.all
-    # binding.pry
     render json: @skills
   end
 
