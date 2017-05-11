@@ -1,6 +1,6 @@
-<h1>This is the Job Seekers Dashboard</h1>
+<h3 style="text-align: center;">This is the Job Seekers Dashboard</h3>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>position_type</th>
@@ -19,15 +19,83 @@
       <td>{{ job.end_time }}</td>
       <td>{{ job.date }}</td>
       <td>{{ job.hourly_wage }}</td>
-      <td> <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">{{ job.location.name }}</a></td>      
- 
-       <td><form ng-submit="$ctrl.acceptJob(job.id)"> 
+      <td> <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">{{ job.location.name }}</a></td>
+
+       <td><form ng-submit="$ctrl.acceptJob(job.id)">
          <button type="submit">accept this job</button></form></td>
- 
-        
+
+
 
     </tr>
   </tbody>
     <tbody>
     </tbody>
-</table>
+</table> -->
+<div class="container">
+  <!-- <div class="col-md-12"> -->
+    <div class="row">
+<!-- Card -->
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img ng-src="http://materializecss.com/images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>Server<br>Taco Mac<br>Atlanta, Ga</p>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+        </div>
+<!-- Card -->
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img ng-src="http://materializecss.com/images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>Server<br>Taco Mac<br>Atlanta, Ga</p>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+        </div>
+<!-- Card -->
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img ng-src="http://materializecss.com/images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>Server<br>Taco Mac<br>Atlanta, Ga</p>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+        </div>
+<!-- Card -->
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img ng-src="http://materializecss.com/images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>Server<br>Taco Mac<br>Atlanta, Ga</p>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+        </div>
+
+
+      </div>
+  <!-- </div> -->
+</div>

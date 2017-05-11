@@ -5,14 +5,10 @@
 
 <div class="container">
   <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+    <input class="btn btn-primary" value="Add a new job at {{$ctrl.selectedLocation.name}}" type="submit">
     <br>
-    <select ng-options="location as location.name for location in $ctrl.locations track by location.id"
-    ng-model="$ctrl.selectedLocation"
-    id="newLocation">
+    <select ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
     </select>
-    <input class="btn btn-primary"
-    value="Add a new job at {{$ctrl.selectedLocation.name}}"
-    type="submit">
   </form>
   <!-- Dropdown Trigger -->
   <a class='location-button btn' href='#' data-activates='locationdropdown'>Drop Me!</a>
@@ -67,7 +63,7 @@
         </tbody>
     </table>
   </div>
-  
+
   <script>
   $('.location-button').dropdown({
       inDuration: 300,
