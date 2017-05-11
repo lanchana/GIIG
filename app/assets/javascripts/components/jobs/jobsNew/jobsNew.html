@@ -1,21 +1,32 @@
 <h1>New Job</h1>
 
-<form>
 
-    <md-select ng-model="$ctrl.job.position_type" >
-        <option ng-repeat="position in $ctrl.positions" value="{{position.name}}">{{position.name}}</option>
-        <br>
-    </md-select>
 
-    <div>You selected: {{ $ctrl.job.position_type }}</div>
-    <div>Description: {{ $ctrl.returnDescription($ctrl.job.position_type) }}</div>
-    <label for="start_time">Start time
-    <input type="time" name="start_time" ng-model="$ctrl.job.start_time"></label><br/>
-    <label for="end_time">End time
-    <input type="time" name="end_time" ng-model="$ctrl.job.end_time"></label><br/>
-    <label for="date">Date
-    <input type="date" name="date" ng-model="$ctrl.job.date"></label><br/>
-    <label for="hourly_wage">Hourly wage
-    <input type="text" name="hourly_wage" ng-model="$ctrl.job.hourly_wage"></label><br/>
-    <button ng-click="$ctrl.saveJob()">Create New Job</button>
-</form>
+<div class='container'>
+  <div class='row'>
+    <div class='span12'>
+      <div class='box-container'>
+        <div class='new_business'>
+          <form>
+            <div class="override-material">
+              <select id="newPosition" ng-model="$ctrl.job.position_type" >
+                <option ng-repeat="position in $ctrl.positions" value="{{position.name}}">{{position.name}}</option>
+                  <br>
+              </select>
+
+              <label for="start_time">Start time
+              <input type="time" name="start_time" ng-model="$ctrl.job.start_time"></label><br/>
+              <label for="end_time">End time
+              <input type="time" name="end_time" ng-model="$ctrl.job.end_time"></label><br/>
+              <label for="date">Date
+              <input type="date" class="datepicker" ng-model="$ctrl.job.date"></label><br/>
+              <label for="hourly_wage">Hourly wage
+              <input type="text" name="hourly_wage" ng-model="$ctrl.job.hourly_wage"></label><br/>
+              <button ng-click="$ctrl.saveJob()">Create New Job</button>
+            </div>
+          </form>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -181,7 +181,16 @@ thead {
   padding-left: 25px;
   padding-top: 105px; }
 
-#newLocation {
+#newLocation, .override-material, #newPosition, #override-switch {
   display: inline;
+
 }
+
+.new_business {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+}
+
+
 
