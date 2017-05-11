@@ -20,15 +20,17 @@
 $nav-color: color("blue-grey", "darken-4") !default;
 $teal-color: #26a69a;
 $text_shadow: 1px 1px 3px grey;
-
+$bg-color: #F1F4F8;
 
 
 
 
 body {
+  background-color: $bg-color;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: Source Sans Pro;
 }
 
 main {
@@ -89,7 +91,7 @@ input {
 
 nav {
 
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
     /*background: $off_white;*/
 
     .brand-logo  {
@@ -109,7 +111,7 @@ nav {
 
     .brand-logo:hover {
          text-decoration: none;
-                     color: $teal-color;
+        color: $teal-color;
 
     }
 
@@ -160,3 +162,17 @@ label {
 }
 
 .angular-google-map-container { height: 27em; }
+
+.table-position {
+  padding-top: 80px;
+}
+
+thead {
+  color: white;
+  background-color: $nav-color;
+  td, th {
+    border-radius: 0 !important;
+  }
+
+}
+

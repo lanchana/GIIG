@@ -1,8 +1,26 @@
 <h1>New Job</h1>
 
 <form>
-    <label for="position">Position
-    <input type="text" name="position" ng-model="$ctrl.job.position_type"></label><br/>
+
+
+
+
+    <select  ng-model="$ctrl.job.position_type" >
+        <option ng-repeat="position in $ctrl.positions" value="{{position.name}}">{{position.name}}</option>
+    </select>
+      
+      <p>You selected: {{ $ctrl.job.position_type }}</p>
+
+     
+
+    </form>
+    
+
+
+    <br>
+  
+    <p>{{position}}</p>
+    
     <label for="description">Description
     <input type="text" name="description" ng-model="$ctrl.job.description"></label><br/>
     <label for="start_time">Start time
@@ -19,3 +37,10 @@
     <input type="text" name="actual_end_time" ng-model="$ctrl.job.actual_end_time"></label><br/>
     <button ng-click="$ctrl.saveJob()">Create New Job</button>
 </form>
+
+<!-- <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+ </form>
+ -->
+<!--  <input class="btn btn-primary"
+           value="Add a new job at {{$ctrl.selectedLocation.name}}"
+            type="submit"> -->

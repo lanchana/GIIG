@@ -16,6 +16,7 @@ function ApplicantController($stateParams, applicantService, jobsService, locati
   function activate() {
     applicantService.getApplicant($stateParams.jobseeker_id).then(function(response) {
       vm.jobseeker = response.data;
+      console.log(vm.jobseeker.avatar_file_name);
       console.log ("controller jobseeker " + vm.jobseeker);
     });
 
@@ -32,6 +33,11 @@ function ApplicantController($stateParams, applicantService, jobsService, locati
       vm.jobs = response.data;
       console.log ("controller.js | " + vm.jobs);
     })
+
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+      });
+
 
   }
 }
