@@ -6,13 +6,15 @@ OrganizationsController.$inject =  ['$stateParams',
                                     '$state',
                                     'organizationsService',
                                     'locationsService',
-                                    'jobsService'];
+                                    'jobsService',
+                                    '$filter'];
 
 function OrganizationsController($stateParams,
                                  $state,
                                  organizationsService,
                                  locationsService,
-                                 jobsService) {
+                                 jobsService,
+                                 $filter) {
   var vm = this;
 
   vm.jobs = [];
@@ -22,6 +24,7 @@ function OrganizationsController($stateParams,
   vm.locations = [];
   vm.postJob = postJob;
   vm.jobDelete = jobDelete;
+  vm.checkDates = checkDates;
 
   activate();
 
@@ -37,6 +40,16 @@ function OrganizationsController($stateParams,
         vm.locations = response.data;
         // console.log(vm.locations);
     });
+  }
+
+  function checkDates(jobDate) {
+    var current_date = $filter('date')(new Date(), 'yyyy-MM-dd');
+    if (jobDate < current_date) {
+      console.log ("TRUE!");
+      return true
+    } else {
+      return false
+    }
   }
 
   function jobDelete(location_id, job_id) {

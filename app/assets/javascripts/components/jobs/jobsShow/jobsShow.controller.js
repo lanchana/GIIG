@@ -2,9 +2,9 @@ angular
   .module('GiiG')
   .controller('JobsShowController', JobsShowController);
 
-JobsShowController.$inject = ['$stateParams', 'jobsService', 'locationsService'];
+JobsShowController.$inject = ['$state', '$stateParams', 'jobsService', 'locationsService', 'jobseekersService'];
 
-function JobsShowController($stateParams, jobsService, locationsService) {
+function JobsShowController($state, $stateParams, jobsService, locationsService, jobseekersService) {
   var vm = this;
 
   vm.job = {};
@@ -13,13 +13,20 @@ function JobsShowController($stateParams, jobsService, locationsService) {
   var loc1;
   vm.some = {};
   vm.map = null;
+  vm.user = {};
+  vm.acceptJob = acceptJob;
+
 
   activate();
   // loc;
 
 
-  
 
+  function acceptJob(job_id) {
+    console.log('acceptJob' + job_id);
+    jobseekersService.updateJob(job_id);
+    $state.go('jobseeker')
+  }
 
   console.log();
   // vm.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
@@ -28,6 +35,13 @@ function JobsShowController($stateParams, jobsService, locationsService) {
     jobsService.getJob($stateParams.location_id, $stateParams.job_id).then(function(resp) {
     vm.job = resp.data;
     });
+
+    jobsService.getuser($stateParams.job_id).then((response) => {
+      vm.user = response.data;
+      console.log(vm.user);
+    })
+
+
 
     locationsService.getLocation($stateParams.location_id).then(function(resp) {
       vm.location = resp.data;
@@ -45,7 +59,7 @@ function JobsShowController($stateParams, jobsService, locationsService) {
             latitude: location.lat,
             longitude: location.lng
           },
-          zoom: 4
+          zoom: 9
         }
           vm.marker = {
                     id: 1,

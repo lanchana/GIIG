@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
   	def after_sign_in_path_for(resource)
             if resource.org == true
               "/organization"
+            elsif resource.phone_num == nil
+              "/users/edit"
             else
                "/jobseeker"
             end

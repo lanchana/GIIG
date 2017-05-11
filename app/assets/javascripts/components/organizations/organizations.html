@@ -7,7 +7,9 @@
   <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
     <input class="btn btn-primary" value="Add a new job at {{$ctrl.selectedLocation.name}}" type="submit">
     <br>
+
     <select ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
+
     </select>
   </form>
   <!-- Dropdown Trigger -->
@@ -54,6 +56,9 @@
                   </div>
                 </td>
                 <td>
+                  <div ng-if="$ctrl.checkDates(job.date) === true">
+                      <a ui-sref"checkJob({job_id: job.id})>Process Billing</a>
+                  </div>
                   <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
                   <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
                     <button type="submit">delete</button>

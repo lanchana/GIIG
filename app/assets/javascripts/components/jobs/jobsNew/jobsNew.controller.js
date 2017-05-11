@@ -2,10 +2,9 @@ angular
     .module('GiiG')
     .controller('JobsNewController', JobsNewController);
 
-JobsNewController.$inject = ['$state', '$stateParams', 'jobsService'];
+JobsNewController.$inject = ['$state', '$stateParams', 'jobsService', 'positionsService'];
 
-function JobsNewController($state, $stateParams,  jobsService) {
-
+function JobsNewController($state, $stateParams, jobsService, positionsService) {
     var vm = this;
 
     vm.job = {
@@ -19,18 +18,35 @@ function JobsNewController($state, $stateParams,  jobsService) {
         actual_end_time: ''
     };
 
-    vm.location_id = $stateParams.location_id;
 
+    vm.location_id = $stateParams.location_id;
+  
     vm.saveJob = saveJob;
+    vm.returnDescription = returnDescription;
+    vm.positions = [];
+
+    activate();
+
+    function activate() {
+      positionsService.getPositions()
+        .then(function(response) {
+        vm.positions = response.data;
+        console.log(vm.positions[0])
+        //console.log("getting positions | ");
+      });
+    }
 
     function saveJob() {
-        jobsService.createJob(vm.job, vm.location)
-           .then((response) => {
-            if(response.status == 201) {
-                $state.go('organization')
-            } else {
-                alert('server is down')
-            }
-        });
+      jobsService.createJob(vm.job, vm.location_id)
+        .then((response) => {
+          if(response.status == 201) {
+            $state.go('organization')
+          } else {
+            alert('server is down')
+          }
+      });
+    }
+
+    function returnDescription(position_type) {
     }
 }

@@ -10,6 +10,8 @@ class Api::JobsController < ApplicationController
     def show
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
+        @jobmaker = User.find(@job.user_id)
+
         # binding.pry
         render json: @job.to_json(include: [:location])
     end
