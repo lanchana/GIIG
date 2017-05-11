@@ -55,6 +55,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super(resource)
   end
 
+  def after_update_path_for(resource)
+       if resource.org?
+         '/organization'
+       elsif
+         '/jobseeker'
+  end
+end
+
    protected
 
   def update_resource(resource, params)
