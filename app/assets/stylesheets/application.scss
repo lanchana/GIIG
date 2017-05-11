@@ -57,8 +57,8 @@ nav{
 }
 
 .login-form {
-    margin-top: 2em;
-    float: none;
+    margin-top: 1em;
+    float: none !important;
 
     .z-depth-4 {
         padding: 2em;
@@ -111,7 +111,7 @@ nav {
 
     .brand-logo:hover {
          text-decoration: none;
-                     color: $teal-color;
+        color: $teal-color;
 
     }
 
@@ -126,11 +126,12 @@ nav {
 }
 
 label {
-  font-size: 1rem !important;
+  font-size: 1.2rem !important;
 }
 
 .page-footer {
   background: $nav-color;
+  z-index: 50;
 }
 
 .sign-up-form {
@@ -141,7 +142,26 @@ label {
   margin: 1em 0;
 }
 
-.angular-google-map-container { height: 400px; }
+.job-show{
+    float: none !important;
+    margin: 0 auto !important;
+}
+
+.jobshow-desc-tittle {
+  font-size: 2em;
+  text-shadow: $text_shadow;
+}
+
+.jobshow-desc {
+  text-indent: 40px;
+    margin: 1em 0;
+    font-size: 1.3em;
+    text-align:justify;
+    text-justify:inter-ideograph;
+    /*text-shadow: $text_shadow;*/
+}
+
+.angular-google-map-container { height: 27em; }
 
 .table-position {
   padding-top: 80px;
@@ -155,3 +175,4 @@ thead {
   }
 
 }
+

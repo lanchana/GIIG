@@ -7,4 +7,11 @@ class Api::OrganizationsController < ApplicationController
     render json: @jobs.to_json(include: [:location, :jobseeker])
 
   end
+
+  def show
+    @job = Job.find(params[:id])
+    @user = User.find(@job.user_id)
+    # binding.pry
+    render json: @user
+  end
 end
