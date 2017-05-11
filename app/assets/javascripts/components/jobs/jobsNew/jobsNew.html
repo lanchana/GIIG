@@ -7,40 +7,17 @@
 
     <select  ng-model="$ctrl.job.position_type" >
         <option ng-repeat="position in $ctrl.positions" value="{{position.name}}">{{position.name}}</option>
+        <br>
     </select>
-      
-      <p>You selected: {{ $ctrl.job.position_type }}</p>
-
-     
-
-    </form>
-    
-
-
-    <br>
-  
-    <p>{{position}}</p>
-    
-    <label for="description">Description
-    <input type="text" name="description" ng-model="$ctrl.job.description"></label><br/>
+    <div>You selected: {{ $ctrl.job.position_type }}</div>
+    <div>Description: {{ $ctrl.returnDescription($ctrl.job.position_type) }}</div>
     <label for="start_time">Start time
-    <input type="text" name="start_time" ng-model="$ctrl.job.start_time"></label><br/>
+    <input type="time" name="start_time" ng-model="$ctrl.job.start_time"></label><br/>
     <label for="end_time">End time
-    <input type="text" name="end_time" ng-model="$ctrl.job.end_time"></label><br/>
+    <input type="time" name="end_time" ng-model="$ctrl.job.end_time"></label><br/>
     <label for="date">Date
     <input type="date" name="date" ng-model="$ctrl.job.date"></label><br/>
     <label for="hourly_wage">Hourly wage
     <input type="text" name="hourly_wage" ng-model="$ctrl.job.hourly_wage"></label><br/>
-    <label for="actual_start_time">Actual start time
-    <input type="text" name="actual_start_time" ng-model="$ctrl.job.actual_start_time"></label><br/>
-    <label for="actual_end_time">Actual end time
-    <input type="text" name="actual_end_time" ng-model="$ctrl.job.actual_end_time"></label><br/>
     <button ng-click="$ctrl.saveJob()">Create New Job</button>
 </form>
-
-<!-- <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
- </form>
- -->
-<!--  <input class="btn btn-primary"
-           value="Add a new job at {{$ctrl.selectedLocation.name}}"
-            type="submit"> -->
