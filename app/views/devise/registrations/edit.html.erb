@@ -42,9 +42,11 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+
   <div class="field col-md-11 col-sm-11 col-xs-11">
     <%= f.label :password, :class => 'left' %> <br />
     <%= f.password_field :password, autocomplete: "off", :class => 'left' %>
+
   </div>
 
   <div class="field col-md-11 col-sm-11 col-xs-11">
@@ -52,7 +54,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-
+<% if resource.phone_num.to_s.empty? %>
   <div class="btn-group col-md-8 col-sm-8 col-xs-8 custom_btn" data-toggle="buttons-radio" style="
     padding-left:;">
     <%= f.radio_button :org, "false", :id=>"first", :style=>"display:none;", :class=>"with-gap" %>
@@ -61,13 +63,13 @@
     <%= f.radio_button :org, "true", :id=>"second", :checked => 'true', :style=>"display:none;", :class=>"with-gap"  %>
     <label for="second">I am a GiiGmaker</label>
   </div>
-
+<% end %>
   <div class="field col-md-11 col-sm-11 col-xs-8 center">
         <label class="btn custom_btn" style="width:70%;font-size: 14px !important">
 
-  Edit Photo
-  <span style="display:none; ">
-    <%= f.file_field :avatar, multiple: true, name: 'picture' %>
+           Edit Photo
+          <span style="display:none; ">
+        <%= f.file_field :avatar %>
   </span>
   </label>
   </div>

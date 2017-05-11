@@ -44,6 +44,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: [:org, :phone_num, :full_name, :address, :city, :state, :zipcode, :photo_url, :avatar])
   end
 
+  def after_update_path_for(resource)
+            if resource.org == true
+              "/organization"
+            elsif resource.phone_num.to_s.empty?
+              "/users/edit"
+            else
+               "/jobseeker"
+            end
+    end
 
 
   # If you have extra params to permit, append them to the sanitizer.
