@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'jquery-rails'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'jbuilder', '~> 2.5'
 
