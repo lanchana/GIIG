@@ -51,7 +51,8 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= image_tag( current_user.avatar.url, style: 'height: 50px; width: 50px; border-radius: 50%;' ) %>
+<!-- <i class="material-icons right">arrow_drop_down</i> --></a></li>
           </ul>
             <% if current_user.org? %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -86,18 +87,8 @@
         </ul>
       </div>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-<% if user_signed_in? %>
-<%= image_tag( current_user.avatar.url, style: 'height: 200px; width: 200px;' ) %>
-    <%# image_tag(current_user.avatar.url)%>
-<% end %>
-
-
-
-
-
+    <!-- <p class="notice"><%# notice %></p> -->
+    <!-- <p class="alert"><%#alert %></p> -->
       <ui-view></ui-view>
       <main>
 
