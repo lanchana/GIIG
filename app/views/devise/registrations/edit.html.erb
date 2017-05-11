@@ -54,10 +54,10 @@
 
   <div class="btn-group col-md-8 col-sm-8 col-xs-8 custom_btn" data-toggle="buttons-radio" style="
     padding-left:;">
-    <%= f.radio_button :org, "false", :id=>"first", :style=>"display:none;" %>
+    <%= f.radio_button :org, "false", :id=>"first", :style=>"display:none;", :class=>"with-gap" %>
     <label for="first">I am a GiiGseeker</label>
 
-    <%= f.radio_button :org, "true", :id=>"second", :checked => 'true', :style=>"display:none;" %>
+    <%= f.radio_button :org, "true", :id=>"second", :checked => 'true', :style=>"display:none;", :class=>"with-gap"  %>
     <label for="second">I am a GiiGmaker</label>
   </div>
 
