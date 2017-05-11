@@ -179,15 +179,16 @@ label {
 .angular-google-map-container { height: 27em; }
 
 .table-position {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 thead {
   color: white;
   background-color: $nav-color;
-  border: 2px solid black;
-  border-radius: 50%;
-  border-top-left-radius: 2em;
+  // border: 2px solid black;
+  // border-radius: 50%;
+  // border-top-left-radius: 2em;
+
   td {
     border: 2px solid;
     border-top-left-radius: 2em;
@@ -198,6 +199,9 @@ thead {
 
   }
 
+}
+.table-content {
+  background-color: white !important;
 }
 
 .card-title {
@@ -305,5 +309,8 @@ thead {
   margin-bottom: 2em !important;
   @extend .custom_btn;
 }
-
-
+.delete-button {
+  border: none !important;
+  color: red;
+  background: rgba(255, 255, 255, 0) !important;
+}
