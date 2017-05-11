@@ -20,16 +20,17 @@
 $nav-color: color("blue-grey", "darken-4") !default;
 $teal-color: #26a69a;
 $text_shadow: 1px 1px 3px grey;
-
+$bg-color: #F1F4F8;
 
 
 
 
 body {
+  background-color: $bg-color;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  // font-family: avenir;
+  font-family: Source Sans Pro;
 }
 
 main {
