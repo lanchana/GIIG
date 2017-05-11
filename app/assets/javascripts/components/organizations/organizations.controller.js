@@ -2,16 +2,16 @@ angular
   .module('GiiG')
   .controller('OrganizationsController', OrganizationsController);
 
-OrganizationsController.$inject =  ['$stateParams', 
-                                    '$state', 
-                                    'organizationsService', 
+OrganizationsController.$inject =  ['$stateParams',
+                                    '$state',
+                                    'organizationsService',
                                     'locationsService',
                                     'jobsService',
                                     '$filter'];
 
-function OrganizationsController($stateParams, 
-                                 $state, 
-                                 organizationsService, 
+function OrganizationsController($stateParams,
+                                 $state,
+                                 organizationsService,
                                  locationsService,
                                  jobsService,
                                  $filter) {
@@ -26,6 +26,8 @@ function OrganizationsController($stateParams,
   vm.checkDates = checkDates;
 
   activate();
+
+
 
   function activate() {
     organizationsService.getJobs().then(function(response) {
@@ -61,4 +63,5 @@ function OrganizationsController($stateParams,
     console.log('hitting postJob');
     $state.go('jobsNew', ({location_id: location.id}));
   }
+  
 }
