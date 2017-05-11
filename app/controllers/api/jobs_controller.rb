@@ -10,15 +10,18 @@ class Api::JobsController < ApplicationController
     def show
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
+        @jobmaker = User.find(@job.user_id)
+
         # binding.pry
         render json: @job.to_json(include: [:location])
     end
 
     def create
         @job = Job.new(job_params)
-
+        # binding.pry
         if @job.save
-            JobMailer.job_posting(@job).deliver
+            # JobMailer.job_posting(@job).deliver
+            binding.pry
             render json: @job, status: :created
         else
             render json: @job.errors, status: :unprocessable_entity

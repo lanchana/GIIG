@@ -2,8 +2,23 @@
 <html>
   <head>
     <title>GiiG</title>
+
     <%= csrf_meta_tags %>
+
+
+
+
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
     <!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
@@ -31,12 +46,12 @@
       </ul>
     <nav>
       <div class="nav-wrapper">
-
-        <%= link_to 'GiiG', root_path, :class => 'brand-logo' %>
+        <div class="brand-logo"><%= link_to image_tag("giig-dark@2x.png", :width => "50%"), root_path %></div>
+        <!-- <%= link_to 'GiiG', root_path, :class => 'brand-logo' %> -->
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= image_tag( current_user.avatar.url, style: 'height: 35px; width: 35px; border-radius: 50%;' ) %><i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
             <% if current_user.org? %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -46,7 +61,7 @@
               </ul>
               <% elsif %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="sass.html">Jobs</a></li>
+                <li><a ui-sref="jobseeker">Jobs</a></li>
                 <li><a href="badges.html">Past Jobs</a></li>
               </ul>
             <% end %>
@@ -71,17 +86,8 @@
         </ul>
       </div>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-<% if user_signed_in? %>
-<%= image_tag( current_user.avatar.url, style: 'height: 200px; width: 200px;' ) %>
-    <%# image_tag(current_user.avatar.url)%>
-<% end %>
-
-
-
-
+    <!-- <p class="notice"><%# notice %></p> -->
+    <!-- <p class="alert"><%#alert %></p> -->
 
       <ui-view></ui-view>
       <main>
@@ -101,6 +107,7 @@
       <script>
         $(".dropdown-button").dropdown();
         $(".button-collapse").sideNav();
+        $('select').material_select();
       </script>
   </body>
 </html>

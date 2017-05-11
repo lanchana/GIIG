@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #POST /resource
   def create
     super
-  
+
   end
 
   #GET /resource/edit
@@ -47,12 +47,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:phone_num, :full_name, :address, :city, :state, :zipcode, :photo_url, :avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:org, :phone_num, :full_name, :address, :city, :state, :zipcode, :photo_url, :avatar])
   end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     super(resource)
+  end
+
+   protected
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
   end
 
   # The path used after sign up for inactive accounts.

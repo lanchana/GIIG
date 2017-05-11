@@ -1,6 +1,10 @@
-<h1>My Jobs</h1>
+<!-- <p ng-repeat="location in $ctrl.locations">
+  <a ui-sref="jobsNew({location_id: location.id})"> Post a job at {{location.name}}</a>
+<p> -->
 
-<form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+
+<div class="container">
+  <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
     <input class="btn btn-primary"
         value="Add a new job at {{$ctrl.selectedLocation.name}}"
         type="submit">
@@ -9,40 +13,47 @@
     ng-model="$ctrl.selectedLocation" 
     id="newLocation">
     </select>
-</form>
+  </form>
+  <div class="table-position">
+    <h3>My Jobs</h3>
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th class="col-md-4">Position</th>
+                <th class="col-md-4">Applicant</th>
+                <th class="col-md-4">Date Posted</th>
+                <th class="col-md-4">Status</th>
+                <th class="col-md-6">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="job in $ctrl.jobs">
+                <td>
+                  {{job.position_type}}
+                  <br>
+                  {{job.location.name}}
+                  <br>
+                  {{job.location.city}}, {{job.location.state}}
+                </td>
+                <td><a ui-sref="applicant({jobseeker_id: job.jobseeker.id, location_id:job.location_id, job_id:job.id})">{{ job.jobseeker.full_name }}</a></td>
+                  <td>{{job.date}}</td>
+                <td>
+                  <div ng-if="job.jobseeker_id === null">
+                    Empty
+                  </div>
+                  <div ng-if="job.jobseeker_id != null">
+                    Filled
+                  </div>
+                </td>
+                <td>
+                  <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
+                  <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
+                    <button type="submit">delete</button>
+                  </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Position</th>
-            <th>Applicant</th>
-            <th>Date Posted</th>
-            <th>Status</th>
-            <th>Actions</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="job in $ctrl.jobs">
-            <td>
-              {{job.position_type}}
-              <br>
-              {{job.location.name}}
-              <br>
-              {{job.location.city}}, {{job.location.state}}
-            </td>
-            <td><a ui-sref="applicant({jobseeker_id: job.jobseeker.id, location_id:job.location_id, job_id:job.id})">{{ job.jobseeker.full_name }}</a></td>
-            <td>{{job.date}}</td>
-            <td ng-if="job.jobseeker_id === null">Empty</td>
-            <td ng-if="job.jobseeker_id != null">Filled</td>
-             <td>{{job.actual_start_time}}</td>
-            <td>{{job.actual_end_time}}</td>
-            <td><a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
-            <td>
-            <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
-                <button type="submit">delete</button>
-            </form>
-            </td>
-        </tr>
-    </tbody>
-</table>

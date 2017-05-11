@@ -13,12 +13,14 @@ function JobsShowController($stateParams, jobsService, locationsService) {
   var loc1;
   vm.some = {};
   vm.map = null;
+  vm.user = {};
+
 
   activate();
   // loc;
 
 
-  
+
 
 
   console.log();
@@ -28,6 +30,11 @@ function JobsShowController($stateParams, jobsService, locationsService) {
     jobsService.getJob($stateParams.location_id, $stateParams.job_id).then(function(resp) {
     vm.job = resp.data;
     });
+
+    jobsService.getuser($stateParams.job_id).then((response) => {
+      vm.user = response.data;
+      console.log(vm.user);
+    })
 
     locationsService.getLocation($stateParams.location_id).then(function(resp) {
       vm.location = resp.data;
@@ -45,7 +52,7 @@ function JobsShowController($stateParams, jobsService, locationsService) {
             latitude: location.lat,
             longitude: location.lng
           },
-          zoom: 4
+          zoom: 9
         }
           vm.marker = {
                     id: 1,
