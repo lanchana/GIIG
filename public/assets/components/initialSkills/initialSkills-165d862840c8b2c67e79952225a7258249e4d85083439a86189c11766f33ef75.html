@@ -1,0 +1,41 @@
+<h1>Initial Skills Page</h1>
+
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised">Button</md-button>
+      <md-button class="md-raised md-primary">Primary</md-button>
+      <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+      <md-button class="md-raised md-warn">Warn</md-button>
+      <div class="label">Raised</div>
+    </section>
+
+
+<div class="inset switchpositions" ng-cloak="">
+
+  
+
+  
+  <md-switch id = "override-switch" ng-model="$ctrl.skills[0]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 0">
+    Prep Cook: {{ $ctrl.skills[0] }}
+  </md-switch>
+  
+
+  <md-switch ng-model="$ctrl.skills[1]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 1">
+    Busboy: {{ $ctrl.skills[1] }}
+  </md-switch>
+  
+  <md-switch ng-model="$ctrl.skills[2]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 2">
+    Dishwasher: {{ $ctrl.skills[2] }}
+  </md-switch>
+  
+  <md-switch ng-model="$ctrl.skills[3]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 3">
+    Server: {{ $ctrl.skills[3] }}
+  </md-switch>
+  
+  <md-switch ng-model="$ctrl.skills[4]" class="md-primary" ng-true-value="'Congratulations!'" aria-label="Switch 4">
+    Foodrunner: {{ $ctrl.skills[4] }}
+  </md-switch>
+  
+  <button ng-click="$ctrl.saveSkills()">Save your skills</button>
+
+</div>
+
