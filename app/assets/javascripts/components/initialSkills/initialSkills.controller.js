@@ -16,7 +16,7 @@ function InitialSkillsController($state, initialSkillsService) {
 
   skill = {
      position_type: '',
-     rating: '0.0'  
+     rating: '0.0'
    };
   vm.saveSkills = saveSkills;
 
@@ -79,7 +79,7 @@ function InitialSkillsController($state, initialSkillsService) {
           }
         })
     }
-    $state.go('jobseeker');  
+    $state.go('jobseeker');
   }
 }
- 
+
