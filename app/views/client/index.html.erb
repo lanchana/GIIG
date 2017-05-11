@@ -88,10 +88,10 @@
     </nav>
     <!-- <p class="notice"><%# notice %></p> -->
     <!-- <p class="alert"><%#alert %></p> -->
-
+       
       <ui-view></ui-view>
       <main>
-
+          
       </main>
       <footer class="page-footer">
 
@@ -108,6 +108,11 @@
         $(".dropdown-button").dropdown();
         $(".button-collapse").sideNav();
         $('select').material_select();
-      </script>
+      
+        $('.datepicker').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+  </script>
   </body>
 </html>

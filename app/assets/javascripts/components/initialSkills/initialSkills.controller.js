@@ -18,7 +18,6 @@ function InitialSkillsController($state, initialSkillsService) {
      position_type: '',
      rating: '0.0'  
    };
-  console.log ('In the controller');
   vm.saveSkills = saveSkills;
 
   function saveSkills() {
@@ -26,7 +25,7 @@ function InitialSkillsController($state, initialSkillsService) {
 
     if (vm.skills[0]) {
       skill.position_type = "Prep Cook";
-      initialSkillsService.postSkills({position_type:"Prep Cook", rating: 0.0})
+      initialSkillsService.postSkills(skill)
         .then(function (response) {
           if(response.status == 201) {
             console.log("prep cook added");
@@ -51,7 +50,7 @@ function InitialSkillsController($state, initialSkillsService) {
       skill.position_type = "Dishwasher";
       initialSkillsService.postSkills(skill)
         .then(function (response) {
-          if(response.status == 201) {
+          if (response.status == 201) {
             console.log("Dishwasher added");
           } else {
             alert('server is down')

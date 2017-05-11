@@ -26,7 +26,6 @@ function JobSeekersController($stateParams, $scope,
   }
 
   function acceptJob(job_id) {
-    console.log('acceptJob' + job_id);
     jobseekersService.updateJob(job_id);
 
   }

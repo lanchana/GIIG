@@ -52,6 +52,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+
   <div class="btn-group col-md-8 col-sm-8 col-xs-8 custom_btn" data-toggle="buttons-radio" style="
     padding-left:;">
     <%= f.radio_button :org, "false", :id=>"first", :style=>"display:none;", :class=>"with-gap" %>
@@ -63,13 +64,13 @@
 
   <div class="field col-md-11 col-sm-11 col-xs-8 center">
         <label class="btn custom_btn" style="width:70%;font-size: 14px !important">
+
   Edit Photo
   <span style="display:none; ">
     <%= f.file_field :avatar, multiple: true, name: 'picture' %>
   </span>
   </label>
   </div>
-
 
   <div class="actions col-md-11 col-sm-11 col-xs-8 center">
     <%= f.submit "Update", :class => 'btn custom_btn', :style => "width: 70%" %>

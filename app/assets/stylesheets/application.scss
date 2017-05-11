@@ -184,7 +184,6 @@ thead {
   }
 
 }
-
 .loc_map {
   width: 100%;
   height: 27em;
@@ -204,3 +203,20 @@ thead {
   padding: 0 !important;
   margin: 5px;
 }
+
+/*initial skills switch styling*/
+.switchpositions .inset {
+  padding-left: 25px;
+  padding-top: 105px; }
+
+#newLocation, .override-material, #newPosition, #override-switch {
+  display: inline;
+
+}
+
+.new_business {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+}
+

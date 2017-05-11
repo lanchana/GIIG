@@ -19,9 +19,10 @@ function JobsNewController($state, $stateParams, jobsService, positionsService) 
     };
 
 
-    vm.location = $stateParams.location_id;
-
+    vm.location_id = $stateParams.location_id;
+  
     vm.saveJob = saveJob;
+    vm.returnDescription = returnDescription;
     vm.positions = [];
 
     activate();
@@ -36,13 +37,16 @@ function JobsNewController($state, $stateParams, jobsService, positionsService) 
     }
 
     function saveJob() {
-        jobsService.createJob(vm.job, vm.location)
-           .then((response) => {
-            if(response.status == 201) {
-                $state.go('organization')
-            } else {
-                alert('server is down')
-            }
-        });
+      jobsService.createJob(vm.job, vm.location_id)
+        .then((response) => {
+          if(response.status == 201) {
+            $state.go('organization')
+          } else {
+            alert('server is down')
+          }
+      });
+    }
+
+    function returnDescription(position_type) {
     }
 }
