@@ -50,9 +50,5 @@ function JobsNewController($state, $stateParams, jobsService, positionsService) 
     }
 
     function returnDescription(position_type) {
-      console.log("position type:" + vm.job.position_type);
-      console.log("position_type:" + position_type);
-      var posi = vm.positions.find(name: vm.job.position_type);
-      console.log ("i am showing " + posi)
     }
 }

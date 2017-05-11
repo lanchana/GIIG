@@ -9,9 +9,9 @@
         value="Add a new job at {{$ctrl.selectedLocation.name}}"
         type="submit">
     <br>
-    <select ng-options="location as location.name for location in $ctrl.locations track by location.id" 
-    ng-model="$ctrl.selectedLocation" 
-    id="newLocation">
+
+    <select id="newLocation" ng-options="location as location.name for location in $ctrl.locations track by location.id" 
+    ng-model="$ctrl.selectedLocation">
     </select>
   </form>
   <div class="table-position">

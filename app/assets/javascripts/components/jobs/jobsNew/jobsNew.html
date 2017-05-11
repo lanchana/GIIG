@@ -2,10 +2,10 @@
 
 <form>
 
-    <select  ng-model="$ctrl.job.position_type" >
+    <md-select ng-model="$ctrl.job.position_type" >
         <option ng-repeat="position in $ctrl.positions" value="{{position.name}}">{{position.name}}</option>
         <br>
-    </select>
+    </md-select>
 
     <div>You selected: {{ $ctrl.job.position_type }}</div>
     <div>Description: {{ $ctrl.returnDescription($ctrl.job.position_type) }}</div>
