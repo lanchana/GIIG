@@ -1,4 +1,4 @@
-<h1>Edit</h1>
+
 <div class="col-md-12 col-sm-12 col-xs-12 center login-form">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -67,11 +67,21 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="btn-group col-md-12" data-toggle="buttons-radio">
+    <%= f.radio_button :org, "false", :id=>"first", :style=>"display:none;" %>
+    <label for="first">I am a GiiGseeker</label>
+
+    <%= f.radio_button :org, "true", :id=>"second", :checked => 'true', :style=>"display:none;" %>
+    <label for="second">I am a GiiGmaker</label>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
+
+
 
 <div class="col-md-12 col-sm-12 col-xs-12 ">
 
