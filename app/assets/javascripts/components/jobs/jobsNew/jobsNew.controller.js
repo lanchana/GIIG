@@ -38,7 +38,8 @@ function JobsNewController($state, $stateParams, jobsService, positionsService) 
       positionsService.getPositions()
         .then(function(response) {
         vm.positions = response.data;
-        console.log("getting positions | " + vm.positions);
+        console.log(vm.positions[0])
+        //console.log("getting positions | ");
       });
     }
 
