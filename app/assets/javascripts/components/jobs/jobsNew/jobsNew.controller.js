@@ -4,9 +4,7 @@ angular
 
 JobsNewController.$inject = ['$state', '$stateParams', 'jobsService', 'positionsService'];
 
-
 function JobsNewController($state, $stateParams, jobsService, positionsService) {
-
     var vm = this;
 
     vm.job = {
@@ -22,7 +20,7 @@ function JobsNewController($state, $stateParams, jobsService, positionsService) 
 
 
     vm.location_id = $stateParams.location_id;
-
+  
     vm.saveJob = saveJob;
     vm.returnDescription = returnDescription;
     vm.positions = [];

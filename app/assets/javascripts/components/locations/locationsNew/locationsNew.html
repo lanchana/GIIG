@@ -1,42 +1,78 @@
-<h1>New Location</h1>
+<!-- <div calss="container">    <form class="col-md-8 col-sm-8 col-xs-10 job-show">
+ -->
+ <div class="col-md-8 col-sm-8 col-xs-10 job-show z-depth-4 location-new">
 
-<form>
-    <label>Position</label>
-    <input ng-model="$ctrl.location.name" />
-    <!-- <input ng-model="$ctrl.address" /> -->
-    <!-- <button ng-click="$ctrl.addlocation($ctrl.address)">Add location</button> -->
+    <form class="col s12">
+      <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center text-uppercase location-new-tittle">
+          Pick your location
+        </div>
+        <div class="input-field col s6">
+          <input id="phone_num" type="number" class=" validate " ng-model="$ctrl.location.phone_num">
+          <label for="phone_num">Bussiness Phone Number</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="business_type" type="text" class=" validate " ng-model="$ctrl.location.business_type">
+          <label for="business_type">Industry (Bussiness Type)</label>
+        </div>
+      </div>
 
-    <input ng-model="$ctrl.location.business_type" />
-    <input ng-model="$ctrl.location.address" />
-    <input ng-model="$ctrl.location.city" />
-    <input ng-model="$ctrl.location.state" />
-    <input ng-model="$ctrl.location.zipcode" />
-    <input ng-model="$ctrl.location.phone_num" />
-    <input ng-model="$ctrl.location.description" />
+      </div>
 
-    <br/>
-    <button ng-click="$ctrl.saveLocation()">Save</button>
+      <div class="pac-card" id="pac-card">
 
-</form>
-
-<div class="pac-card" id="pac-card">
-
-        <div id="title">
+        <div id="title" >
          search
         </div>
-      <div id="pac-container">
+      <div id="pac-container" class="col-md-12 col-sm-12 col-xs-12">
         <input id="pac-input" type="text"
-            placeholder="Enter a location" ng-model="$ctrl.address">
-            <button ng-click="$ctrl.addlocation($ctrl.address)">Add location</button>
+            placeholder="Enter a location" ng-model="$ctrl.address" style="background:white;" class="col-md-8 col-sm-8 col-xs-8 loc-search">
+            <button ng-click="$ctrl.addlocation($ctrl.address)" class="col-md-2 col-sm-2 col-xs-2 btn location-add-btn">Add location</button>
             <!-- <input ng-model="$ctrl.address" /> -->
       </div>
     </div>
-    <div id="map" ></div>
+    <div id="map" class="loc_map" ></div>
     <div id="infowindow-content">
       <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>
       <span id="place-address"></span>
     </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="input-field col s12">
+          <input id="name" type="text" class="validate" ng-model="$ctrl.location.name" placeholder="Location name">
+
+        </div>
+        <div class="input-field col s12">
+          <input id="address" type="text" class="validate" ng-model="$ctrl.location.address" placeholder="Address">
+        </div>
+        <div class="input-field col s6">
+          <input id="city" type="text" class="validate" ng-model="$ctrl.location.city" placeholder="City">
+        </div>
+        <div class="input-field col s6">
+          <input id="state" type="text" class="validate" ng-model="$ctrl.location.state" placeholder="State">
+        </div>
+        <div class="input-field col s12">
+        <textarea id="description" class="materialize-textarea" ng-model="$ctrl.location.description" placeholder="Description"></textarea>
+        </div>
+        <div class="input-field col s12 center"  style="margin-bottom: 1em;">
+
+        <button class="btn custom-btn" ng-click="$ctrl.saveLocation()">Save</button>
+        </div>
+
+      </div>
+
+      </div>
+  </form>
+</div>
+
+
+
+
+<!-- <h1>New Location</h1> -->
+
 
     <script>
       // This example requires the Places library. Include the libraries=places
@@ -46,7 +82,7 @@
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 33.753746, lng: -84.386330},
-          zoom: 13
+          zoom: 9
         });
         var card = document.getElementById('pac-card');
         var input = document.getElementById('pac-input');
@@ -110,4 +146,3 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAohMMx5Ns4F5hhjZolRS29Ey9X5ZfKftU&libraries=places&callback=initMap"
         async defer></script>
-

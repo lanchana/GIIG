@@ -2,12 +2,12 @@ angular
   .module('GiiG')
   .controller('JobSeekersController', JobSeekersController);
 
-JobSeekersController.$inject = ['$stateParams', '$scope', 
-                                'jobseekersService', 
+JobSeekersController.$inject = ['$stateParams', '$scope',
+                                'jobseekersService',
                                 'locationsService'];
 
-function JobSeekersController($stateParams, $scope, 
-                              jobseekersService, 
+function JobSeekersController($stateParams, $scope,
+                              jobseekersService,
                               locationsService) {
   var vm = this;
 
@@ -27,6 +27,7 @@ function JobSeekersController($stateParams, $scope,
 
   function acceptJob(job_id) {
     jobseekersService.updateJob(job_id);
+
   }
   //   console.log(“delete”+ job_id);
   //   jobsService.deleteJob(location_id, job_id)
@@ -34,6 +35,6 @@ function JobSeekersController($stateParams, $scope,
   //               console.log('delete job 2');
   //               activate();
   //            });
-  
+
 }
 
