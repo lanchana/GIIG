@@ -18,14 +18,14 @@
      <td>{{ location.business_type }}</td>
      <td>{{ location.address }}</td>
      <td>{{ location.city }}</td>
-     <td>{{ location.telephone}}</td>
+     <td>{{ location.phone_num}}</td>
     <!-- later we could add number of jobs made for that site -->
 
-    <td> <a ui-sref="jobsIndex({ location_id: location.id })">Jobs</a> </td> 
+    <td> <a ui-sref="jobsIndex({ location_id: location.id })">Jobs</a> </td>
 
-    <td> <a ui-sref="locationsEdit({ id: location.id })">Edit your location</a> </td> 
-       
-    <td> <form ng-submit="$ctrl.locationDelete(location.id)">         
+    <td> <a ui-sref="locationsEdit({ id: location.id })">Edit your location</a> </td>
+
+    <td> <form ng-submit="$ctrl.locationDelete(location.id)">
       <button type="submit">delete</button>
     </form> </td>
 
