@@ -59,11 +59,12 @@
     <label for="second">I am a GiiGmaker</label>
   </div>
 
-  <div class="field col-md-11 col-sm-11 col-xs-8 center">
-        <label class="btn custom_btn" style="width:70%;font-size: 14px !important">
-  Upload Picture
-  <span style="display:none; ">
-    <%= f.file_field :avatar, multiple: true, name: 'picture' %>
+ <div class="field col-md-11 col-sm-11 col-xs-8 center">
+        <label class="btn waves-effect waves-light custom_btn" style="width:70%;font-size: 14px !important">
+
+           Edit Photo
+          <span style="display:none; ">
+        <%= f.file_field :avatar %>
   </span>
   </label>
   </div>
@@ -71,7 +72,7 @@
 
 
   <div class="actions col-md-11 col-sm-11 col-xs-8 center">
-    <%= f.submit "Sign up", :class => 'btn custom_btn', :style => "width: 70%" %>
+    <%= f.submit "Sign up", :class => 'btn waves-effect waves-light custom_btn', :style => "width: 70%" %>
   </div>
 
 

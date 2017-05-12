@@ -1,33 +1,46 @@
-<h1>This is the Job Seekers Dashboard</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>position_type</th>
-      <th>start_time</th>
-      <th>end_time</th>
-      <th>date</th>
-      <th>hourly_wage</th>
-      <th>location</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat='job in $ctrl.jobs'>
-      <td>{{ job.position_type }}</td>
-      <td>{{ job.start_time }}</td>
-      <td>{{ job.end_time }}</td>
-      <td>{{ job.date }}</td>
-      <td>{{ job.hourly_wage }}</td>
-      <td> <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">{{ job.location.name }}</a></td>      
- 
-       <td><form ng-submit="$ctrl.acceptJob(job.id)"> 
-         <button type="submit">accept this job</button></form></td>
- 
-        
+<div class="container">
+  <hr>
 
-    </tr>
-  </tbody>
-    <tbody>
-    </tbody>
-</table>
+    <div class="row">
+<!-- Card -->
+
+        <div ng-repeat='job in $ctrl.jobs' class="col s12 m4">
+          <div class="card raised">
+            <div class="card-image">
+              <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+                <img ng-src="http://materializecss.com/images/sample-1.jpg">
+              </a>
+              <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+              <div class="card-title">
+                <div class="title-content">
+                  <span>{{ job.position_type }}</span>
+                </div>
+                <div class="time-content">
+                  <i class="material-icons left">schedule</i>
+                  {{ job.start_time }} - {{ job.end_time }}
+                </div>
+              </div>
+              </a>
+            </div>
+            <div class="card-content">
+              <div class="location-content">
+                <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+                <p>{{ job.location.name }}</a><br>{{job.location.city}}, {{job.location.state}}</p>
+              </div>
+              <div class="payment-content">
+                  <i class="material-icons left">attach_money</i>
+                  {{ job.hourly_wage }}/hr
+              </div>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+
+        </div>
+
+
+      </div>
+
+</div>

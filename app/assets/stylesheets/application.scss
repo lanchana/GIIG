@@ -21,6 +21,7 @@ $nav-color: color("blue-grey", "darken-4") !default;
 $teal-color: #26a69a;
 $text_shadow: 1px 1px 3px grey;
 $bg-color: #F1F4F8;
+$text-size: 1.4em !important;
 
 
 
@@ -30,7 +31,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: Source Sans Pro;
+  /*font-family: Source Sans Pro !important;*/
+  font-family: ‘Source Sans Pro’, sans-serif;
 }
 
 main {
@@ -97,7 +99,7 @@ nav {
     .brand-logo  {
         /*font-family: $logo_font;*/
       /*color: $text_color;*/
-      margin-left: 1em;
+      padding-left: 10px;
 
       /*text-decoration: none;*/
     }
@@ -144,7 +146,7 @@ label {
 
 .job-show{
     float: none !important;
-    margin: 0 auto !important;
+    margin: 2em auto !important;
 }
 
 .jobshow-desc-tittle {
@@ -161,6 +163,11 @@ label {
   @extend .jobshow-desc-tittle;
 }
 
+.initial-skill-tittle {
+  margin: 2em 0 !important;
+  @extend .location-new-tittle
+}
+
 .jobshow-desc {
   text-indent: 40px;
     margin: 1em 0;
@@ -173,17 +180,97 @@ label {
 .angular-google-map-container { height: 27em; }
 
 .table-position {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 thead {
   color: white;
   background-color: $nav-color;
+  // border: 2px solid black;
+  // border-radius: 50%;
+  // border-top-left-radius: 2em;
+
+  td {
+    border: 2px solid;
+    border-top-left-radius: 2em;
+  }
+
   td, th {
     border-radius: 0 !important;
+
   }
 
 }
+.table-content {
+  background-color: white !important;
+
+}
+
+.card-title {
+  width: 100%;
+  display: flex;
+
+}
+.card-content {
+  display: flex;
+}
+
+.title-content {
+  width: 50%;
+
+  .title-content, span {
+    width: auto;
+    border-radius: 2px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+
+  }
+  // float: left;
+}
+.time-content {
+  width: 50%;
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.location-content {
+  width: 50%;
+
+  // float: left;
+}
+.payment-content {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.money-content {
+  width: 100%;
+  height: 50%;
+}
+.container .row {
+    margin-left: -5.75rem;
+    margin-right: -5.75rem;
+}
+
+
+.raised {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.raised:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@media all and (max-width: 650px) {
+  .container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+}
+
 .loc_map {
   width: 100%;
   height: 27em;
@@ -218,5 +305,43 @@ thead {
     margin-left: auto;
     margin-right: auto;
     width: 20em;
+}
+
+.initialskill-custom-btn {
+  margin-bottom: 2em !important;
+  @extend .custom_btn;
+}
+
+
+.text-size {
+  font-size: $text-size;
+}
+
+.jobsnew-padding {
+  /*font-size: $text-size;*/
+  padding: 1em 3em !important;
+}
+
+.delete-button {
+  border: none !important;
+  color: red;
+  background: rgba(255, 255, 255, 0) !important;
+}
+
+
+.applicant-content {
+  padding-top: 55px;
+  padding-bottom: 100px;
+}
+.applicant-name {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+.applicant-position {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+.applicant-dateapplied {
+  font-size: 18px;
 }
 

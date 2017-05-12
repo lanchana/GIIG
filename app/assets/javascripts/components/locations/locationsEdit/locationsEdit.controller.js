@@ -8,8 +8,19 @@ function LocationsEditController($stateParams, $state, locationsService) {
   var vm = this;
 
   vm.location = {};
-  
+
   vm.saveLocation = saveLocation;
+
+  vm.addlocation = addlocation;
+
+  function addlocation() {
+    address = vm.address.split(',');
+    vm.location.name = address[0];
+    vm.location.address = address[1];
+    vm.location.city = address[2];
+    vm.location.state = address[3];
+
+  }
 
   locationsService.getLocation($stateParams.id).then(function(response) {
     vm.location = response.data;
