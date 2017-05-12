@@ -55,8 +55,7 @@
           <div class="brand-logo"><a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a></div>
         <% end %>
         <% end %>
-        <!-- <a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a> -->
-        <!-- <%= link_to 'GiiG', root_path, :class => 'brand-logo' %> -->
+
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
@@ -72,6 +71,8 @@
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a ui-sref="jobseeker">Jobs</a></li>
                 <li><a href="applicant">Past Jobs</a></li>
+                <li><a href="initialSkills">Skills</a></li>
+
               </ul>
             <% end %>
           <% else %>
