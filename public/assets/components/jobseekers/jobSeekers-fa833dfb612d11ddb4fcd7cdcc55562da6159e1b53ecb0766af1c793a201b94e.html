@@ -1,0 +1,46 @@
+
+<div class="container">
+  <hr>
+
+    <div class="row">
+<!-- Card -->
+
+        <div ng-repeat='job in $ctrl.jobs' class="col s12 m4">
+          <div class="card raised">
+            <div class="card-image">
+              <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+                <img ng-src="http://materializecss.com/images/sample-1.jpg">
+              </a>
+              <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+              <div class="card-title">
+                <div class="title-content">
+                  <span>{{ job.position_type }}</span>
+                </div>
+                <div class="time-content">
+                  <i class="material-icons left">schedule</i>
+                  {{ job.start_time }} - {{ job.end_time }}
+                </div>
+              </div>
+              </a>
+            </div>
+            <div class="card-content">
+              <div class="location-content">
+                <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+                <p>{{ job.location.name }}</a><br>{{job.location.city}}, {{job.location.state}}</p>
+              </div>
+              <div class="payment-content">
+                  <i class="material-icons left">attach_money</i>
+                  {{ job.hourly_wage }}/hr
+              </div>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+
+        </div>
+
+
+      </div>
+
+</div>
