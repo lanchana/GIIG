@@ -42,6 +42,10 @@ angular
         url: '/organization',
         component: 'orgDash'
       })
+      .state('pastJobs', {
+        url: '/history/:jobseeker_id',
+        component: 'pastJobs'
+      })
       .state('applicantsShow', {
         url: '/applicats',
         component: 'applicantsShow'

@@ -69,12 +69,12 @@
             <% if current_user.org? %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li ><a ui-sref="organization">Jobs</a></li>
-                <!-- <li ><a ui-sref="skillsIndex">Applicants</a></li> -->
+                <li><a ui-sref="locationsIndex">Locations</a></li>
               </ul>
               <% elsif %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a ui-sref="jobseeker">Jobs</a></li>
-                <!-- <li><a href="badges.html">Past Jobs</a></li> -->
+                <li><a href="applicant">Past Jobs</a></li>
               </ul>
             <% end %>
           <% else %>
