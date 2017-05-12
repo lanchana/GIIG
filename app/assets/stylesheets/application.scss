@@ -21,6 +21,7 @@ $nav-color: color("blue-grey", "darken-4") !default;
 $teal-color: #26a69a;
 $text_shadow: 1px 1px 3px grey;
 $bg-color: #F1F4F8;
+$footer-color: color("grey", "lighten-2") !default;
 
 
 
@@ -38,10 +39,7 @@ main {
   flex: 1 0 auto;
 }
 
-.page-footer {
-     padding-top: 0 !important;
 
-}
 
 #dropdown1 {
   top: 55px !important;
@@ -57,6 +55,16 @@ nav{
   }
 }
 
+// ***** Footer *****//
+.page-footer {
+  color: black !important;
+  padding-top: 0 !important;
+  background: $footer-color;
+  z-index: 50;
+}
+.footer-copyright {
+  color: black !important;
+}
 .login-form {
     margin-top: 1em;
     float: none !important;
@@ -130,10 +138,7 @@ label {
   font-size: 1.2rem !important;
 }
 
-.page-footer {
-  background: $nav-color;
-  z-index: 50;
-}
+
 
 .sign-up-form {
   float: none;
