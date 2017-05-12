@@ -1,6 +1,6 @@
 <div calss="container">
-    <div class="col-md-10 col-sm-10 col-xs-11 job-show">
-    <header class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-10 col-sm-10 col-xs-11 job-show ">
+    <header class="col-md-12 col-sm-12 col-xs-12 text-size">
         <div class="col-md-6 col-sm-6 col-xs-6 ">
             <div class="col-md-12 col-sm-12 col-xs-12">Host/Hosts</div>
             <div class="col-md-12 col-sm-12 col-xs-12">{{$ctrl.location.name}}</div>
@@ -38,8 +38,8 @@
         <div class="col-md-6 col-sm-6 col-xs-6 text-right" ng-hide="{{$ctrl.job.user_id}}">
             <!-- fix the route -->
             <!-- <input type="button" value="Fix Me" class="btn"> -->
-            <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" ng-if="$ctrl.user.org">
-         <button type="submit">accept this job</button>
+            <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" ng-hide="$ctrl.user.org">
+         <button type="submit" class="btn waves-effect waves-light custom_btn">accept this job</button>
          </form>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12 center">
