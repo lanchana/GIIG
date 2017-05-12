@@ -1,7 +1,7 @@
 class Api::JobsController < ApplicationController
     # after_commit :job_posting_notification, on: :create
 
-    def index 
+    def index
         location = Location.find(params[:location_id])
         @jobs = location.jobs.all
         render json: @jobs
@@ -20,15 +20,15 @@ class Api::JobsController < ApplicationController
         @job = Job.new(job_params)
         # binding.pry
         if @job.save
-            # JobMailer.job_posting(@job).deliver
-            
+            JobMailer.job_posting(@job).deliver
+
             render json: @job, status: :created
         else
             render json: @job.errors, status: :unprocessable_entity
         end
     end
 
-    def update 
+    def update
 
         @location = Location.find(params[:location_id])
         @job = @location.jobs.find(params[:id])
