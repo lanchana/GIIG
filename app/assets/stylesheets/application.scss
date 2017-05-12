@@ -353,6 +353,17 @@ thead {
 
 #newLocation, .override-material, #newPosition, #override-switch {
   display: inline;
+}
+
+#newLocation {
+  width: 20em;
+  margin-top: 2em;
+}
+
+#job-selector {
+  margin: auto;
+  /*justify-content: center;*/
+  padding: 3em 6em 0 6em;
 
 }
 

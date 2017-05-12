@@ -1,23 +1,31 @@
 class ChargesController < ApplicationController
 	
 	def new
-		binding.pry
+		bill = Bill.last
+		@amount = (bill.amount * 100).to_i
+		@amountShow = bill.amount.number_to_currency
+
 	end
 
 	def create
-		bill = Bill.last
-		@amount = bill.amount
-	  customer = Stripe::Customer.create(
+			bill = Bill.last
+			@amount = (bill.amount * 100).to_i
+			@amountShow = bill.amount.number_to_currency 
+
+	    customer = Stripe::Customer.create(
 	    email: params[:stripeEmail],
 	    source: params[:stripeToken]
-	  )
+	  	)
 
-	  charge = Stripe::Charge.create(
+	    charge = Stripe::Charge.create(
 	    customer: customer.id,
+
+	    # amount: Bill.last.amount.to_i,
 	    amount: @amount,
+
 	    description: 'Rails Stripe customer',
 	    currency: 'usd'
-	  )
+	  	)
 
 		rescue Stripe::CardError => e
 	  		flash[:error] = e.message
