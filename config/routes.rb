@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+
+  get 'charges/create'
+
   # resources :positions
   # resources :locations
   # resources :jobs
@@ -7,7 +11,9 @@ Rails.application.routes.draw do
 #     registrations: 'users/registrations'
 # }
 
-devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", registrations: 'users/registrations' }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", registrations: 'users/registrations' }
+
+  resources :charges, only: [:new, :create]
 
   namespace :api do
       resources :positions
