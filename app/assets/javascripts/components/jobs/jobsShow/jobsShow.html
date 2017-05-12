@@ -1,8 +1,78 @@
-<div calss="container">
-    <div class="col-md-10 col-sm-10 col-xs-11 job-show ">
+<div class="container">
+  <div class="jobshow-content">
+    <div class="back-button">
+      <a ui-sref="jobseeker"><i class="material-icons left">keyboard_arrow_left</i>Back to Jobs</a>
+    </div>
+    <br>
+    <div class="job-name text-capitalize">
+      {{$ctrl.job.position_type }}
+
+    </div>
+  </div>
+  <div class="pic-img">
+    Image Goes here!
+    Image Goes here!
+    Image Goes here!
+    Image Goes here!
+
+  </div>
+  <div class="job-show">
+    <div class="job-content">
+
+
+      <div class="">{{$ctrl.location.name}}</div>
+      <div class="">
+      {{$ctrl.location.address}}
+      </div>
+      <div class="text-capitalize">
+      {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>{{$ctrl.location.zipcode}}
+      </div>
+      <div class="">
+        _________
+      </div>
+      <br>
+      <div class="">
+        When: {{$ctrl.job.date | date }}
+      </div>
+      <div class="">
+          Time: {{$ctrl.job.actual_start_time}} - {{$ctrl.job.actual_end_time}}
+      </div>
+      <div class="">
+      Pay rate: {{$ctrl.job.hourly_wage | currency}} / hr
+      </div>
+      <div class="" ng-hide="{{$ctrl.job.user_id}}">
+          <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" >
+       <button type="submit" class="btn waves-effect waves-light ">accept this job</button>
+       </form>
+      </div>
+    </div>
+
+    <div class="map">
+      <article class="">
+      <!-- zoom='$ctrl.map.zoom' -->
+          <div ng-if="$ctrl.map" class="">
+              <ui-gmap-google-map center='$ctrl.map.center'  draggable="true" options="options">
+                  <ui-gmap-marker coords="$ctrl.marker.coords" idKey="$ctrl.marker.id"></ui-gmap-marker>
+              </ui-gmap-google-map>
+          </div>
+      </article>
+Map View
+Map View
+Map View
+Map View
+Map View
+    </div>
+    <div class="">
+      <p class="text-capitalize">job description</p>
+              <div class="">
+              {{$ctrl.job.description}}
+              </div>
+    </div>
+  </div>
+    <!-- <div class=" job-show ">
     <header class="col-md-12 col-sm-12 col-xs-12 text-size">
         <div class="col-md-6 col-sm-6 col-xs-6 ">
-            <div class="col-md-12 col-sm-12 col-xs-12">Host/Hosts</div>
+            <div class="col-md-12 col-sm-12 col-xs-12">Host/Hostssss</div>
             <div class="col-md-12 col-sm-12 col-xs-12">{{$ctrl.location.name}}</div>
             <div class="col-md-12 col-sm-12 col-xs-12">
             {{$ctrl.location.address}}
@@ -36,10 +106,9 @@
             </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 text-right" ng-hide="{{$ctrl.job.user_id}}">
-            <!-- fix the route -->
-            <!-- <input type="button" value="Fix Me" class="btn"> -->
+
             <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" ng-hide="$ctrl.user.org">
-         <button type="submit" class="btn waves-effect waves-light custom_btn">accept this job</button>
+         <button type="submit" class="btn waves-effect waves-light ">accept this job</button>
          </form>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12 center">
@@ -64,13 +133,18 @@
 </div>
     </article>
 
-    </div>
+    </div> -->
 </div>
+<!-- <div class="container">
+  <div class="box">
+    hjwhh
 
+  </div>
+
+</div> -->
 
 
 
 
 
 <!-- <h1>Jobs show</h1> -->
-

@@ -21,7 +21,6 @@ $nav-color: color("blue-grey", "darken-4") !default;
 $teal-color: #26a69a;
 $text_shadow: 1px 1px 3px grey;
 $bg-color: #F1F4F8;
-$text-size: 1.4em !important;
 
 
 
@@ -143,12 +142,54 @@ label {
 .custom_btn {
   margin: 1em 0;
 }
+//********************//
+//**** Job Show *****//
+//******************//
 
-.job-show{
-    float: none !important;
-    margin: 2em auto !important;
+.job-name {
+  padding-bottom: 10px;
 }
 
+.jobshow-content {
+  padding-top: 30px;
+}
+
+.pic-img {
+  width: 100%;
+  height: 300px;
+  background-color: red;
+}
+.job-show {
+    float: none !important;
+    margin: 0 auto !important;
+    position: relative;
+    background-color: white !important;
+    top: -50px;
+
+    width: 85%;
+    height: auto;
+}
+.job-content {
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+  top: 25px;
+  padding-bottom: 10px;
+  // margin-top: 50px;
+  // background-color: blue;
+
+}
+
+
+.map {
+  margin-top: 35px;
+  width: 100%;
+  background-color: yellow;
+}
+.box {
+  background-color: red !important;
+  width: 100%;
+}
 .jobshow-desc-tittle {
   font-size: 2em;
   text-shadow: $text_shadow;
@@ -201,6 +242,7 @@ thead {
   }
 
 }
+
 .table-content {
   background-color: white !important;
 
@@ -249,6 +291,7 @@ thead {
   width: 100%;
   height: 50%;
 }
+// Job card width
 .container .row {
     margin-left: -5.75rem;
     margin-right: -5.75rem;
@@ -311,23 +354,11 @@ thead {
   margin-bottom: 2em !important;
   @extend .custom_btn;
 }
-
-
-.text-size {
-  font-size: $text-size;
-}
-
-.jobsnew-padding {
-  /*font-size: $text-size;*/
-  padding: 1em 3em !important;
-}
-
 .delete-button {
   border: none !important;
   color: red;
   background: rgba(255, 255, 255, 0) !important;
 }
-
 
 .applicant-content {
   padding-top: 55px;
@@ -344,4 +375,3 @@ thead {
 .applicant-dateapplied {
   font-size: 18px;
 }
-
