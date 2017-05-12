@@ -1,0 +1,67 @@
+
+
+<!-- New Locations! -->
+
+<div class="container">
+  <div class="table-position">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-center jobshow-desc-tittle text-uppercase ">
+        <h3>Locations</h3>
+    </div>
+    <table class="responsive-table centered bordered">
+        <thead>
+            <tr>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-2">Address</th>
+                <th class="col-md-2">Telephone</th>
+                <th class="col-md-2"># Jobs</th>
+                <th class="col-md-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-content text-capitalize" ng-repeat="location in $ctrl.locations">
+                <td>
+                  {{ location.name }}
+                </td>
+                <td>{{ location.address }} <br> {{ location.city }}, {{ location.state }}</td>
+                <td>{{ location.phone_num }}</td>
+                <td>
+                  <div ng-if="job.jobseeker_id === null">
+                    Empty
+                  </div>
+                  <div ng-if="job.jobseeker_id != null">
+                    Filled
+                  </div>
+                </td>
+                <!-- <td> <a ui-sref="locationsEdit({ id: location.id })">Edit your location</a> </td> -->
+                <td >
+                  <div ng-if="$ctrl.checkDates(job.date) === true">
+                      <a ui-sref"checkJob({job_id: job.id})>Process Billing"<i class="material-icons" style="color:green;">credit_card/i></a>
+                  </div>
+                  <a ui-sref="locationsEdit({ id: location.id })"><i class="material-icons left" style="color:green;">mode_edit</i></a>
+                  <form ng-submit="$ctrl.locationDelete(location.id)">
+                    <button type="submit" class="delete-button"><i class="material-icons " >delete</i></button>
+                  </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 text-center loc_index">
+      <!-- Dropdown Trigger -->
+      <a ui-sref="locationsNew" class="btn">Create a Location</a>
+      </div>
+
+  <script>
+  $('.location-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+  </script>
+</div>
