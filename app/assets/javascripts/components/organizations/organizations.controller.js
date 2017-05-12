@@ -15,11 +15,10 @@ function OrganizationsController($stateParams,
                                  locationsService,
                                  jobsService,
                                  $filter) {
+
   var vm = this;
 
   vm.jobs = [];
-
-  // vm.jobDelete = jobDelete;
 
   vm.locations = [];
   vm.postJob = postJob;

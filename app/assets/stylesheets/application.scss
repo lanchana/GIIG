@@ -31,7 +31,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: Source Sans Pro !important;
+  /*font-family: Source Sans Pro !important;*/
+  font-family: ‘Source Sans Pro’, sans-serif;
 }
 
 main {
@@ -179,15 +180,16 @@ label {
 .angular-google-map-container { height: 27em; }
 
 .table-position {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 thead {
   color: white;
   background-color: $nav-color;
-  border: 2px solid black;
-  border-radius: 50%;
-  border-top-left-radius: 2em;
+  // border: 2px solid black;
+  // border-radius: 50%;
+  // border-top-left-radius: 2em;
+
   td {
     border: 2px solid;
     border-top-left-radius: 2em;
@@ -198,6 +200,9 @@ thead {
 
   }
 
+}
+.table-content {
+  background-color: white !important;
 }
 
 .card-title {
@@ -306,6 +311,7 @@ thead {
   @extend .custom_btn;
 }
 
+
 .text-size {
   font-size: $text-size;
 }
@@ -315,4 +321,9 @@ thead {
   padding: 1em 3em !important;
 }
 
+.delete-button {
+  border: none !important;
+  color: red;
+  background: rgba(255, 255, 255, 0) !important;
+}
 
