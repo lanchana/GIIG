@@ -1,29 +1,30 @@
+<!-- <p ng-repeat="location in $ctrl.locations">
+  <a ui-sref="jobsNew({location_id: location.id})"> Post a job at {{location.name}}</a>
+<p> -->
+
 <div class="container">
-
-
   <div id="job-selector">
     <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
       <input class="btn btn-primary" value="Add a new job at {{$ctrl.selectedLocation.name}}" type="submit">
       <br>
-
 
       <select id="newLocation" ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
       </select>
     </form>
   </div>
 
-  
-  <div class="table-position">
-    <div style="width: 100%; display: flex;">
-      <div style="width: 50%;">
-        <h3>My Jobs</h3>
-      </div>
-      <div style="width: 50%;">
-      <!-- Dropdown Trigger -->
-      <a style="float: right;"class='location-button btn' href='#' data-activates='locationdropdown'>New Job Post</a>
-      </div>
+   <ul id='locationdropdown' class='dropdown-content'>
 
-    </div>
+    <li><a href="#!">one</a></li>
+
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+  <div class="table-position">
+    <h3>My Jobs</h3>
     <table class="responsive-table centered bordered">
         <thead>
             <tr>
@@ -35,7 +36,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="table-content text-capitalize" ng-repeat="job in $ctrl.jobs">
+            <tr class="table-content" ng-repeat="job in $ctrl.jobs">
                 <td>
                   {{job.position_type}}
                   <br>
@@ -44,7 +45,7 @@
                   {{job.location.city}}, {{job.location.state}}
                 </td>
                 <td><a ui-sref="applicant({jobseeker_id: job.jobseeker.id, location_id:job.location_id, job_id:job.id})">{{ job.jobseeker.full_name }}</a></td>
-                  <td>{{job.date | date }}</td>
+                  <td>{{job.date}}</td>
                 <td>
                   <div ng-if="job.jobseeker_id === null">
                     Empty
@@ -53,8 +54,7 @@
                     Filled
                   </div>
                 </td>
-
-                <td>
+        <td>
 
 
     <div ng-if="$ctrl.checkDates(job.date) === true && job.jobseeker_id != null">
@@ -82,7 +82,6 @@
       <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
         <button type="submit" class="delete-button"><i class="material-icons " >delete</i></button>
       </form> -->
-
 
                 </td>
             </tr>
