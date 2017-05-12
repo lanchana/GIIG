@@ -13,12 +13,12 @@
               </a>
               <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
               <div class="card-title">
-                <div class="title-content">
+                <div class="title-content text-capitalize">
                   <span>{{ job.position_type }}</span>
                 </div>
                 <div class="time-content">
-                  <i class="material-icons left">schedule</i>
-                  {{ job.start_time }} - {{ job.end_time }}
+                  <!-- <i class="material-icons left">schedule</i> -->
+                  {{ job.start_time | date: 'EEE, MMM d @ ha' }} - {{ job.end_time | date: ' ha' }}
                 </div>
               </div>
               </a>

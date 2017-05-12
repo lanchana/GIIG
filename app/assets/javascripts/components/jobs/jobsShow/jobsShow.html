@@ -6,41 +6,55 @@
     <br>
     <div class="job-name text-capitalize">
       {{$ctrl.job.position_type }}
-
     </div>
   </div>
   <div class="pic-img">
-
-    {{ $ctrl.location.photo_url }}
-    Image Goes here!
-    Image Goes here!
-    Image Goes here!
-    Image Goes here!
-
+    <img class="pic-content" ng-src="http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg">
   </div>
   <div class="job-show z-depth-2">
     <div class="job-content">
 
 
-      <div class="">{{$ctrl.location.name}}</div>
-      <div class="">
+      <div style="font-size: 24px; padding-bottom: 10px;"class="">
+        {{$ctrl.location.name}}
+      </div>
+      <div style="font-size: 16px; padding-bottom: 5px;" class="">
       {{$ctrl.location.address}}
       </div>
-      <div class="text-capitalize">
+      <div style="font-size: 14px; padding-bottom: 5px;" class="text-capitalize">
       {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>{{$ctrl.location.zipcode}}
       </div>
       <div class="">
         _________
       </div>
       <br>
-      <div class="">
-        When: {{$ctrl.job.date | date }}
+      <div style="width: 30%; display: flex;">
+        <div style="width: 100%;">
+          When:
+        </div>
+        <div style="width: 100%;">
+      {{$ctrl.job.date | date }}
+        </div>
+
       </div>
-      <div class="">
-          Time: {{$ctrl.job.actual_start_time}} - {{$ctrl.job.actual_end_time}}
+
+      <div style="width: 30%; display: flex;">
+
+          <div style="width: 100%;">
+            Time:
+          </div>
+          <div style="width: 100%;">
+            {{$ctrl.job.start_time | date: 'EEE, MMM d @ ha' }} - {{$ctrl.job.end_time | date: ' ha' }}
+          </div>
       </div>
-      <div class="">
-      Pay rate: {{$ctrl.job.hourly_wage | currency}} / hr
+      <div style="width: 30%; display: flex;">
+        <div style="width: 100%;">
+          Pay rate:
+        </div>
+        <div style="width: 100%;">
+          {{$ctrl.job.hourly_wage | currency}} / hr
+        </div>
+      
       </div>
       <div class="" ng-hide="{{$ctrl.job.user_id}}">
           <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" >
@@ -58,18 +72,13 @@
               </ui-gmap-google-map>
           </div>
       </article>
-Map View
-Map View
-Map View
-Map View
-Map View
     </div>
-    <div class="">
+    <!-- <div class="">
       <p class="text-capitalize">job description</p>
               <div class="">
               {{$ctrl.job.description}}
               </div>
-    </div>
+    </div> -->
   </div>
     <!-- <div class=" job-show ">
     <header class="col-md-12 col-sm-12 col-xs-12 text-size">
@@ -144,7 +153,7 @@ Map View
 
   </div>
 
-       
+
 
 </div> -->
 
