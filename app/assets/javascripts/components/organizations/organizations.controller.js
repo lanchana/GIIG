@@ -24,6 +24,8 @@ function OrganizationsController($stateParams,
   vm.postJob = postJob;
   vm.jobDelete = jobDelete;
   vm.checkDates = checkDates;
+  vm.goEdit = goEdit;
+  vm.processBilling = processBilling;
 
   activate();
 
@@ -39,6 +41,15 @@ function OrganizationsController($stateParams,
     });
   }
 
+  function processBilling(job) {
+
+  }
+
+  function goEdit(location_id, job_id) {
+    console.log("At the controller");
+    $state.go('jobsEdit', ({location_id:location_id, job_id:job_id}));
+  }
+
   function checkDates(jobDate) {
     var current_date = $filter('date')(new Date(), 'yyyy-MM-dd');
     if (jobDate < current_date) {
@@ -47,6 +58,10 @@ function OrganizationsController($stateParams,
     } else {
       return false
     }
+  }
+
+  function processBilling(job_id) {
+
   }
 
   function jobDelete(location_id, job_id) {

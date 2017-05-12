@@ -46,13 +46,25 @@
                   </div>
                 </td>
                 <td>
-                  <div ng-if="$ctrl.checkDates(job.date) === true">
-                      <a ui-sref"checkJob({job_id: job.id})>Process Billing</a>
-                  </div> 
-                  <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})">Edit</a>
-                  <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
-                    <button type="submit">delete</button>
-                  </form>
+
+                  <div ng-if="$ctrl.checkDates(job.date) === true && job.jobseeker_id != null">
+                      <form ng-submit="$ctrl.processBilling(job)">
+                        <button type="submit">payment</button>
+                      </form>
+                  </div>
+
+                  <div ng-if="$ctrl.checkDates(job.date) === false || job.jobseeker_id === null")>
+                    <form ng-submit="$ctrl.goEdit(job.location.id, job.id)">
+                      <button type="submit">edit</button>
+                    </form>
+                  </div>
+                  
+                  <div>
+                    <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
+                      <button type="submit">delete</button>
+                    </form>
+                  </div>
+
                 </td>
             </tr>
         </tbody>
