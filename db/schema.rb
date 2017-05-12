@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510011938) do
+ActiveRecord::Schema.define(version: 20170512063647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.integer "org_id"
+    t.integer "jobseeker_id"
+    t.float   "amount"
+  end
+
+  create_table "bills_tables", force: :cascade do |t|
+    t.integer "org_id"
+    t.integer "jobseeker_id"
+    t.float   "amount"
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string   "position_type"
@@ -43,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170510011938) do
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "photo_url"
   end
 
   create_table "positions", force: :cascade do |t|
