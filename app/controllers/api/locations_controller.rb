@@ -1,7 +1,9 @@
 class Api::LocationsController < ApplicationController
   # GET /api/locations
   def index
-    @locations = Location.all
+    # @user = current_user
+    user = current_user
+    @locations = Location.where(user_id: user.id)
 
     render json: @locations
   end
