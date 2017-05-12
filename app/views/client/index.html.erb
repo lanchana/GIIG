@@ -39,7 +39,7 @@
   <body ng-app="GiiG">
       <ul id="dropdown1" class="dropdown-content">
         <li><%= link_to 'Edit account', edit_user_registration_path, target: '_self' %></li>
-        <li><a ui-sref="locationsIndex">Locations</a></li>
+
         <!-- <li><a ui-sref="skillsIndex">Skills</a></li> -->
         <li class="divider"></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></li>
@@ -49,7 +49,13 @@
 
     <nav>
       <div class="nav-wrapper">
-        <div class="brand-logo"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ), root_path %></div>
+        <% if user_signed_in? %>
+        <div class="brand-logo"><a ui-sref="jobseeker"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a></div>
+        <% if current_user.org? %>
+          <div class="brand-logo"><a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a></div>
+        <% end %>
+        <% end %>
+        <!-- <a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a> -->
         <!-- <%= link_to 'GiiG', root_path, :class => 'brand-logo' %> -->
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
@@ -60,13 +66,12 @@
             <% if current_user.org? %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li ><a ui-sref="organization">Jobs</a></li>
-                <!-- <li ><a ui-sref="locationsIndex">Jobs</a></li> -->
-                <li ><a ui-sref="skillsIndex">Applicants</a></li>
+                <li><a ui-sref="locationsIndex">Locations</a></li>
               </ul>
               <% elsif %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a ui-sref="jobseeker">Jobs</a></li>
-                <li><a href="badges.html">Past Jobs</a></li>
+                <li><a href="applicant">Past Jobs</a></li>
               </ul>
             <% end %>
           <% else %>
@@ -80,12 +85,7 @@
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Edit account', edit_user_registration_path, target: '_self' %></li>
           <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></li>
-            <% if current_user.org? %>
 
-            <li><a ui-sref="locationsIndex">Locations</a></li>
-            <% elsif %>
-            <li><a ui-sref="skillsIndex">Skills</a></li>
-            <% end %>
           <% end %>
         </ul>
       </div>
