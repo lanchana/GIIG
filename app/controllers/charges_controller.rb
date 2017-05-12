@@ -1,11 +1,12 @@
 class ChargesController < ApplicationController
 	
 	def new
+		binding.pry
 	end
 
 	def create
-	  @amount = 500
-
+		bill = Bill.last
+		@amount = bill.amount
 	  customer = Stripe::Customer.create(
 	    email: params[:stripeEmail],
 	    source: params[:stripeToken]
