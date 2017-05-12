@@ -14,13 +14,12 @@ class Api::OrganizationsController < ApplicationController
   def show
     amount = params[:id]
     @bill = Bill.new(org_id: current_user.id, jobseeker_id: 0, amount: amount.to_i) 
+
     if @bill.save
-            redirect_to charges_new_path
-            binding.pry
-            render json: @bill, status: :created
-        else
-            render json: @bill.errors, status: :unprocessable_entity
-        end
+      redirect_to new_charge_path
+    else
+      render json: @bill.errors, status: :unprocessable_entity
+    end
     # @job = Job.find(params[:id])
     # @user = User.find(@job.user_id)
     
