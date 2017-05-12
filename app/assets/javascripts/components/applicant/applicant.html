@@ -5,16 +5,25 @@
 <div class="container">
 
 <!-- <img ng-src="{{ $ctrl.jobseeker.photo_url }}" style="height: 200px; width: 200px;" alt=""> -->
-{{ $ctrl.jobseeker.email }}
-<h3> {{ $ctrl.jobseeker.full_name }} </h3>
-<h3> {{ $ctrl.job.position_type }} </h3>
-<h3> {{ $ctrl.job.position }} </h3>
+<div class="applicant-content" >
+  <div class="applicant-name">
+    {{ $ctrl.jobseeker.full_name }}
+  </div>
+  <div class="applicant-position text-capitalize" >
+   {{ $ctrl.job.position_type }}
+  </div>
+  <div class="applicant-dateapplied">
+    {{ $ctrl.jobseeker.updated_at | date }}
+  </div>
+</div>
+
 <!-- <h3> {{ $ctrl.job.location.name }} </h3> -->
-<h3> {{ $ctrl.job.date | date }}</h3>
 
 <br>
+<br>
 <div class="">
-  <span>Experience</span>
+  <span style="font-size: 24px; font-weight: semi-bold;">Experience</span>
+  <br>
 
 <!-- <table>
   <thead>
@@ -39,19 +48,13 @@
     <tbody>
     </tbody>
 </table> -->
+<br>
 <ul class="collapsible" data-collapsible="accordion">
-   <li>
-     <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+   <li ng-repeat='job in $ctrl.jobs'>
+     <div class="text-capitalize collapsible-header "><i class="material-icons">filter_drama</i><div class="text-capitalize">{{ job.position_type }}</div></div>
+     <div class="collapsible-body"><span>{{ job.hourly_wage }}</span></div>
    </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
+
  </ul>
 </div>
 </div>
