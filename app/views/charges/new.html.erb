@@ -1,18 +1,25 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: <%= @amountShow %> </span>
-    </label>
-  </article>
+<div class="container">
+<div class= "col-md-12 text-center" style="margin: 5em 0;">
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key = "<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description = "A month's subscription"
-          data-amount= @amountShow
-          data-locale= "auto"></script>
-<% end %>
+
+    <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span style="font-size: 2em;">Amount to be paid: <%= @amountShow %> </span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key = "<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description = "A month's subscription"
+            data-amount= @amountShow
+            data-locale= "auto">
+    </script>
+    <% end %>
+  </div>
+</div>
