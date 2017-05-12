@@ -291,7 +291,10 @@ thead {
   width: 50%;
   font-size: 10px;
   display: flex;
+  border-radius: 2px;
+  padding: 8px;
   justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .location-content {
   width: 50%;
