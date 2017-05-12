@@ -24,7 +24,7 @@ function LocationsEditController($stateParams, $state, locationsService) {
 
   locationsService.getLocation($stateParams.id).then(function(response) {
     vm.location = response.data;
-    // console.log(vm.location);
+    console.log(vm.location);
   });
 
   function saveLocation() {

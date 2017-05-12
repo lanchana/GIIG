@@ -17,6 +17,7 @@ function LocationsNewController($state, $stateParams, locationsService) {
     zipcode: '',
     description: '',
     phone_num: '',
+    photo_url: ''
   };
 
   vm.address= [];

@@ -2,12 +2,13 @@ class Api::LocationsController < ApplicationController
   # GET /api/locations
   def index
     @locations = Location.all
-    
+
     render json: @locations
   end
 
   def create
     @location = Location.new(location_params)
+    # binding.pry
     if @location.save
       render json: @location, status: :created
     else
@@ -23,6 +24,7 @@ class Api::LocationsController < ApplicationController
 
   def update
     @location = Location.find(params[:id])
+    # binding.pry
     if @location.update(location_params)
         render json: @location, status: :ok
     else
@@ -40,7 +42,7 @@ class Api::LocationsController < ApplicationController
 
   def location_params
     params.require(:location)
-          .permit(:name, :business_type, :address, :city, :state, :zipcode, :description, :phone_num)
+          .permit(:name, :business_type, :address, :city, :state, :zipcode, :description, :phone_num, :photo_url)
           .merge(user_id: current_user.id)
   end
 end
