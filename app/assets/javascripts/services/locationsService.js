@@ -6,7 +6,7 @@ locationsService.$inject = ['$http'];
 
 function locationsService($http) {
  var service = {};
- 
+
  service.getLocations   = getLocations;
  service.getLocation    = getLocation;
  service.createLocation = createLocation;
@@ -25,6 +25,7 @@ function locationsService($http) {
  }
 
  function createLocation(location) {
+    console.log(location);
    return $http.post('/api/locations/', location);
  }
 
