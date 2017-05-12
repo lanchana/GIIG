@@ -79,6 +79,7 @@ function OrganizationsController($stateParams,
     console.log("salary | " + salary);
     organizationsService.processBill(salary).then(function(response) {
       console.log ("back from stripe!");
+      window.location.pathname = '/charges/new'
     });
 
   }

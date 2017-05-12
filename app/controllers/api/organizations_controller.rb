@@ -15,9 +15,7 @@ class Api::OrganizationsController < ApplicationController
     amount = params[:id]
     @bill = Bill.new(org_id: current_user.id, jobseeker_id: 0, amount: amount.to_i) 
     if @bill.save
-            redirect_to charges_new_path
-            binding.pry
-            render json: @bill, status: :created
+            render json: @bill
         else
             render json: @bill.errors, status: :unprocessable_entity
         end
