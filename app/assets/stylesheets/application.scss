@@ -203,6 +203,7 @@ thead {
 }
 .table-content {
   background-color: white !important;
+
 }
 
 .card-title {
@@ -325,5 +326,22 @@ thead {
   border: none !important;
   color: red;
   background: rgba(255, 255, 255, 0) !important;
+}
+
+
+.applicant-content {
+  padding-top: 55px;
+  padding-bottom: 100px;
+}
+.applicant-name {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+.applicant-position {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+.applicant-dateapplied {
+  font-size: 18px;
 }
 

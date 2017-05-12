@@ -37,4 +37,3 @@ function JobSeekersController($stateParams, $scope,
   //            });
 
 }
-
