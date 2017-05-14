@@ -3,10 +3,13 @@
 <p> -->
 
 <div class="container">
-  <div id="job-selector">
+
+
+  <div id="job-selector" class="col-md-12 col-sm-12 col-xs-12 text-right">
     <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
       <input class="btn btn_custom" value="Add a new job at {{$ctrl.selectedLocation.name}}" type="submit">
       <br>
+
 
       <select id="newLocation" ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
       </select>
@@ -23,8 +26,8 @@
       <!-- Dropdown Trigger -->
       <!-- <a style="float: right;"class='location-button btn' href='#' data-activates='locationdropdown'>New Job Post</a> -->
       </div>
-  <div class="table-position">
-    <h3>My Jobs</h3>
+
+    </div>
     <table class="responsive-table centered bordered">
         <thead>
             <tr>
@@ -36,7 +39,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="table-content" ng-repeat="job in $ctrl.jobs">
+            <tr class="table-content text-capitalize" ng-repeat="job in $ctrl.jobs">
                 <td>
                   {{job.position_type}}
                   <br>
@@ -45,7 +48,7 @@
                   {{job.location.city}}, {{job.location.state}}
                 </td>
                 <td><a ui-sref="applicant({jobseeker_id: job.jobseeker.id, location_id:job.location_id, job_id:job.id})">{{ job.jobseeker.full_name }}</a></td>
-                  <td>{{job.date}}</td>
+                  <td>{{job.date | date }}</td>
                 <td>
                   <div ng-if="job.jobseeker_id === null">
                     Empty
@@ -54,7 +57,8 @@
                     Filled
                   </div>
                 </td>
-        <td>
+
+                <td>
 
 
     <div ng-if="$ctrl.checkDates(job.date) === true && job.jobseeker_id != null">
@@ -82,6 +86,7 @@
       <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
         <button type="submit" class="delete-button"><i class="material-icons " >delete</i></button>
       </form> -->
+
 
                 </td>
             </tr>

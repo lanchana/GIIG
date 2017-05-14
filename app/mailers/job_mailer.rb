@@ -8,7 +8,7 @@ class JobMailer < ApplicationMailer
   def job_posting(job)
     @specific_job = job
     @specific_location = Location.find(job.location_id)
-   
+
     candidates = Skill.where(position_type: job.position_type)
     # binding.pry
     candidates.each do |candidate|
@@ -24,7 +24,7 @@ class JobMailer < ApplicationMailer
     # mail to: "hernquistdavid@gmail.com"
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
+  # Subject can be set in your I18n file wyes yesat config/locales/en.yml
   # with the following lookup:
   #
   #   en.job_mailer.job_accepted.subject
@@ -50,7 +50,7 @@ class JobMailer < ApplicationMailer
     @specific_location = Location.find(job.location_id)
 
     @org = User.find(@specific_location.user_id)
-   
+
     mail to: @org.email
   end
 end
