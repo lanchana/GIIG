@@ -36,26 +36,27 @@
 
 
         <% if user_signed_in? %>
-          <% if current_user.org? %>
-            <div class="brand-logo"><a href="/organization"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+          <% if current_user.org == false %>
+          <div class="brand-logo"><a href="/jobseeker"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+
           <% else %>
-              <div class="brand-logo"><a href="/jobseeker"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+              <div class="brand-logo"><a href="/organization"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+
           <% end %>
+          <% else %>
+            <div class="brand-logo"><a href="/"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+
       <% end %>
-      <!-- <a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a> -->
-      <!-- <%= link_to 'GiiG', root_path, :class => 'brand-logo' %> -->
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <% if user_signed_in? %>
           <li id="user-photo" style="
   margin-right: 20px;"><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= image_tag( current_user.avatar.url, style: 'height: 35px; width: 35px; border: 1px solid white;border-radius: 50%;' ) %><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
-        <% else %>
-        <ul class="right hide-on-med-and-down">
-        <li><%= link_to "Sign Up", new_user_registration_path, target: '_self' %></li>
-        <li><%= link_to "Log In", new_user_session_path, target: '_self' %></li>
+
+
         <% end %>
-      </ul>
+
       <ul class="side-nav" id="mobile-demo">
         <% if user_signed_in? %>
         <li><%= link_to 'Home', root_path %></li>

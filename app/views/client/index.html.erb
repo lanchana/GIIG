@@ -50,10 +50,12 @@
     <nav>
       <div class="nav-wrapper">
         <% if user_signed_in? %>
-        <div class="brand-logo"><a ui-sref="jobseeker"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a></div>
+
         <% if current_user.org? %>
           <div class="brand-logo"><a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a></div>
-        <% end %>
+        <% else %>
+         <div class="brand-logo"><a ui-sref="jobseeker"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a></div>
+         <% end %>
         <% end %>
 
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -95,7 +97,6 @@
     </div>
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-
       <ui-view></ui-view>
       <main>
 
