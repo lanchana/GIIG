@@ -36,6 +36,14 @@
 #### Deployed
 * Deployed On Heroku. Click [here](https://pure-reaches-61040.herokuapp.com/) to see.
 
+ If you want to log in a jobmaker you can use
+        email:        hernquistdavid@gmail.com
+        password: password
+
+        Or a jobseeker
+        email:        hernquist@yahoo.com
+        password: password
+
 #### Team
 * Lanchana Shivananda
 * David Hernquist
