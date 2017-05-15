@@ -28,10 +28,10 @@
 #### Wireframe
 * ##### GiiGmakers (also called organizations):
 
-    ![alt tag](https://files.slack.com/files-tmb/T0351JZQ0-F59BN55JM-0173a95289/organization_wireframes_720.png)
-* ##### GiiGseekers (also called jobseekers):
+    ![alt tag](https://raw.githubusercontent.com/lanchana/GIIG/master/wireframes/Organization_wireframes.png)
+* ##### GiiGseekers (also called jobseekers)
 
-    ![alt tag](https://files.slack.com/files-tmb/T0351JZQ0-F59R00G91-91ea39a5ac/jobseeker_wireframes_720.png)
+    ![alt tag](https://raw.githubusercontent.com/lanchana/GIIG/master/wireframes/JobSeeker_wireframes.png)
 
 #### Deployed
 * Deployed On Heroku. Click [here](https://pure-reaches-61040.herokuapp.com/) to see.
