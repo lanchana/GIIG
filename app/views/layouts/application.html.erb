@@ -36,14 +36,13 @@
 
 
         <% if user_signed_in? %>
-          <% if current_user.org? %>
-            <div class="brand-logo"><a href="/organization"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+          <% if current_user.org == false %>
+          <div class="brand-logo"><a href="/jobseeker"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+
           <% else %>
-              <div class="brand-logo"><a href="/jobseeker"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
+              <div class="brand-logo"><a href="/organization"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
           <% end %>
       <% end %>
-      <!-- <a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "50%" ) %></a> -->
-      <!-- <%= link_to 'GiiG', root_path, :class => 'brand-logo' %> -->
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <% if user_signed_in? %>
