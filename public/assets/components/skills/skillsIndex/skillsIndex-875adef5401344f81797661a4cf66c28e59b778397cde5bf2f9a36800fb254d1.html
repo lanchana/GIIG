@@ -1,0 +1,38 @@
+<div class="container">
+
+
+  <div id="job-selector" class="col-md-12 col-sm-12 col-xs-12 text-right">
+<div class="table-position">
+    <div style="width: 100%; display: flex;">
+      <div style="width: 100%;" class="text-center">
+        <h3>My Skills</h3>
+      </div>
+
+</div>
+    <table class="responsive-table centered bordered">
+<!-- <table> -->
+ <thead>
+   <tr>
+     <th>Type</th>
+     <!-- <th>Rating</th> -->
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <tr ng-repeat="skill in $ctrl.skills">
+     <td class="text-capitalize">{{ skill.position_type }}</td>
+     <!-- <td>{{ skill.rating }}</td> -->
+     <td><a ui-sref="skillsEdit({id: skill.id })"><i class="material-icons" style="color:green;">mode_edit</i></a></td>
+
+     <!-- <td><a ui-sref="notesShow({id: note.id})">Show</a></td>
+     <td><a ui-sref="notesEdit({id: note.id})">Edit</a></td> -->
+     <td><form ng-submit="$ctrl.skillDelete(skill.id)">
+      <button type="submit" class="delete-button"><i class="material-icons">delete</i></button>
+     </form></td>
+   </tr>
+ </tbody>
+</table>
+</div>
+
+<a ui-sref="skillsNew" class="btn initialskill-custom-btn ">Create a Skill</a>
