@@ -1,20 +1,42 @@
-<h1>Job Edit</h1>
-<form>
-    <label for="position">Position
-    <input type="text" name="position" ng-model="$ctrl.job.position_type"></label><br/>
-    <label for="description">Description
-    <input type="text" name="description" ng-model="$ctrl.job.description"></label><br/>
-    <label for="start_time">Start time
-    <input type="text" name="start_time" ng-model="$ctrl.job.start_time"></label><br/>
-    <label for="end_time">End time
-    <input type="text" name="end_time" ng-model="$ctrl.job.end_time"></label><br/>
-    <label for="date">Date
-    <input type="text" name="date" ng-model="$ctrl.job.date"></label><br/>
-    <label for="hourly_wage">Hourly wage
-    <input type="text" name="hourly_wage" ng-model="$ctrl.job.hourly_wage"></label><br/>
-    <label for="actual_start_time">Actual start time
-    <input type="text" name="actual_start_time" ng-model="$ctrl.job.actual_start_time"></label><br/>
-    <label for="actual_end_time">Actual end time
-    <input type="text" name="actual_end_time" ng-model="$ctrl.job.actual_end_time"></label><br/>
-    <button ng-click="$ctrl.saveJob()">Update Job</button>
-</form>
+
+
+
+
+<div class='container'>
+
+
+  <div class='row'>
+  <div class="col-md-6 col-sm-6 col-xs-6 job-show z-depth-4 white jobsnew-padding">
+  <div class="col-md-12 col-sm-12 col-xs-12 text-center text-uppercase initial-skill-tittle">
+          update job
+          </div>
+    <!-- <div class='span12'> -->
+      <!-- <div class='box-container'> -->
+        <!-- <div class='new_business'> -->
+          <form class="jobsnew-margin">
+            <div class="override-material ">
+            <div>
+              <label >Positions</label>
+              <select id="newPosition" ng-model="$ctrl.job.position_type" >
+                <option ng-repeat="position in $ctrl.positions" value="{{position.name}}">{{position.name}}</option>
+                  <br>
+              </select>
+            </div>
+              <label for="start_time">Start time
+              <input type="time" name="start_time" ng-model="$ctrl.job.start_time"></label><br/>
+              <label for="end_time">End time
+              <input type="time" name="end_time" ng-model="$ctrl.job.end_time"></label><br/>
+              <label for="date">Date
+              <input type="date"  ng-model="$ctrl.job.date"></label><br/>
+              <label for="hourly_wage">Hourly wage
+              <input type="text" name="hourly_wage" ng-model="$ctrl.job.hourly_wage"></label><br/>
+              <div class=" center">
+              <button ng-click="$ctrl.saveJob()" class="btn custom_btn ">Update Job</button>
+              </div>
+            </div>
+          </form>
+</div>
+</div>
+</div>
+
+

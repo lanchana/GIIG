@@ -65,13 +65,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super(resource)
   end
 
-  def after_update_path_for(resource)
-    if resource.org?
-      '/organization'
-    elsif
-      '/jobseeker'
+  def after_sign_in_path_for(resource)
+            if resource.org == true
+              "/organization"
+            elsif resource.phone_num.to_s.empty?
+              "/users/edit"
+            else
+               "/jobseeker"
+            end
     end
-  end
 
    protected
 

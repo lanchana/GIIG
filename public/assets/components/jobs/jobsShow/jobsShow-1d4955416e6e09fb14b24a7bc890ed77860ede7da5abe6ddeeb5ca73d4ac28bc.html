@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="jobshow-content">
+    <div class="back-button">
+      <a ui-sref="jobseeker"><i class="material-icons left">keyboard_arrow_left</i>Back to Jobs</a>
+    </div>
+    <br>
+    <div class="job-name text-capitalize">
+      {{$ctrl.job.position_type }}
+    </div>
+  </div>
+  <div class="pic-img">
+    <img class="pic-content" ng-src="http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg">
+  </div>
+  <div class="job-show z-depth-2">
+    <div class="job-content">
+
+
+      <div style="font-size: 24px; padding-bottom: 10px;"class="">
+        {{$ctrl.location.name}}
+      </div>
+      <div style="font-size: 16px; padding-bottom: 5px;" class="">
+      {{$ctrl.location.address}}
+      </div>
+      <div style="font-size: 14px; padding-bottom: 5px;" class="text-capitalize">
+      {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>{{$ctrl.location.zipcode}}
+      </div>
+      <div class="">
+        _________
+      </div>
+      <br>
+      <div style="width: 30%; display: flex;">
+        <div style="width: 100%;">
+          When:
+        </div>
+        <div style="width: 100%;">
+      {{$ctrl.job.date | date }}
+        </div>
+
+      </div>
+
+      <div style="width: 30%; display: flex;">
+
+          <div style="width: 100%;">
+            Time:
+          </div>
+          <div style="width: 100%;">
+            {{$ctrl.job.start_time | date: 'EEE, MMM d @ ha' }} - {{$ctrl.job.end_time | date: ' ha' }}
+          </div>
+      </div>
+      <div style="width: 30%; display: flex;">
+        <div style="width: 100%;">
+          Pay rate:
+        </div>
+        <div style="width: 100%;">
+          {{$ctrl.job.hourly_wage | currency}} / hr
+        </div>
+      
+      </div>
+      <div class="" ng-hide="{{$ctrl.job.user_id}}">
+          <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" >
+       <button type="submit" class="btn waves-effect waves-light ">accept this job</button>
+       </form>
+      </div>
+    </div>
+
+    <div class="map">
+      <article class="">
+      <!-- zoom='$ctrl.map.zoom' -->
+          <div ng-if="$ctrl.map" class="">
+              <ui-gmap-google-map center='$ctrl.map.center'  draggable="true" options="options">
+                  <ui-gmap-marker coords="$ctrl.marker.coords" idKey="$ctrl.marker.id"></ui-gmap-marker>
+              </ui-gmap-google-map>
+          </div>
+      </article>
+    </div>
+    <!-- <div class="">
+      <p class="text-capitalize">job description</p>
+              <div class="">
+              {{$ctrl.job.description}}
+              </div>
+    </div> -->
+  </div>
+    <!-- <div class=" job-show ">
+    <header class="col-md-12 col-sm-12 col-xs-12 text-size">
+        <div class="col-md-6 col-sm-6 col-xs-6 ">
+            <div class="col-md-12 col-sm-12 col-xs-12">Host/Hostssss</div>
+            <div class="col-md-12 col-sm-12 col-xs-12">{{$ctrl.location.name}}</div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            {{$ctrl.location.address}}
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 text-capitalize">
+            {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-capitalize text-right">
+                {{$ctrl.user.full_name}}
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                {{$ctrl.user.phone_num}}
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr class="m12 s12 xs12">
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 ">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-capitalize">
+
+            pay rate: {{$ctrl.job.hourly_wage}}
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            date: {{$ctrl.job.date}}
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                time: {{$ctrl.job.actual_start_time}} - {{$ctrl.job.actual_end_time}}
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 text-right" ng-hide="{{$ctrl.job.user_id}}">
+
+            <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" ng-hide="$ctrl.user.org">
+         <button type="submit" class="btn waves-effect waves-light ">accept this job</button>
+         </form>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 center">
+            <hr class="m12 s12 xs12 center">
+        </div>
+
+
+    </header>
+    <article class="col-md-12 col-sm-12 col-xs-12">
+        <div ng-if="$ctrl.map" class="col-md-12 col-sm-12 col-xs-12">
+            <ui-gmap-google-map center='$ctrl.map.center' zoom='$ctrl.map.zoom' style=" width:100%; height: 27em; display: block;" draggable="true" options="options">
+                <ui-gmap-marker coords="$ctrl.marker.coords" idKey="$ctrl.marker.id"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+    </article>
+    <article class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <p class="text-capitalize jobshow-desc-tittle">job description</p>
+        </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 jobshow-desc">
+                {{$ctrl.job.description}}
+</div>
+    </article>
+
+    </div> -->
+</div>
+<!-- <div class="container">
+  <div class="box">
+    hjwhh
+
+
+  </div>
+
+
+
+</div> -->
+
+
+
+
+
+<!-- <h1>Jobs show</h1> -->
