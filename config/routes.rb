@@ -27,7 +27,10 @@ Rails.application.routes.draw do
 
   end
 
-  root 'client#index'
+  # root 'client#index'
+  # get '*path', to: 'client#index'
+
+  root 'home#index'
   get '*path', to: 'client#index'
 
 
