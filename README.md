@@ -9,11 +9,11 @@
 
     * GiiGseekers and GiiGmakers. The latter can create locations and post jobs for those locations. They can edit and delete jobs and make payments on those jobs after they are completed.
 
-    * GiiGseekers can add skills so they can have access to more jobs. The can respond to jobs and look at them using google maps.
+    * GiiGseekers can add skills so they can have access to more jobs. They can respond to jobs and look at them using google maps.
 
 #### Technologies and API's
 * Ruby on Rails Backend
-* AngulatJs Frontend
+* AngularJs Frontend
 * Devise user authentication
 * Facebook omniauth login with devise
 * Paperclip to upload user profile pics and Amazon s3 to store the photo.

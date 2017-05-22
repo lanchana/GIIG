@@ -18,7 +18,8 @@
                 </div>
                 <div class="time-content">
                   <!-- <i class="material-icons left">schedule</i> -->
-                  {{ job.start_time | date: 'EEE, MMM d @ ha' }} - {{ job.end_time | date: ' ha' }}
+                  {{ job.date | date: 'EEE, MMM d' }} <br>
+                  {{ job.start_time | date: ' ha' }} - {{ job.end_time | date: ' ha' }}
                 </div>
               </div>
               </a>
