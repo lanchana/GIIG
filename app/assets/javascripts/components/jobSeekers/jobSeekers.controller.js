@@ -14,7 +14,6 @@ function JobSeekersController($stateParams, $scope,
   vm.jobs = [];
   vm.acceptJob  = acceptJob;
 
-
   activate();
 
   function activate() {
@@ -27,7 +26,6 @@ function JobSeekersController($stateParams, $scope,
 
   function acceptJob(job_id) {
     jobseekersService.updateJob(job_id);
-
   }
   //   console.log(“delete”+ job_id);
   //   jobsService.deleteJob(location_id, job_id)

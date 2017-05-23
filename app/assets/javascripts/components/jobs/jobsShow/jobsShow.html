@@ -8,9 +8,20 @@
       {{$ctrl.job.position_type }}
     </div>
   </div>
-  <div class="pic-img">
-    <img class="pic-content" ng-src="http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg">
-  </div>
+
+  <script>
+                  $(document).ready(function()
+                  {
+                    $(".pic-img").on("error", function(){
+                      $(this).attr('src', 'http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg');
+                    });
+                  });
+                  </script>
+
+  <!--<div class="pic-img">-->
+     <img class='pic-img' src={{$ctrl.location.photo_url}} alt="restaurant image">
+    
+  <!--</div>-->
   <div class="job-show z-depth-2">
     <div class="job-content">
 
@@ -30,10 +41,10 @@
       <br>
       <div style="width: 30%; display: flex;">
         <div style="width: 100%;">
-          When:
+          When: 
         </div>
         <div style="width: 100%;">
-      {{$ctrl.job.date | date }}
+          {{$ctrl.job.date | date }}
         </div>
 
       </div>
@@ -43,8 +54,8 @@
           <div style="width: 100%;">
             Time:
           </div>
-          <div style="width: 100%;">
-            {{$ctrl.job.start_time | date: 'EEE, MMM d @ ha' }} - {{$ctrl.job.end_time | date: ' ha' }}
+          <div style="width: 100%; ">
+            {{$ctrl.job.start_time | date: 'ha' }} - {{$ctrl.job.end_time | date: ' ha'}}
           </div>
       </div>
       <div style="width: 30%; display: flex;">

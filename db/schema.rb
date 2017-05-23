@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20170512063647) do
     t.float   "amount"
   end
 
+  create_table "bills_tables", force: :cascade do |t|
+    t.integer "org_id"
+    t.integer "jobseeker_id"
+    t.float   "amount"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string   "position_type"
     t.text     "description"
@@ -89,7 +95,6 @@ ActiveRecord::Schema.define(version: 20170512063647) do
     t.datetime "updated_at",                          null: false
     t.boolean  "org"
     t.string   "photo_url"
-    t.string   "avatar"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

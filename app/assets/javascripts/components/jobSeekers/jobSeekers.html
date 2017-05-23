@@ -9,7 +9,15 @@
           <div class="card raised">
             <div class="card-image">
               <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
-                <img ng-src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2012/08/restaurant.jpeg">
+                <script>
+                  $(document).ready(function()
+                  {
+                    $(".backup_picture").on("error", function(){
+                      $(this).attr('src', 'http://s3.amazonaws.com/digitaltrends-uploads-prod/2012/08/restaurant.jpeg');
+                    });
+                  });
+                  </script>
+                <img class='backup_picture' src={{job.location.photo_url}} alt="restaurant image">
               </a>
               <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
               <div class="card-title">
@@ -18,7 +26,8 @@
                 </div>
                 <div class="time-content">
                   <!-- <i class="material-icons left">schedule</i> -->
-                  {{ job.start_time | date: 'EEE, MMM d @ ha' }} - {{ job.end_time | date: ' ha' }}
+                  {{ job.date | date: 'EEE, MMM d' }} <br>
+                  {{ job.start_time | date: ' ha' }} - {{ job.end_time | date: ' ha' }}
                 </div>
               </div>
               </a>
