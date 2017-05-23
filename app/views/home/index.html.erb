@@ -33,7 +33,7 @@
       </div>
       <div class="row center">
         <!-- <a id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a> -->
-        <%= link_to "Get Started", new_user_session_path, :class => 'btn-large waves-effect waves-light', target: '_self' %>
+        <%= link_to "Get Started", new_user_session_path, :style=>'text-decoration: none;', :class => 'btn-large waves-effect waves-light no-underline', target: '_self' %>
       </div>
       <br><br>
 
@@ -52,18 +52,18 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Job Seekers</h5>
+            <h5 class="center">Organizations</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">We did most of the heavy lifting for you to provide a steady flow on job seekers looking to pick up shifts. You can create locations and post jobs for those locations. They can edit and delete jobs and make payments on those jobs after they are completed.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Organizations</h5>
+            <h5 class="center">Job Seekers</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Job seekers first must register, then they can add skills so they can have access to more jobs. They can respond to jobs and look at them using google maps.</p>
           </div>
         </div>
 
@@ -72,7 +72,7 @@
             <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">Easy to work with</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">When a job post is made, the notice is emailed out to all qualified job seekers. The first job seeker who responds gets the job and both parties are notified.</p>
           </div>
         </div>
       </div>
@@ -85,8 +85,8 @@
     </div>
   </div>
 
-  <footer class="page-footer orange">
-    <div class="container">
+  <footer class="page-footer">
+    <!-- <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
@@ -113,10 +113,10 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      <div class="container center">
+      © 2017 GiiG
       </div>
     </div>
   </footer>
