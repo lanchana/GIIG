@@ -55,7 +55,7 @@ main {
 }
 
 #header-content {
-  padding-top: 100px;
+  padding-top: 3em;
   color: white;
   font-size: 4em;
 
@@ -482,5 +482,9 @@ thead {
 
   .pic-img {
     height: 200px;
+  }
+
+  #header-content {
+    font-size: 2em;
   }
 }
