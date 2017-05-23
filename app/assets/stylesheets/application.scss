@@ -175,8 +175,9 @@ label {
   height: 100%;
 
 }
-.job-show {
-    float: none !important;
+
+.initial-skill {
+  float: none !important;
     margin: 0 auto !important;
     position: relative;
     background-color: white !important;
@@ -185,6 +186,22 @@ label {
     width: 85%;
     height: auto;
 }
+
+.job-show {
+    /*float: none !important;
+    margin: 0 auto !important;
+    position: relative;
+    background-color: white !important;*/
+    top: -50px;
+    @extend .initial-skill;
+
+    /*border-radius: 2px !important;
+    width: 85%;
+    height: auto;*/
+}
+
+
+
 .job-content {
   margin: 0 auto;
   width: 90%;
@@ -385,6 +402,7 @@ thead {
   margin-bottom: 2em !important;
   @extend .custom_btn;
 }
+
 .delete-button {
   border: none !important;
   color: red;
@@ -431,5 +449,9 @@ thead {
 
   .card-title {
     font-size: 1em !important;
+  }
+
+  .pic-img {
+    height: 200px;
   }
 }
