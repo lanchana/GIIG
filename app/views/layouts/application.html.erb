@@ -36,7 +36,7 @@
 
 
         <% if user_signed_in? %>
-          <% if current_user.org == false %>
+          <% if current_user.org == nil %>
           <div class="brand-logo"><a href="/jobseeker"><%=image_tag("giig-dark@2x.png", :width => "50%")%></a></div>
 
           <% else %>
