@@ -41,12 +41,19 @@ main {
 
 #index-banner {
   background: url("http://www.hrc.org/files/images/meta_images/Topic-Workplace-Share1200.png") no-repeat center center;
+  // background-image: rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  height: 80vh;
+}
+.overlay {
+  background:rgba(0, 0, 0, 0.4) no-repeat center center;
   background-size: cover;
   height: 80vh;
 }
 
 #header-content {
-  padding-top: 100px;
+  padding-top: 120px;
+  color: white;
 }
 
 
