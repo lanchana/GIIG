@@ -8,9 +8,20 @@
       {{$ctrl.job.position_type }}
     </div>
   </div>
-  <div class="pic-img">
-    <img class="pic-content" ng-src="http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg">
-  </div>
+
+  <script>
+                  $(document).ready(function()
+                  {
+                    $(".pic-img").on("error", function(){
+                      $(this).attr('src', 'http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg');
+                    });
+                  });
+                  </script>
+
+  <!--<div class="pic-img">-->
+     <img class='pic-img' src={{$ctrl.location.photo_url}} alt="restaurant image">
+    
+  <!--</div>-->
   <div class="job-show z-depth-2">
     <div class="job-content">
 
