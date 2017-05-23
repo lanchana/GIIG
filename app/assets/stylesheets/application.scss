@@ -44,7 +44,6 @@ main {
 #dropdown1 {
   top: 55px !important;
   width: 140px !important;
-
 }
 
 nav{
@@ -181,7 +180,7 @@ label {
     margin: 0 auto !important;
     position: relative;
     background-color: white !important;
-    top: -50px;
+    /*top: -50px;*/
     border-radius: 2px !important;
     width: 85%;
     height: auto;
@@ -410,4 +409,23 @@ thead {
 
 .loc_index {
   margin: 2em;
+}
+
+.nav-jobs {
+  padding-left: 30px !important;
+}
+
+.navbar-fixed-top {
+  top: 0;
+  position: fixed;
+}
+
+.nav-space {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 415px) {
+  .initial-skill-tittle {
+    font-size: 1.3em;
+  }
 }
