@@ -1,8 +1,8 @@
 <div class="container">
   <div class="jobshow-content">
-    <div class="back-button">
+    <!-- <div class="back-button">
       <a ui-sref="jobseeker"><i class="material-icons left">keyboard_arrow_left</i>Back to Jobs</a>
-    </div>
+    </div> -->
     <br>
     <div class="job-name text-capitalize">
       {{$ctrl.job.position_type }}
@@ -54,7 +54,7 @@
         <div style="width: 100%;">
           {{$ctrl.job.hourly_wage | currency}} / hr
         </div>
-      
+
       </div>
       <div class="" ng-hide="{{$ctrl.job.user_id}}">
           <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" >
