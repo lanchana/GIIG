@@ -31,8 +31,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /*font-family: Source Sans Pro !important;*/
-  font-family: ‘Source Sans Pro’, sans-serif;
+  // font-family: ‘Source Sans Pro’, sans-serif;
 }
 
 main {
@@ -52,8 +51,14 @@ main {
 }
 
 #header-content {
-  padding-top: 120px;
+  padding-top: 100px;
   color: white;
+  font-size: 4em;
+
+}
+
+#des-content {
+  font-size: 1.64em;
 }
 
 
