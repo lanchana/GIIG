@@ -471,6 +471,11 @@ thead {
   margin-top: 50px;
 }
 
+.card .card-image img {
+  min-height: 200px;
+  max-height: 200px;
+}
+
 @media screen and (max-width: 415px) {
   .initial-skill-tittle {
     font-size: 1.3em;
@@ -487,4 +492,6 @@ thead {
   #header-content {
     font-size: 2em;
   }
+
+
 }
