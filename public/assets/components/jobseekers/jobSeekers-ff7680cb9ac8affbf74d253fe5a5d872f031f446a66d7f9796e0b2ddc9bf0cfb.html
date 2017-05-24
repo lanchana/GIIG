@@ -1,0 +1,55 @@
+
+<div class="container">
+  <hr>
+
+    <div class="row">
+<!-- Card -->
+
+        <div ng-repeat='job in $ctrl.jobs' class="col-md-4 col-sm-6 col-xs-12">
+          <div class="card raised">
+            <div class="card-image">
+              <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+                <script>
+                  $(document).ready(function()
+                  {
+                    $(".backup_picture").on("error", function(){
+                      $(this).attr('src', 'http://s3.amazonaws.com/digitaltrends-uploads-prod/2012/08/restaurant.jpeg');
+                    });
+                  });
+                  </script>
+                <img class='backup_picture' src={{job.location.photo_url}} alt="restaurant image">
+              </a>
+              <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+              <div class="card-title">
+                <div class="title-content text-capitalize">
+                  <span>{{ job.position_type }}</span>
+                </div>
+                <div class="time-content">
+                  <!-- <i class="material-icons left">schedule</i> -->
+                  {{ job.date | date: 'EEE, MMM d' }} <br>
+                  {{ job.start_time | date: ' ha' }} - {{ job.end_time | date: ' ha' }}
+                </div>
+              </div>
+              </a>
+            </div>
+            <div class="card-content">
+              <div class="location-content">
+                <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
+                <p>{{ job.location.name }}</a><br>{{job.location.city}}, {{job.location.state}}</p>
+              </div>
+              <div class="payment-content">
+                  <i class="material-icons left">attach_money</i>
+                  {{ job.hourly_wage }}/hr
+              </div>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
+
+        </div>
+
+
+      </div>
+
+</div>

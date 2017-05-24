@@ -2,10 +2,10 @@
 <div class="container">
   <hr>
 
-    <div class="row">
+    <div class="col-md-12">
 <!-- Card -->
 
-        <div ng-repeat='job in $ctrl.jobs' class="col s12 m4">
+        <div ng-repeat='job in $ctrl.jobs' class="col-md-4 col-sm-6 col-xs-12">
           <div class="card raised">
             <div class="card-image">
               <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
@@ -17,7 +17,7 @@
                     });
                   });
                   </script>
-                <img class='backup_picture' src={{job.location.photo_url}} alt="restaurant image">
+                <img class='backup_picture responsive-img' src={{job.location.photo_url}} alt="restaurant image">
               </a>
               <a ui-sref="jobsShow({location_id: job.location.id, job_id: job.id})">
               <div class="card-title">

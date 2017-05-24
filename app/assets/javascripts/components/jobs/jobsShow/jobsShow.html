@@ -1,73 +1,46 @@
 <div class="container">
   <div class="jobshow-content">
-    <div class="back-button">
+    <!-- <div class="back-button">
       <a ui-sref="jobseeker"><i class="material-icons left">keyboard_arrow_left</i>Back to Jobs</a>
-    </div>
+    </div> -->
     <br>
     <div class="job-name text-capitalize">
       {{$ctrl.job.position_type }}
     </div>
   </div>
-
-  <script>
-                  $(document).ready(function()
-                  {
-                    $(".pic-img").on("error", function(){
-                      $(this).attr('src', 'http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg');
-                    });
-                  });
-                  </script>
-
-  <!--<div class="pic-img">-->
-     <img class='pic-img' src={{$ctrl.location.photo_url}} alt="restaurant image">
-    
-  <!--</div>-->
+  <div class="pic-img responsive-img">
+    <img class="pic-content" ng-src="http://svcdn.simpleviewinc.com/v3/cache/www_exploreboone_com/C2D81BE450D9BCA1FE1F6BD8ADA9BF1A.jpg">
+  </div>
   <div class="job-show z-depth-2">
     <div class="job-content">
 
 
-      <div style="font-size: 24px; padding-bottom: 10px;"class="">
+      <div style="font-size: 24px; padding-bottom: 10px;" class="col-md-12 col-sm-12 col-xs-12">
         {{$ctrl.location.name}}
       </div>
-      <div style="font-size: 16px; padding-bottom: 5px;" class="">
+      <div style="font-size: 16px; padding-bottom: 5px;" class="col-md-12 col-sm-12 col-xs-12">
       {{$ctrl.location.address}}
       </div>
-      <div style="font-size: 14px; padding-bottom: 5px;" class="text-capitalize">
+      <div style="font-size: 14px; padding-bottom: 5px;" class="text-capitalize col-md-12">
       {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>{{$ctrl.location.zipcode}}
       </div>
-      <div class="">
+      <div class="col-md-12 col-sm-12 col-xs-12" >
         _________
       </div>
       <br>
-      <div style="width: 30%; display: flex;">
-        <div style="width: 100%;">
-          When: 
-        </div>
-        <div style="width: 100%;">
-          {{$ctrl.job.date | date }}
-        </div>
-
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          When:  {{$ctrl.job.date | date }}
       </div>
 
-      <div style="width: 30%; display: flex;">
-
-          <div style="width: 100%;">
+      <div class="col-md-12 col-sm-12 col-xs-12">
             Time:
-          </div>
-          <div style="width: 100%; ">
-            {{$ctrl.job.start_time | date: 'ha' }} - {{$ctrl.job.end_time | date: ' ha'}}
-          </div>
+            {{$ctrl.job.start_time | date: 'EEE, MMM d @ ha' }} - {{$ctrl.job.end_time | date: ' ha' }}
       </div>
-      <div style="width: 30%; display: flex;">
-        <div style="width: 100%;">
+      <div class="col-md-12 col-sm-12 col-xs-12">
           Pay rate:
-        </div>
-        <div style="width: 100%;">
           {{$ctrl.job.hourly_wage | currency}} / hr
-        </div>
-      
       </div>
-      <div class="" ng-hide="{{$ctrl.job.user_id}}">
+      <div ng-hide="{{$ctrl.job.user_id}}" >
           <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" >
        <button type="submit" class="btn waves-effect waves-light ">accept this job</button>
        </form>

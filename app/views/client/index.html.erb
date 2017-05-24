@@ -44,11 +44,11 @@
         <li class="divider"></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></li>
       </ul>
-      <div class="navbar-fixed">
+      <div class="">
 
 
-    <nav>
-      <div class="nav-wrapper">
+    <nav class="navbar navbar-fixed-top">
+      <div class="nav nav-wrapper">
         <% if user_signed_in? %>
 
         <% if current_user.org? %>
@@ -71,8 +71,8 @@
               </ul>
               <% elsif %>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a ui-sref="jobseeker">Jobs</a></li>
-                <li><a href="applicant">Past Jobs</a></li>
+                <li><a ui-sref="jobseeker" class="nav-jobs">Jobs</a></li>
+                <!-- <li><a href="applicant">Past Jobs</a></li> -->
                 <li><a href="initialSkills">Skills</a></li>
 
               </ul>
@@ -94,6 +94,8 @@
       </div>
     </nav>
 
+    </div>
+    <div class="nav-space">
     </div>
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->

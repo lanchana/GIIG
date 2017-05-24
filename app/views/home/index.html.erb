@@ -1,0 +1,131 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Goolgle fonts -->
+  <link href=“https://fonts.googleapis.com/css?family=Source+Sans+Pro” rel=“stylesheet”>
+  <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+</head>
+<body>
+
+  <div class="section no-pad-bot no-pad-top" id="index-banner">
+    <div class="overlay">
+
+
+    <div class="container">
+      <br><br>
+      <h1 id="header-content" class="header center">Helping workers find work faster</h1>
+      <div class="row center">
+        <h5 id="des-content" class="header col s12 light white-text">A modern staffing aid for restaurants in the style of Uber</h5>
+      </div>
+      <div class="row center">
+        <!-- <a id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a> -->
+        <%= link_to "Get Started", new_user_session_path, :style=>'text-decoration: none;', :class => 'btn-large waves-effect waves-light no-underline', target: '_self' %>
+      </div>
+      <br><br>
+
+    </div>
+<!-- //Overlay end -->
+  </div>
+
+  </div>
+
+
+  <div style="width: 80%;" class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Organizations</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a steady flow on job seekers looking to pick up shifts. You can create locations and post jobs for those locations. They can edit and delete jobs and make payments on those jobs after they are completed.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Job Seekers</h5>
+
+            <p class="light">Job seekers first must register, then they can add skills so they can have access to more jobs. They can respond to jobs and look at them using google maps.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">When a job post is made, the notice is emailed out to all qualified job seekers. The first job seeker who responds gets the job and both parties are notified.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+    <div class="footer-copyright">
+      <div class="container center">
+      © 2017 GiiG
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
