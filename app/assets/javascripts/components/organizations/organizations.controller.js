@@ -61,7 +61,7 @@ function OrganizationsController($stateParams,
   function processBilling(job) {
     // later this will be actual time
     var hours = findDifferenceInTime(job);
-    var salary = hours * job.hourly_wage;
+    var salary = hours * job.hourly_wage * 100;
     organizationsService.processBill(salary).then(function(response) {
       window.location.pathname = '/charges/new'
     });

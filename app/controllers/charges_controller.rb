@@ -4,14 +4,14 @@ class ChargesController < ApplicationController
 		bill = Bill.last
 		
 		@amount = bill.amount.to_i
-		@amountShow = bill.amount
+		@amountShow = bill.amount/100
 
 	end
 
 	def create
 			bill = Bill.last
-			@amount = (bill.amount * 100).to_i
-			@amountShow = bill.amount 
+			@amount = bill.amount.to_i
+			@amountShow = bill.amount/100 
 
 	    customer = Stripe::Customer.create(
 	    email: params[:stripeEmail],
