@@ -137,7 +137,20 @@ nav {
     .brand-logo  {
         /*font-family: $logo_font;*/
       /*color: $text_color;*/
+      // position: relative;
+      // top: -3px;
       padding-left: 10px;
+      width: 200px;
+      height: 65px;
+
+       img {
+        display: flex;
+        margin: auto;
+        position: relative;
+        top: -3px;
+
+      }
+
 
       /*text-decoration: none;*/
     }
@@ -322,8 +335,11 @@ thead {
 
 .title-content {
   width: 50%;
+  display: flex;
 
-  .title-content, span {
+  span {
+    display: flex;
+    align-items: center;
     width: auto;
     border-radius: 2px;
     padding: 8px;
@@ -334,13 +350,29 @@ thead {
 }
 .time-content {
   width: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+  span {
+  width: 90px;
   font-size: 10px;
   display: flex;
+  justify-content: flex-end;
   border-radius: 2px;
   padding: 8px;
-  justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.4);
+ }
 }
+
+//  span {
+//   font-size: 10px;
+//   display: flex;
+//   border-radius: 2px;
+//   padding: 8px;
+//   justify-content: flex-end;
+//   background-color: rgba(0, 0, 0, 0.4);
+// }
+
 .location-content {
   width: 50%;
 
@@ -410,16 +442,22 @@ thead {
 }
 
 #newLocation {
-  width: 20em;
-  margin-top: 2em;
+  width: 10em;
+  // margin-top: 2em;
 }
 
 #job-selector {
-  margin: auto;
-  /*justify-content: center;*/
-  padding: 3em 6em 0 6em;
+  /* margin: auto; */
+  /* justify-content: center; */
+  /* padding: 3em 6em 0 6em; */
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: baseline; */
+  position: relative;
+  top: 25px;
 
 }
+
 
 .new_business {
     margin-left: auto;
@@ -430,6 +468,11 @@ thead {
 .initialskill-custom-btn {
   margin-bottom: 2em !important;
   @extend .custom_btn;
+}
+.payment-button {
+  border: none !important;
+  color: red;
+  background: rgba(255, 255, 255, 0) !important;
 }
 
 .delete-button {
