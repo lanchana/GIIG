@@ -137,7 +137,18 @@ nav {
     .brand-logo  {
         /*font-family: $logo_font;*/
       /*color: $text_color;*/
+      // position: relative;
+      // top: -3px;
       padding-left: 10px;
+      width: 200px;
+      height: 65px;
+
+       img {
+        position: relative;
+        top: -3px;
+
+      }
+
 
       /*text-decoration: none;*/
     }
@@ -410,16 +421,22 @@ thead {
 }
 
 #newLocation {
-  width: 20em;
-  margin-top: 2em;
+  width: 10em;
+  // margin-top: 2em;
 }
 
 #job-selector {
-  margin: auto;
-  /*justify-content: center;*/
-  padding: 3em 6em 0 6em;
+  /* margin: auto; */
+  /* justify-content: center; */
+  /* padding: 3em 6em 0 6em; */
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: baseline; */
+  position: relative;
+  top: 25px;
 
 }
+
 
 .new_business {
     margin-left: auto;
@@ -430,6 +447,11 @@ thead {
 .initialskill-custom-btn {
   margin-bottom: 2em !important;
   @extend .custom_btn;
+}
+.payment-button {
+  border: none !important;
+  color: red;
+  background: rgba(255, 255, 255, 0) !important;
 }
 
 .delete-button {

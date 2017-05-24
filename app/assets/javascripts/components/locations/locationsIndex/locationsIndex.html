@@ -4,8 +4,21 @@
 
 <div class="container">
   <div class="table-position">
-    <div class="col-md-12 col-sm-12 col-xs-12 text-center jobshow-desc-tittle text-uppercase ">
+    <div style="width: 100%; display: flex;">
+      <div style="width: 50%;">
         <h3>Locations</h3>
+      </div>
+      <div style="width: 50%;">
+        <div id="job-selector" class="">
+          <div>
+              <!-- Dropdown Trigger -->
+              <a ui-sref="locationsNew" class="btn">Create a Location</a>
+              </div>
+        </div>
+      <!-- Dropdown Trigger -->
+      <!-- <a style="float: right;"class='location-button btn' href='#' data-activates='locationdropdown'>New Job Post</a> -->
+      </div>
+
     </div>
     <table class="responsive-table centered bordered">
         <thead>
@@ -46,10 +59,10 @@
         </tbody>
     </table>
   </div>
-  <div class="col-md-12 col-sm-12 col-xs-12 text-center loc_index">
+  <!-- <div class="col-md-12 col-sm-12 col-xs-12 text-center loc_index"> -->
       <!-- Dropdown Trigger -->
-      <a ui-sref="locationsNew" class="btn">Create a Location</a>
-      </div>
+      <!-- <a ui-sref="locationsNew" class="btn">Create a Location</a>
+      </div> -->
 
   <script>
   $('.location-button').dropdown({

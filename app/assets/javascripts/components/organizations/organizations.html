@@ -3,26 +3,20 @@
 <p> -->
 
 <div class="container">
-
-
-  <div id="job-selector" class="col-md-12 col-sm-12 col-xs-12 text-right">
-    <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
-      <input class="btn btn_custom" value="Add a new job at {{$ctrl.selectedLocation.name}}" type="submit">
-      <br>
-
-
-      <select id="newLocation" ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
-      </select>
-    </form>
-  </div>
-
-
-  <div class="table-position">
+  <div class="table-position" style="margin-bottom: 30px;">
     <div style="width: 100%; display: flex;">
       <div style="width: 50%;">
         <h3>My Jobs</h3>
       </div>
       <div style="width: 50%;">
+        <div id="job-selector" class="">
+          <form ng-submit="$ctrl.postJob($ctrl.selectedLocation)" class="form-group">
+            <input class="btn btn_custom" value="New job at {{$ctrl.selectedLocation.name}}" type="submit">
+            <!-- <br> -->
+            <select id="newLocation" ng-options="location as location.name for location in $ctrl.locations track by location.id" ng-model="$ctrl.selectedLocation">
+            </select>
+          </form>
+        </div>
       <!-- Dropdown Trigger -->
       <!-- <a style="float: right;"class='location-button btn' href='#' data-activates='locationdropdown'>New Job Post</a> -->
       </div>
@@ -57,26 +51,24 @@
                     Filled
                   </div>
                 </td>
-
                 <td>
+                  <div style="display: flex; justify-content: center;">
 
 
-    <div ng-if="$ctrl.checkDates(job.date) === true && job.jobseeker_id != null">
-        <form ng-submit="$ctrl.processBilling(job)">
-          <button type="submit" class="btn-flat" class="payment-button"><i class="material-icons" style="color:green;">payment</i></button>
-        </form>
-    </div>
-
-    <div ng-if="$ctrl.checkDates(job.date) === false || job.jobseeker_id === null")>
-      <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})"><i class="material-icons" style="color:green;">mode_edit</i></a>
-
-    </div>
-
-    <div>
-      <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
-        <button type="submit" class="delete-button"><i class="material-icons">delete</i></button>
-      </form>
-    </div>
+                    <div ng-if="$ctrl.checkDates(job.date) === true && job.jobseeker_id != null">
+                        <form ng-submit="$ctrl.processBilling(job)">
+                          <button type="submit" class="payment-button"><i class="material-icons" style="color:green;">payment</i></button>
+                        </form>
+                    </div>
+                    <div ng-if="$ctrl.checkDates(job.date) === false || job.jobseeker_id === null")>
+                      <a ui-sref="jobsEdit({location_id:job.location_id, job_id:job.id})"><i class="material-icons" style="color:green;">mode_edit</i></a>
+                    </div>
+                    <div>
+                      <form ng-submit="$ctrl.jobDelete(job.location_id, job.id)">
+                        <button type="submit" class="delete-button"><i class="material-icons">delete</i></button>
+                      </form>
+                    </div>
+                  </div>
 
 
     <!--   <div ng-if="$ctrl.checkDates(job.date) === true">
