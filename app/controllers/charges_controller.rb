@@ -3,7 +3,7 @@ class ChargesController < ApplicationController
 	def new
 		bill = Bill.last
 		
-		@amount = (bill.amount.to_i
+		@amount = bill.amount.to_i
 		@amountShow = bill.amount
 
 	end
