@@ -335,8 +335,11 @@ thead {
 
 .title-content {
   width: 50%;
+  display: flex;
 
-  .title-content, span {
+  span {
+    display: flex;
+    align-items: center;
     width: auto;
     border-radius: 2px;
     padding: 8px;
@@ -347,13 +350,29 @@ thead {
 }
 .time-content {
   width: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+  span {
+  width: 90px;
   font-size: 10px;
   display: flex;
+  justify-content: flex-end;
   border-radius: 2px;
   padding: 8px;
-  justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.4);
+ }
 }
+
+//  span {
+//   font-size: 10px;
+//   display: flex;
+//   border-radius: 2px;
+//   padding: 8px;
+//   justify-content: flex-end;
+//   background-color: rgba(0, 0, 0, 0.4);
+// }
+
 .location-content {
   width: 50%;
 

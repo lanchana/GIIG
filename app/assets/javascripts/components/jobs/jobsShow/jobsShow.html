@@ -24,9 +24,10 @@
       <div style="font-size: 14px; padding-bottom: 5px;" class="text-capitalize col-md-12">
       {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>{{$ctrl.location.zipcode}}
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12" >
+      <div style="padding-bottom: 10px;"class="col-md-12 col-sm-12 col-xs-12" >
         _________
       </div>
+      <br>
       <br>
       <div class="col-md-12 col-sm-12 col-xs-12">
           When:  {{$ctrl.job.date | date }}
@@ -36,7 +37,7 @@
             Time:
             {{$ctrl.job.start_time | date: 'EEE, MMM d @ ha' }} - {{$ctrl.job.end_time | date: ' ha' }}
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="padding-bottom: 10px;"class="col-md-12 col-sm-12 col-xs-12">
           Pay rate:
           {{$ctrl.job.hourly_wage | currency}} / hr
       </div>
@@ -57,92 +58,5 @@
           </div>
       </article>
     </div>
-    <!-- <div class="">
-      <p class="text-capitalize">job description</p>
-              <div class="">
-              {{$ctrl.job.description}}
-              </div>
-    </div> -->
   </div>
-    <!-- <div class=" job-show ">
-    <header class="col-md-12 col-sm-12 col-xs-12 text-size">
-        <div class="col-md-6 col-sm-6 col-xs-6 ">
-            <div class="col-md-12 col-sm-12 col-xs-12">Host/Hostssss</div>
-            <div class="col-md-12 col-sm-12 col-xs-12">{{$ctrl.location.name}}</div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-            {{$ctrl.location.address}}
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 text-capitalize">
-            {{$ctrl.location.city}}, <span class="text-upcase">{{$ctrl.location.state}}</span>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="col-md-12 col-sm-12 col-xs-12 text-capitalize text-right">
-                {{$ctrl.user.full_name}}
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                {{$ctrl.user.phone_num}}
-            </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <hr class="m12 s12 xs12">
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 ">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-capitalize">
-
-            pay rate: {{$ctrl.job.hourly_wage}}
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-            date: {{$ctrl.job.date}}
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                time: {{$ctrl.job.actual_start_time}} - {{$ctrl.job.actual_end_time}}
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 text-right" ng-hide="{{$ctrl.job.user_id}}">
-
-            <form ng-submit="$ctrl.acceptJob($ctrl.job.id)" ng-hide="$ctrl.user.org">
-         <button type="submit" class="btn waves-effect waves-light ">accept this job</button>
-         </form>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 center">
-            <hr class="m12 s12 xs12 center">
-        </div>
-
-
-    </header>
-    <article class="col-md-12 col-sm-12 col-xs-12">
-        <div ng-if="$ctrl.map" class="col-md-12 col-sm-12 col-xs-12">
-            <ui-gmap-google-map center='$ctrl.map.center' zoom='$ctrl.map.zoom' style=" width:100%; height: 27em; display: block;" draggable="true" options="options">
-                <ui-gmap-marker coords="$ctrl.marker.coords" idKey="$ctrl.marker.id"></ui-gmap-marker>
-            </ui-gmap-google-map>
-        </div>
-    </article>
-    <article class="col-md-12 col-sm-12 col-xs-12">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <p class="text-capitalize jobshow-desc-tittle">job description</p>
-        </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 jobshow-desc">
-                {{$ctrl.job.description}}
 </div>
-    </article>
-
-    </div> -->
-</div>
-<!-- <div class="container">
-  <div class="box">
-    hjwhh
-
-
-  </div>
-
-
-
-</div> -->
-
-
-
-
-
-<!-- <h1>Jobs show</h1> -->
