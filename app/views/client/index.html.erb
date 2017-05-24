@@ -51,10 +51,10 @@
       <div class="nav nav-wrapper">
         <% if user_signed_in? %>
 
-        <% if current_user.org? %>
-          <div class="brand-logo"><a ui-sref="organization"><%= link_to image_tag("giig-dark@2x.png", :width => "60%" ) %></a></div>
+        <% if current_user.org == nil %>
+        <div class="brand-logo"><a href="/jobseeker"><%=image_tag("giig-dark@2x.png", :width => "60%")%></a></div>
         <% else %>
-         <div class="brand-logo"><a ui-sref="jobseeker"><%= link_to image_tag("giig-dark@2x.png", :width => "60%" ) %></a></div>
+            <div class="brand-logo"><a href="/organization"><%=image_tag("giig-dark@2x.png", :width => "60%")%></a></div>
          <% end %>
         <% end %>
 
